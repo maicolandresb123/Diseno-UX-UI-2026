@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 19</title>
+</head>
+
+<body>
+
+    <div class="registro">
+
+        <h1>Registro F1 Fan Club</h1>
+
+        <input
+            type="radio"
+            name="paso"
+            id="paso-1"
+            checked
+        >
+
+        <input
+            type="radio"
+            name="paso"
+            id="paso-2"
+        >
+
+        <div class="indicador">
+            <span class="indicador-1">1. Datos personales</span>
+            <span class="indicador-2">2. Crear cuenta</span>
+        </div>
+
+        <form class="formulario">
+
+            <section class="paso paso-1">
+
+                <h2>Datos personales</h2>
+
+                <label for="nombre">Nombre</label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ingresá tu nombre"
+                    required
+                >
+
+                <label for="email">Correo electrónico</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="ejemplo@correo.com"
+                    required
+                >
+
+                <label
+                    for="paso-2"
+                    class="boton siguiente"
+                >
+                    Siguiente
+                </label>
+
+            </section>
+
+
+            <section class="paso paso-2">
+
+                <h2>Crear cuenta</h2>
+
+                <label for="usuario">Usuario</label>
+
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    placeholder="Elegí un usuario"
+                    required
+                >
+
+                <label for="password">Contraseña</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Mínimo 6 caracteres"
+                    minlength="6"
+                    required
+                >
+
+                <div class="acciones">
+
+                    <label
+                        for="paso-1"
+                        class="boton anterior"
+                    >
+                        Anterior
+                    </label>
+
+                    <button type="submit">
+                        Registrarme
+                    </button>
+
+                </div>
+
+            </section>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

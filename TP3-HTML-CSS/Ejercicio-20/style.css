@@ -1,0 +1,1381 @@
+/* ========================================
+   VARIABLES - TEMA CLARO
+   ======================================== */
+
+:root {
+    --color-primario: #e10600;
+    --color-primario-hover: #ff1e18;
+
+    --color-fondo: #f2f2f2;
+    --color-superficie: #ffffff;
+    --color-superficie-clara: #e7e7e7;
+
+    --color-texto: #1a1a1a;
+    --color-texto-secundario: #555555;
+
+    --color-borde: #cccccc;
+
+    --color-error: #ff3333;
+    --color-valido: #28a745;
+
+    --espaciado: 30px;
+
+    --radio: 12px;
+}
+
+
+/* ========================================
+   MODO OSCURO
+   CAMBIO DE VARIABLES
+   ======================================== */
+
+.modo-oscuro {
+    --color-fondo: #111111;
+    --color-superficie: #1d1d1d;
+    --color-superficie-clara: #292929;
+
+    --color-texto: #ffffff;
+    --color-texto-secundario: #cccccc;
+
+    --color-borde: #444444;
+}
+
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--color-fondo);
+
+    color: var(--color-texto);
+
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+main,
+section {
+    min-width: 0;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ========================================
+   NAVBAR - FLEXBOX
+   ======================================== */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 6%;
+
+    background-color: rgba(17, 17, 17, 0.96);
+
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.logo {
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+#menu-toggle {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+.menu-icon {
+    display: none;
+
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 120px 8% 70px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.40),
+            rgba(0, 0, 0, 0.90)
+        ),
+        url("https://media.formula1.com/image/upload/t_16by9Centre/c_fit,w_3200,h_1800/q_auto/v1740000001/fom-website/2026/Barcelona%20Shakedown/AOC-44.webp");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+.hero-contenido {
+    max-width: 700px;
+
+    animation-name: aparecer;
+
+    animation-duration: 1.2s;
+
+    animation-timing-function: ease-out;
+
+    animation-iteration-count: 1;
+}
+
+.hero-etiqueta {
+    color: var(--color-primario);
+
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 10px 0;
+
+    font-size: 70px;
+}
+
+.hero p {
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #dddddd;
+}
+
+.boton {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background-color: var(--color-primario);
+
+    color: white;
+
+    border-radius: var(--radio);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+
+    background-color: var(--color-primario-hover);
+}
+
+
+/* ========================================
+   TÍTULOS
+   ======================================== */
+
+.titulo-seccion {
+    margin-bottom: 40px;
+}
+
+.titulo-seccion span,
+.contacto-info span {
+    color: var(--color-primario);
+
+    font-weight: bold;
+}
+
+.titulo-seccion h2,
+.contacto-info h2 {
+    margin: 8px 0;
+
+    font-size: 40px;
+}
+
+.titulo-seccion p,
+.contacto-info p {
+    color: var(--color-texto-secundario);
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   BOX MODEL
+   ======================================== */
+
+.datos-clave {
+    padding: 90px 8%;
+}
+
+.datos-fila {
+    display: flex;
+
+    justify-content: center;
+}
+
+.dato-card {
+    width: 300px;
+    height: 220px;
+
+    margin: 10px;
+
+    padding: 25px;
+
+    border: 2px solid var(--color-borde);
+
+    box-sizing: border-box;
+
+    background-color: var(--color-superficie);
+
+    border-radius: var(--radio);
+}
+
+.dato-card h3 {
+    margin-top: 0;
+
+    color: var(--color-primario);
+}
+
+.dato-card p {
+    line-height: 1.6;
+
+    color: var(--color-texto-secundario);
+}
+
+
+/* ========================================
+   SERVICIOS - CSS GRID
+   ======================================== */
+
+.servicios {
+    padding: 90px 8%;
+
+    background-color: var(--color-superficie);
+}
+
+.servicios-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: var(--espaciado);
+}
+
+.servicio-card {
+    min-height: 220px;
+
+    padding: var(--espaciado);
+
+    border: 1px solid var(--color-borde);
+
+    border-radius: var(--radio);
+
+    box-sizing: border-box;
+
+    background-color: var(--color-superficie-clara);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--color-primario);
+}
+
+.numero {
+    color: var(--color-primario);
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.servicio-card h3 {
+    margin: 15px 0;
+
+    font-size: 24px;
+}
+
+.servicio-card p {
+    margin: 0;
+
+    line-height: 1.6;
+
+    color: var(--color-texto-secundario);
+}
+
+
+/* ========================================
+   FLEXBOX - TARJETAS CON WRAP
+   ======================================== */
+
+.destacados {
+    padding: 90px 8%;
+}
+
+.destacados-flex {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.destacado-card {
+    flex: 1 1 280px;
+
+    overflow: hidden;
+
+    padding-bottom: 25px;
+
+    background-color: var(--color-superficie);
+
+    border: 1px solid var(--color-borde);
+
+    border-radius: var(--radio);
+}
+
+.destacado-card img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.destacado-card h3,
+.destacado-card p,
+.destacado-card a {
+    margin-left: 20px;
+
+    margin-right: 20px;
+}
+
+.destacado-card h3 {
+    margin-top: 20px;
+}
+
+.destacado-card p {
+    color: var(--color-texto-secundario);
+
+    line-height: 1.5;
+}
+
+.destacado-card a {
+    display: inline-block;
+
+    color: var(--color-primario);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.destacado-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   GRID TEMPLATE AREAS
+   ======================================== */
+
+.temporada {
+    padding: 90px 8%;
+
+    background-color: var(--color-superficie);
+}
+
+.temporada-grid {
+    display: grid;
+
+    grid-template-columns:
+        250px 1fr;
+
+    grid-template-rows: auto;
+
+    grid-template-areas:
+        "sidebar principal";
+
+    gap: 30px;
+}
+
+.temporada-sidebar {
+    grid-area: sidebar;
+
+    padding: 25px;
+
+    background-color: var(--color-superficie-clara);
+
+    border-radius: var(--radio);
+}
+
+.temporada-principal {
+    grid-area: principal;
+
+    min-width: 0;
+
+    padding: 30px;
+
+    background-color: var(--color-superficie-clara);
+
+    border-radius: var(--radio);
+}
+
+.temporada-principal p {
+    line-height: 1.7;
+
+    color: var(--color-texto-secundario);
+}
+
+
+/* ========================================
+   PSEUDO-CLASES Y PSEUDO-ELEMENTOS
+   ======================================== */
+
+.lista-enlaces {
+    margin: 0;
+
+    padding: 0;
+}
+
+.lista-enlaces li {
+    list-style: none;
+
+    padding: 12px;
+
+    border-radius: 6px;
+}
+
+.lista-enlaces li:nth-child(even) {
+    background-color: var(--color-superficie);
+}
+
+.lista-enlaces a {
+    text-decoration: none;
+}
+
+.lista-enlaces a::before {
+    content: "›";
+
+    margin-right: 8px;
+
+    color: var(--color-primario);
+}
+
+.lista-enlaces a:hover {
+    color: var(--color-primario);
+}
+
+
+/* ========================================
+   TOOLTIP
+   ======================================== */
+
+.tooltip-contenedor {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 10px 0 20px;
+}
+
+.termino {
+    color: var(--color-primario);
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 130%;
+
+    width: 230px;
+
+    padding: 10px;
+
+    transform: translateX(-50%);
+
+    background-color: #333333;
+
+    color: white;
+
+    text-align: center;
+
+    border-radius: 6px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 20;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.tooltip-contenedor:hover .tooltip {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* ========================================
+   GALERÍA MASONRY-LIKE
+   ======================================== */
+
+.galeria-seccion {
+    padding: 90px 8%;
+}
+
+.galeria {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 1fr));
+
+    grid-auto-rows: 180px;
+
+    grid-auto-flow: dense;
+
+    gap: 15px;
+}
+
+.galeria-item {
+    overflow: hidden;
+
+    border-radius: var(--radio);
+
+    background-color: var(--color-superficie);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeria .grande {
+    grid-column: span 2;
+
+    grid-row: span 2;
+}
+
+.galeria .ancha {
+    grid-column: span 2;
+
+    grid-row: span 1;
+}
+
+.galeria .vertical {
+    grid-column: span 1;
+
+    grid-row: span 2;
+}
+
+
+/* ========================================
+   TESTIMONIOS - SCROLL SNAP
+   ======================================== */
+
+.testimonios {
+    padding: 90px 8%;
+
+    background-color: var(--color-superficie);
+}
+
+.carrusel-contenedor {
+    position: relative;
+
+    padding: 0 55px;
+}
+
+.carrusel {
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonio {
+    min-width: 350px;
+
+    padding: 30px;
+
+    background-color: var(--color-superficie-clara);
+
+    border-radius: var(--radio);
+
+    scroll-snap-align: start;
+}
+
+.testimonio p {
+    line-height: 1.7;
+
+    color: var(--color-texto-secundario);
+}
+
+.testimonio strong {
+    color: var(--color-texto);
+}
+
+
+/* ========================================
+   FLECHAS DEL CARRUSEL
+   ======================================== */
+
+.flecha {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: var(--color-primario);
+
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    z-index: 10;
+
+    transition: background-color 0.3s ease;
+}
+
+.flecha:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.flecha-izquierda {
+    left: 0;
+}
+
+.flecha-derecha {
+    right: 0;
+}
+
+
+/* ========================================
+   CONTACTO
+   ======================================== */
+
+.contacto {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    padding: 90px 8%;
+}
+
+.form-multistep {
+    position: relative;
+}
+
+#contacto-paso-1,
+#contacto-paso-2 {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+
+/* ========================================
+   INDICADOR DEL FORMULARIO
+   ======================================== */
+
+.pasos-indicador {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    color: var(--color-texto-secundario);
+}
+
+#contacto-paso-1:checked
+~ .pasos-indicador
+.indicador-1,
+
+#contacto-paso-2:checked
+~ .pasos-indicador
+.indicador-2 {
+    color: var(--color-primario);
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   FORMULARIO MULTI-STEP
+   ======================================== */
+
+.formulario {
+    overflow: hidden;
+}
+
+.paso-form {
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transform: translateX(30px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        max-height 0.4s ease;
+}
+
+#contacto-paso-1:checked
+~ .formulario
+.paso-form-1,
+
+#contacto-paso-2:checked
+~ .formulario
+.paso-form-2 {
+    max-height: 700px;
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    pointer-events: auto;
+}
+
+.formulario label:not(.boton-form) {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 14px;
+
+    background-color: var(--color-superficie);
+
+    color: var(--color-texto);
+
+    border: 2px solid var(--color-borde);
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.formulario textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--color-primario);
+}
+
+
+/* ========================================
+   VALIDACIÓN DEL FORMULARIO
+   ======================================== */
+
+.formulario input:required,
+.formulario textarea:required {
+    border-left:
+        4px solid var(--color-primario);
+}
+
+.formulario input:required:not(:placeholder-shown):invalid,
+.formulario textarea:required:not(:placeholder-shown):invalid {
+    border-color: var(--color-error);
+
+    background-color: #341c1c;
+}
+
+.formulario input:required:not(:placeholder-shown):valid,
+.formulario textarea:required:not(:placeholder-shown):valid {
+    border-color: var(--color-valido);
+
+    background-color: #18301f;
+}
+
+
+/* ========================================
+   BOTONES DEL FORMULARIO
+   ======================================== */
+
+.boton-form,
+.formulario button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.siguiente,
+.formulario button {
+    background-color: var(--color-primario);
+
+    color: white;
+}
+
+.anterior {
+    background-color: var(--color-superficie-clara);
+
+    color: var(--color-texto);
+}
+
+.boton-form:hover,
+.formulario button:hover {
+    transform: translateY(-2px);
+}
+
+.siguiente:hover,
+.formulario button:hover {
+    background-color: var(--color-primario-hover);
+}
+
+.formulario button:active {
+    transform: scale(0.97);
+}
+
+.acciones-form {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 30px 8%;
+
+    background-color: #080808;
+
+    color: white;
+
+    border-top: 1px solid var(--color-borde);
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ========================================
+   VOLVER ARRIBA
+   ======================================== */
+
+.volver-arriba {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    padding: 14px 20px;
+
+    background-color: var(--color-primario);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    z-index: 1000;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.volver-arriba:hover {
+    background-color: var(--color-primario-hover);
+
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   ANIMACIÓN
+   ======================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - TABLET
+   DESKTOP FIRST
+   ======================================== */
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 18px 4%;
+    }
+
+    .hero {
+        padding-left: 6%;
+
+        padding-right: 6%;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .datos-clave,
+    .servicios,
+    .destacados,
+    .temporada,
+    .galeria-seccion,
+    .testimonios,
+    .contacto {
+        padding-left: 6%;
+
+        padding-right: 6%;
+    }
+
+    .servicios-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .temporada-grid {
+        grid-template-columns:
+            200px 1fr;
+    }
+
+    .contacto {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        padding: 15px 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        transition: max-height 0.4s ease;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 15px 0;
+
+        text-align: center;
+
+        border-bottom: 1px solid #444444;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        max-height: 500px;
+    }
+
+    section {
+        scroll-margin-top: 85px;
+    }
+
+    .hero {
+        min-height: 650px;
+
+        padding: 130px 20px 60px;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .hero-contenido {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        margin-left: auto;
+
+        margin-right: auto;
+
+        font-size: 17px;
+    }
+
+    .datos-clave,
+    .servicios,
+    .destacados,
+    .temporada,
+    .galeria-seccion,
+    .testimonios,
+    .contacto {
+        padding: 60px 20px;
+    }
+
+    .datos-fila {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .dato-card {
+        width: 100%;
+
+        max-width: 400px;
+
+        height: auto;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .temporada-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "principal";
+    }
+
+    .temporada-sidebar {
+        display: none;
+    }
+
+    .titulo-seccion h2,
+    .contacto-info h2 {
+        font-size: 32px;
+    }
+
+    .galeria {
+        grid-template-columns:
+            repeat(auto-fill, minmax(150px, 1fr));
+
+        grid-auto-rows: 150px;
+    }
+
+    .galeria .grande,
+    .galeria .ancha,
+    .galeria .vertical {
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+    .carrusel-contenedor {
+        padding: 0 40px;
+    }
+
+    .testimonio {
+        min-width: 90%;
+    }
+
+    .flecha {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 28px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .volver-arriba {
+        right: 15px;
+
+        bottom: 15px;
+
+        padding: 12px 16px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .destacado-card {
+        flex-basis: 100%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 220px;
+    }
+
+    .testimonio {
+        min-width: 100%;
+    }
+
+    .carrusel-contenedor {
+        padding: 0 35px;
+    }
+
+    .flecha {
+        width: 32px;
+
+        height: 32px;
+
+        font-size: 24px;
+    }
+
+    .acciones-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .boton-form,
+    .formulario button {
+        width: 100%;
+    }
+
+}

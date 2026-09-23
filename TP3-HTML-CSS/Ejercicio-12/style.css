@@ -1,0 +1,104 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #111111;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    min-height: 400px;
+
+    margin-bottom: 30px;
+    padding: 30px;
+
+    background-color: #1f1f1f;
+
+    border-radius: 10px;
+}
+
+.tooltip-contenedor {
+    position: relative;
+
+    display: inline-block;
+
+    margin-top: 20px;
+}
+
+.termino {
+    color: #e10600;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+
+    bottom: 130%;
+    left: 50%;
+
+    width: 220px;
+
+    padding: 10px;
+
+    background-color: #333333;
+    color: white;
+
+    text-align: center;
+
+    border-radius: 6px;
+
+    transform: translateX(-50%);
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 10;
+}
+
+.tooltip-contenedor:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.volver-arriba {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 15px 20px;
+
+    background-color: #e10600;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    z-index: 100;
+}
+
+section img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+}
