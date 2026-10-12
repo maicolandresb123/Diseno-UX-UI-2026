@@ -1,23 +1,18 @@
-# TP4 — Coffea Landing Page
+# TP4 - Coffea
 
-Trabajo práctico de **Diseño UX-UI 2026** de la Licenciatura en Sistemas de Información.
+Trabajo práctico de Diseño UX-UI 2026.
 
-## Objetivo
+El objetivo fue reproducir la landing de Coffea usando HTML5 y CSS3, sin JavaScript, y adaptarla para desktop, tablet y mobile.
 
-Reproducir la landing page de la cafetería ficticia **Coffea** con HTML5 semántico y CSS3, siguiendo el PRD de la cátedra y manteniendo una implementación responsive de 360 px a 1920 px.
+## Tecnologías usadas
 
-## Tecnologías
-
-- HTML5 semántico
+- HTML5
 - CSS3
+- Flexbox y Grid
 - CSS Custom Properties
-- Flexbox
-- CSS Grid
 - CSS Scroll Snap
 - Media Queries
 - Google Fonts
-
-El proyecto no utiliza JavaScript, frameworks, preprocesadores, bundlers ni CMS.
 
 ## Estructura
 
@@ -26,7 +21,6 @@ TP4-Coffea/
 ├── index.html
 ├── 404.html
 ├── netlify.toml
-├── README.md
 ├── assets/
 │   ├── img/
 │   └── icons/
@@ -37,108 +31,34 @@ TP4-Coffea/
     ├── layout.css
     ├── utilities.css
     └── components/
-        ├── header.css
-        ├── hero.css
-        ├── categories.css
-        ├── product-card.css
-        ├── carousel.css
-        ├── promo.css
-        ├── testimonial-card.css
-        ├── newsletter.css
-        ├── footer.css
-        └── error-page.css
 ```
 
-## Convenciones
+Los estilos están separados por componentes y se usa nomenclatura BEM. Los colores, tipografías, radios y espaciados principales se centralizan en `tokens.css`.
 
-- Nomenclatura BEM.
-- Enfoque mobile-first.
-- Breakpoints principales: 768 px, 1024 px y 1440 px.
-- Colores, tipografías y radios centralizados en `css/tokens.css`.
-- Interacciones resueltas sin JavaScript.
-- Uso de `@layer` para ordenar la cascada CSS.
+## Responsive
 
-## Secciones implementadas
+La página fue trabajada con enfoque mobile-first y usa breakpoints principales en 768 px, 1024 px y 1440 px.
 
-1. Header / navegación.
-2. Hero.
-3. Categorías.
-4. Our Special Coffee.
-5. Our Special Dessert.
-6. CTA de granos de café.
-7. Testimonios.
-8. Newsletter.
-9. Footer.
+También se implementaron sin JavaScript:
 
-## Accesibilidad
-
-La implementación incluye:
-
-- Skip link.
-- Landmarks semánticos.
-- Foco visible.
-- Navegación por teclado.
-- `aria-label` en controles solo-ícono.
-- `alt` descriptivo en imágenes de contenido y `alt=""` en imágenes decorativas.
-- Soporte para `prefers-reduced-motion`.
-- Validación nativa del newsletter con `type="email"`, `required` y `autocomplete="email"`.
-
-## Interacciones CSS-only
-
-- Menú mobile mediante `<details>/<summary>`.
-- Carruseles con `overflow-x` y `scroll-snap`.
-- Favoritos mediante checkbox + `:checked`.
-- Paginador de testimonios con anclas.
-- Hover y focus sin JavaScript.
+- menú mobile con `details/summary`;
+- carruseles con `overflow-x` y `scroll-snap`;
+- estados hover y focus;
+- favorito mediante checkbox;
+- validación nativa del formulario de newsletter.
 
 ## Ejecutar en local
 
-No requiere instalación ni build.
+No necesita instalación ni compilación.
 
-1. Clonar el repositorio.
-2. Abrir la carpeta `TP4-Coffea`.
-3. Abrir `index.html` en el navegador o usar Live Server en Visual Studio Code.
+Se puede abrir `index.html` directamente en el navegador o ejecutar la carpeta con Live Server desde Visual Studio Code.
 
-## Netlify
+## Sitio publicado
 
-El sitio debe publicarse desde la rama `main`.
-
-Como este TP está dentro de un repositorio que también contiene otros trabajos, en Netlify se debe configurar:
-
-- **Base directory:** `TP4-Coffea`
-- **Build command:** ninguno
-- **Publish directory:** `.`
-
-El archivo `netlify.toml` contiene los headers de seguridad y caché requeridos.
-
-## QA antes de la entrega
-
-Comprobar:
-
-- HTML W3C: 0 errores.
-- CSS W3C: 0 errores.
-- Lighthouse Performance mobile: 90 o más.
-- Lighthouse Accessibility: 95 o más.
-- Lighthouse Best Practices: 95 o más.
-- Lighthouse SEO: 95 o más.
-- Sin scroll horizontal entre 360 px y 1920 px.
-- Pruebas en Chrome/Edge, Firefox, Safari iOS/macOS y Samsung Internet.
-
-## Assets
-
-Los recursos visuales utilizados por la implementación están versionados localmente dentro de `assets/`.
-
-- `assets/img/`: hero, cafés, postres, CTA, newsletter y avatares.
-- `assets/icons/`: categorías, búsqueda, favorito, flechas, chevron, estrella, correo y redes sociales.
-- Las fotografías tienen variantes AVIF y WebP, con JPG como fallback.
-- Las imágenes principales usan `<picture>`, `srcset`, `sizes`, `width` y `height`.
-- El hero cuenta con variantes de 960 px y 1920 px.
-- Las imágenes de cards y avatares incluyen tamaños responsivos para reducir transferencia innecesaria.
-
-Los raster locales corresponden a la selección visual usada durante el desarrollo de esta implementación. Si se dispone de los archivos fuente originales del Figma de la cátedra, pueden sustituirse conservando los mismos nombres y estructura sin modificar la arquitectura del proyecto.
+Netlify: https://charming-dragon-f39d2f.netlify.app/
 
 ## Autor
 
 Maikol Andrés Betancourt Castaño  
 Licenciatura en Sistemas de Información  
-Diseño UX-UI — 2026
+Diseño UX-UI - 2026
