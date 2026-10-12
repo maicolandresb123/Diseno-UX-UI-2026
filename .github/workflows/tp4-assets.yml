@@ -1,0 +1,165 @@
+name: TP4 Generate Local Assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/tp4-assets.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create asset folders
+        run: |
+          mkdir -p TP4-Coffea/assets/img
+          mkdir -p TP4-Coffea/assets/icons
+
+      - name: Download responsive raster assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          download_pair () {
+            local base="$1"
+            local stem="$2"
+            local width="$3"
+            curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=84&fm=webp" -o "TP4-Coffea/assets/img/${stem}.webp"
+            curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=84&fm=jpg" -o "TP4-Coffea/assets/img/${stem}.jpg"
+          }
+
+          HERO="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+          curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=960&q=84&fm=webp" -o TP4-Coffea/assets/img/hero-960.webp
+          curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=88&fm=webp" -o TP4-Coffea/assets/img/hero-1920.webp
+          curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=88&fm=jpg" -o TP4-Coffea/assets/img/hero.jpg
+
+          download_pair "https://images.unsplash.com/photo-1509042239860-f550ce710b93" "coffee-1" 668
+          download_pair "https://images.unsplash.com/photo-1512568400610-62da28bc8a13" "coffee-2" 668
+          download_pair "https://images.unsplash.com/photo-1445116572660-236099ec97a0" "coffee-3" 668
+          download_pair "https://images.unsplash.com/photo-1485808191679-5f86510681a2" "coffee-4" 668
+
+          download_pair "https://images.unsplash.com/photo-1578985545062-69928b1d9587" "dessert-1" 668
+          download_pair "https://images.unsplash.com/photo-1551024506-0bccd828d307" "dessert-2" 668
+          download_pair "https://images.unsplash.com/photo-1558961363-fa8fdf82db35" "dessert-3" 668
+          download_pair "https://images.unsplash.com/photo-1587314168485-3236d6710814" "dessert-4" 668
+
+          download_pair "https://images.unsplash.com/photo-1442512595331-e89e73853f31" "promo-hand" 1040
+          download_pair "https://images.unsplash.com/photo-1447933601403-0c6688de566e" "promo-beans" 1006
+          download_pair "https://images.unsplash.com/photo-1447933601403-0c6688de566e" "newsletter-beans" 964
+
+          download_pair "https://images.unsplash.com/photo-1500648767791-00dcc994a43e" "avatar-1" 224
+          download_pair "https://images.unsplash.com/photo-1494790108377-be9c29b29330" "avatar-2" 224
+          download_pair "https://images.unsplash.com/photo-1534528741775-53994a69daeb" "avatar-3" 224
+
+      - name: Create local SVG icons
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cat > TP4-Coffea/assets/icons/cat-hot.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" fill="none" stroke="#544A3E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 29h37v16c0 12-8 20-19 20S21 57 21 45V29Z"/>
+            <path d="M58 33h6c8 0 11 5 11 11s-5 11-14 11h-4"/>
+            <path d="M29 20c0-4 4-5 4-9"/>
+            <path d="M41 20c0-4 4-5 4-9"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/cat-cold.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" fill="none" stroke="#544A3E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M27 19h28l-3 47H30L27 19Z"/>
+            <path d="M24 19h34"/>
+            <path d="M37 28v28"/>
+            <path d="M46 28v28"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/cat-cup.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" fill="none" stroke="#544A3E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 30h42v18c0 11-8 18-21 18S19 59 19 48V30Z"/>
+            <path d="M61 35h6c6 0 9 4 9 9s-4 9-11 9h-4"/>
+            <path d="M28 21h25"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/cat-dessert.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" fill="none" stroke="#544A3E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 57h47"/>
+            <path d="M23 57l7-29h28l7 29"/>
+            <path d="M30 28c2-8 18-13 28 0"/>
+            <path d="M35 40h18"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/search.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#30261C" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M16.5 16.5 21 21"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/heart.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2A0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/heart-filled.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2A0000">
+            <path d="M12 21 4.2 13.4l-1-1a5.5 5.5 0 0 1 7.8-7.8l1 1 1-1a5.5 5.5 0 0 1 7.8 7.8l-1 1L12 21Z"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/arrow.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 71">
+            <circle cx="35.5" cy="35.5" r="34.5" fill="#FFFFFF" stroke="rgba(48,38,28,.1)"/>
+            <path d="M29 22 42 35.5 29 49" fill="none" stroke="#30261C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/chevron.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 4 6 6-6 6"/>
+            <path d="m10 4 6 6-6 6"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/star.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#D79A43">
+            <path d="m12 2.2 3 6.1 6.7 1-4.9 4.7 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.7 6.7-1 3-6.1Z"/>
+          </svg>
+          EOF
+
+          cat > TP4-Coffea/assets/icons/mail.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#544A3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m4 7 8 6 8-6"/>
+          </svg>
+          EOF
+
+          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/x/FFFFFF -o TP4-Coffea/assets/icons/social-x.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/instagram/FFFFFF -o TP4-Coffea/assets/icons/social-instagram.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/facebook/FFFFFF -o TP4-Coffea/assets/icons/social-facebook.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/linkedin/FFFFFF -o TP4-Coffea/assets/icons/social-linkedin.svg
+
+      - name: Commit generated assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add TP4-Coffea/assets
+          if git diff --cached --quiet; then
+            echo "No asset changes to commit."
+            exit 0
+          fi
+          git commit -m "feat(tp4): versionar assets locales optimizados"
+          git push
