@@ -129,7 +129,7 @@
 
     object-fit: cover;
 
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
 }
 
 
@@ -213,7 +213,7 @@
     background-color: var(--color-sand);
 
     border: 1px solid var(--color-espresso);
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
 }
 
 
