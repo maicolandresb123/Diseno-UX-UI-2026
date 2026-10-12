@@ -1,6 +1,4 @@
-/* =========================
-   PÁGINA 404
-   ========================= */
+/* Página 404 */
 
 .error-page {
     display: grid;
@@ -20,11 +18,9 @@
     text-align: center;
 }
 
-
 .error-page__content {
     max-width: 640px;
 }
-
 
 .error-page__code {
     margin-bottom: var(--space-4);
@@ -42,7 +38,6 @@
     line-height: 1;
 }
 
-
 .error-page__title {
     margin-bottom: var(--space-4);
 
@@ -57,13 +52,11 @@
     font-weight: 600;
 }
 
-
 .error-page__text {
     margin-bottom: var(--space-7);
 
     color: var(--color-white-80);
 }
-
 
 .error-page__button {
     display: inline-flex;
@@ -86,15 +79,12 @@
     border-radius: var(--radius-pill);
 }
 
-
 @media (min-width: 768px) {
 
     .error-page {
         padding-inline: var(--gutter-tablet);
     }
-
 }
-
 
 @media (min-width: 1024px) {
 
@@ -103,5 +93,4 @@
 
         padding-inline: var(--gutter-desktop);
     }
-
 }
