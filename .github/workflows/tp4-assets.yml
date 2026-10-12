@@ -145,10 +145,15 @@ jobs:
           </svg>
           EOF
 
-          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/x/FFFFFF -o TP4-Coffea/assets/icons/social-x.svg
-          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/instagram/FFFFFF -o TP4-Coffea/assets/icons/social-instagram.svg
-          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/facebook/FFFFFF -o TP4-Coffea/assets/icons/social-facebook.svg
-          curl -L --fail --retry 3 --silent --show-error https://cdn.simpleicons.org/linkedin/FFFFFF -o TP4-Coffea/assets/icons/social-linkedin.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/x.svg -o TP4-Coffea/assets/icons/social-x.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/instagram.svg -o TP4-Coffea/assets/icons/social-instagram.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/facebook.svg -o TP4-Coffea/assets/icons/social-facebook.svg
+          curl -L --fail --retry 3 --silent --show-error https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/linkedin.svg -o TP4-Coffea/assets/icons/social-linkedin.svg
+
+          sed -i 's/<svg /<svg fill="#FFFFFF" /' TP4-Coffea/assets/icons/social-x.svg
+          sed -i 's/<svg /<svg fill="#FFFFFF" /' TP4-Coffea/assets/icons/social-instagram.svg
+          sed -i 's/<svg /<svg fill="#FFFFFF" /' TP4-Coffea/assets/icons/social-facebook.svg
+          sed -i 's/<svg /<svg fill="#FFFFFF" /' TP4-Coffea/assets/icons/social-linkedin.svg
 
       - name: Commit generated assets
         shell: bash
