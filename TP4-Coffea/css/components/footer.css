@@ -1,6 +1,4 @@
-/* =========================
-   FOOTER
-   ========================= */
+/* Footer */
 
 .footer {
     min-height: 358px;
@@ -11,10 +9,7 @@
     color: var(--color-white);
 }
 
-
-/* =========================
-   CONTENIDO INTERNO
-   ========================= */
+/* Contenido interno */
 
 .footer__inner {
     display: grid;
@@ -29,10 +24,7 @@
         var(--space-6);
 }
 
-
-/* =========================
-   LOGO
-   ========================= */
+/* Logo */
 
 .footer__logo {
     grid-column: 1 / -1;
@@ -46,20 +38,14 @@
     line-height: 1;
 }
 
-
-/* =========================
-   COLUMNAS
-   ========================= */
+/* Columnas */
 
 .footer__column,
 .footer__social {
     min-width: 0;
 }
 
-
-/* =========================
-   TÍTULOS
-   ========================= */
+/* Títulos */
 
 .footer__heading {
     margin:
@@ -78,10 +64,7 @@
     text-transform: uppercase;
 }
 
-
-/* =========================
-   LISTAS
-   ========================= */
+/* Listas */
 
 .footer__list {
     display: flex;
@@ -90,7 +73,6 @@
 
     gap: var(--space-3);
 }
-
 
 .footer__list a {
     display: inline-flex;
@@ -113,15 +95,11 @@
         opacity 200ms ease;
 }
 
-
-/* =========================
-   REDES SOCIALES
-   ========================= */
+/* Redes sociales */
 
 .footer__social {
     grid-column: 1 / -1;
 }
-
 
 .footer__social-list {
     display: flex;
@@ -132,7 +110,6 @@
 
     flex-wrap: nowrap;
 }
-
 
 .footer__social-link {
     display: grid;
@@ -153,7 +130,6 @@
         transform 200ms ease;
 }
 
-
 .footer__social-icon {
     display: block;
 
@@ -163,19 +139,13 @@
     object-fit: contain;
 }
 
-
-/* =========================
-   FOCO
-   ========================= */
+/* Foco */
 
 .footer :focus-visible {
     outline-color: var(--color-white);
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -184,18 +154,12 @@
         opacity: 0.7;
     }
 
-
     .footer__social-link:hover {
         transform: translateY(-2px);
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
@@ -206,23 +170,16 @@
         );
     }
 
-
     .footer__logo {
         grid-column: auto;
     }
 
-
     .footer__social {
         grid-column: auto;
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -231,7 +188,6 @@
 
         align-items: center;
     }
-
 
     .footer__inner {
         grid-template-columns:
@@ -248,23 +204,19 @@
         column-gap: var(--space-10);
     }
 
-
     .footer__heading {
         font-size: var(--fs-sm);
     }
 
-
     .footer__list {
         gap: var(--space-2);
     }
-
 
     .footer__list a {
         min-height: auto;
 
         font-size: var(--fs-xs);
     }
-
 
     .footer__social-link {
         width: 24px;
@@ -273,10 +225,8 @@
         flex-basis: 24px;
     }
 
-
     .footer__social-icon {
         width: 14px;
         height: 14px;
     }
-
 }
