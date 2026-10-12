@@ -13,5 +13,6 @@
 @import url("./components/testimonial-card.css") layer(components);
 @import url("./components/newsletter.css") layer(components);
 @import url("./components/footer.css") layer(components);
+@import url("./components/error-page.css") layer(components);
 
 @import url("./utilities.css") layer(utilities);
