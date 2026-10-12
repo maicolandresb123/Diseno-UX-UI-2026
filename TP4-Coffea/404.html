@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>404 | Coffea</title>
+
+    <meta
+        name="description"
+        content="The page you are looking for could not be found."
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+
+    <style>
+
+        /* =========================
+           PÁGINA 404
+           ========================= */
+
+        .error-page {
+            display: grid;
+
+            min-height: 100vh;
+
+            place-items: center;
+
+            padding: 2rem;
+
+            background-color: #30261C;
+            color: #FFFFFF;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           CONTENIDO
+           ========================= */
+
+        .error-page__content {
+            max-width: 640px;
+        }
+
+
+        /* =========================
+           NÚMERO 404
+           ========================= */
+
+        .error-page__title {
+            margin-bottom: 1rem;
+
+            color: #FFFFFF;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(
+                4rem,
+                14vw,
+                9rem
+            );
+
+            line-height: 1;
+        }
+
+
+        /* =========================
+           TÍTULO
+           ========================= */
+
+        .error-page__subtitle {
+            color: #FFFFFF;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(
+                1.75rem,
+                5vw,
+                3rem
+            );
+        }
+
+
+        /* =========================
+           TEXTO
+           ========================= */
+
+        .error-page__text {
+            margin-bottom: 2rem;
+
+            color: rgba(
+                255,
+                255,
+                255,
+                0.8
+            );
+        }
+
+
+        /* =========================
+           BOTÓN
+           ========================= */
+
+        .error-page__button {
+            display: inline-flex;
+
+            min-height: 48px;
+
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                0
+                2rem;
+
+            background-color: #FFFFFF;
+            color: #30261C;
+
+            font-weight: 600;
+
+            border-radius: 100px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="error-page">
+
+        <div class="error-page__content">
+
+
+            <p class="error-page__title">
+                404
+            </p>
+
+
+            <h1 class="error-page__subtitle">
+                This page is not available.
+            </h1>
+
+
+            <p class="error-page__text">
+                The link may be broken or the page may have been moved.
+            </p>
+
+
+            <a
+                class="error-page__button"
+                href="/"
+            >
+                Back to Coffea
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+/* =========================
+   TESTIMONIOS
+   ========================= */
+
+.testimonials {
+    background-color: var(--color-bg);
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.testimonials__header {
+    margin-bottom: var(--space-10);
+
+    text-align: center;
+}
+
+
+.testimonials__eyebrow {
+    margin-bottom: var(--space-2);
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+
+.testimonials__title {
+    margin: 0;
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    font-weight: 600;
+
+    letter-spacing: 1.28px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   CONTENEDOR DE TESTIMONIOS
+   ========================= */
+
+.testimonials__viewport {
+    display: flex;
+
+    gap: var(--space-4);
+
+    overflow-x: auto;
+
+    padding:
+        var(--space-2)
+        0
+        var(--space-6);
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+
+
+/* =========================
+   OCULTAR SCROLLBAR
+   ========================= */
+
+.testimonials__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   TESTIMONIAL CARD
+   ========================= */
+
+.testimonial-card {
+    flex: 0 0 88%;
+
+    min-height: 207px;
+
+    margin: 0;
+
+    padding: var(--space-7);
+
+    scroll-snap-align: start;
+
+    background-color: var(--color-sand-40);
+
+    border: 2px solid var(--color-border-soft);
+    border-radius: var(--radius-card);
+}
+
+
+/* =========================
+   CABECERA DE LA CARD
+   ========================= */
+
+.testimonial-card__header {
+    display: grid;
+
+    grid-template-columns:
+        56px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-4);
+}
+
+
+/* =========================
+   AVATAR
+   ========================= */
+
+.testimonial-card__avatar {
+    width: 56px;
+    height: 56px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   NOMBRE
+   ========================= */
+
+.testimonial-card__name {
+    margin-bottom: 2px;
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-md);
+    font-weight: 600;
+}
+
+
+/* =========================
+   ROL
+   ========================= */
+
+.testimonial-card__role {
+    margin-bottom: 0;
+
+    color: var(--color-text-soft);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+}
+
+
+/* =========================
+   ESTRELLAS
+   ========================= */
+
+.testimonial-card__rating {
+    color: var(--color-star);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   TEXTO DEL TESTIMONIO
+   ========================= */
+
+.testimonial-card__quote {
+    margin: 0;
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+
+    line-height: 20px;
+}
+
+
+/* =========================
+   PAGINADOR
+   ========================= */
+
+.testimonials__pager {
+    display: flex;
+
+    justify-content: center;
+
+    gap: var(--space-2);
+}
+
+
+.testimonials__pager a {
+    width: 10px;
+    height: 10px;
+
+    background-color: var(--color-sand);
+
+    border: 1px solid var(--color-espresso);
+    border-radius: 50%;
+}
+
+
+/* =========================
+   TABLET
+   768px EN ADELANTE
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .testimonial-card {
+        flex-basis: calc(
+            50% - var(--space-2)
+        );
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .testimonials__viewport {
+        align-items: center;
+
+        overflow: visible;
+    }
+
+
+    .testimonial-card {
+        flex: 1 1 0;
+
+        max-width: 417px;
+    }
+
+
+    .testimonial-card--featured {
+        max-width: 441px;
+
+        min-height: 235px;
+    }
+
+}

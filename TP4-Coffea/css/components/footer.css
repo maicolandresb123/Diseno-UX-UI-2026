@@ -1,0 +1,338 @@
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    min-height: 358px;
+
+    padding-block: var(--space-14);
+
+    background-color: var(--color-espresso);
+    color: var(--color-white);
+}
+
+
+/* =========================
+   CONTENIDO INTERNO
+   ========================= */
+
+.footer__inner {
+    display: grid;
+
+    gap: var(--space-10);
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.footer__logo {
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-logo);
+    font-weight: 700;
+}
+
+
+/* =========================
+   BLOQUE DE LINKS
+   ========================= */
+
+.footer__links {
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    gap:
+        var(--space-10)
+        var(--space-6);
+
+    min-width: 0;
+}
+
+
+.footer__links nav {
+    min-width: 0;
+}
+
+
+/* =========================
+   TÍTULOS GENERALES
+   ========================= */
+
+.footer__heading {
+    margin-bottom: var(--space-6);
+
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-footer-h);
+    font-weight: 500;
+
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LISTAS
+   ========================= */
+
+.footer__list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================
+   ENLACES
+   ========================= */
+
+.footer__list a {
+    display: inline-flex;
+
+    min-height: 44px;
+
+    align-items: center;
+
+    color: var(--color-white);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-md);
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+   ========================= */
+
+.footer__social {
+    min-width: 0;
+}
+
+
+/* TÍTULO SOCIAL MEDIA */
+
+.footer__social .footer__heading {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    text-decoration: underline;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LISTA DE REDES
+   ========================= */
+
+.footer__social-list {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =========================
+   ENLACE DE RED SOCIAL
+   ========================= */
+
+.footer__social-link {
+    display: flex;
+
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 18px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background-color: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    opacity: 0.9;
+
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+
+/* ELIMINAR LETRAS ANTERIORES */
+
+.footer__social-link::before,
+.footer__social-link::after {
+    content: none !important;
+}
+
+
+/* =========================
+   LOGOTIPO
+   ========================= */
+
+.footer__social-icon {
+    display: block;
+
+    width: 15px;
+    height: 15px;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   FOCO
+   ========================= */
+
+.footer :focus-visible {
+    outline-color: var(--color-white);
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover: hover) {
+
+    .footer__list a:hover {
+        opacity: 0.7;
+    }
+
+
+    .footer__social-link:hover {
+        opacity: 1;
+
+        transform: translateY(-2px);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+   768px EN ADELANTE
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .footer__links {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .footer__inner {
+        grid-template-columns:
+            140px
+            minmax(0, 1fr);
+
+        align-items: start;
+    }
+
+
+    .footer__links {
+        grid-template-columns: repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+        grid-column: 2;
+    }
+
+
+    .footer__social {
+        grid-column: 1 / -1;
+
+        justify-self: center;
+
+        text-align: left;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+   1440px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1440px) {
+
+    .footer {
+        display: flex;
+
+        align-items: center;
+    }
+
+
+    .footer__inner {
+        grid-template-columns:
+            150px
+            minmax(0, 1fr)
+            180px;
+
+        gap: var(--space-10);
+    }
+
+
+    .footer__links {
+        grid-column: auto;
+    }
+
+
+    .footer__social {
+        grid-column: auto;
+
+        justify-self: start;
+
+        text-align: left;
+    }
+
+}

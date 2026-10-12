@@ -1,0 +1,161 @@
+/* =========================
+   CARRUSEL
+   ========================= */
+
+.carousel {
+    position: relative;
+}
+
+
+/* =========================
+   ÁREA DESPLAZABLE
+   ========================= */
+
+.carousel__viewport {
+    display: flex;
+
+    gap: var(--space-4);
+
+    overflow-x: auto;
+
+    padding:
+        var(--space-2)
+        0
+        var(--space-6);
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+
+
+/* =========================
+   OCULTAR SCROLLBAR
+   CHROME / SAFARI
+   ========================= */
+
+.carousel__viewport::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   FLECHAS
+   MOBILE
+   ========================= */
+
+.carousel__arrow {
+    display: none;
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .carousel {
+        padding-inline: 58px;
+    }
+
+
+    .carousel__viewport {
+        gap: 4px;
+    }
+
+
+    .carousel__arrow {
+        position: absolute;
+
+        top: 50%;
+
+        z-index: 4;
+
+        display: grid;
+
+        width: 58px;
+        height: 58px;
+
+        place-items: center;
+
+        background-color: var(--color-white);
+        color: var(--color-espresso);
+
+        font-family: var(--font-display);
+        font-size: 42px;
+
+        line-height: 1;
+
+        border-radius: 50%;
+
+        box-shadow: var(--shadow-soft);
+
+        transform: translateY(-50%);
+
+        transition:
+            transform 200ms ease,
+            background-color 200ms ease;
+    }
+
+
+    .carousel__arrow--left {
+        left: -18px;
+    }
+
+
+    .carousel__arrow--right {
+        right: -18px;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+   1440px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1440px) {
+
+    .carousel {
+        padding-inline: 0;
+    }
+
+
+    .carousel__arrow {
+        width: 71px;
+        height: 71px;
+    }
+
+
+    .carousel__arrow--left {
+        left: -80px;
+    }
+
+
+    .carousel__arrow--right {
+        right: -80px;
+    }
+
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover: hover) {
+
+    .carousel__arrow:hover {
+        background-color: var(--color-sand);
+
+        transform:
+            translateY(-50%)
+            scale(1.05);
+    }
+
+}

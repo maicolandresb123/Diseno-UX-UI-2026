@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Coffea | Coffee Shop</title>
+
+    <meta
+        name="description"
+        content="Coffea is a responsive coffee shop landing page built with semantic HTML5 and modern CSS."
+    >
+
+    <meta
+        property="og:title"
+        content="Coffea | Coffee Shop"
+    >
+
+    <meta
+        property="og:description"
+        content="Discover special coffee, desserts and a warm coffee shop experience."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2330261C'/%3E%3Cpath d='M17 25h27v9c0 9-6 15-14 15S17 43 17 34v-9Z' fill='%23E2D9C8'/%3E%3Cpath d='M44 28h4c5 0 7 3 7 7s-3 7-9 7h-3' fill='none' stroke='%23E2D9C8' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&family=Reggae+One&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <a
+        class="skip-link"
+        href="#main"
+    >
+        Skip to content
+    </a>
+
+
+    <header class="header">
+
+        <div class="container header__inner">
+
+
+            <a
+                class="header__logo"
+                href="#home"
+                aria-label="Coffea home"
+            >
+                coffea
+            </a>
+
+
+            <nav
+                class="header__nav"
+                aria-label="Main navigation"
+            >
+
+                <ul class="header__list">
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="#home"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="#coffee"
+                        >
+                            Coffee
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="#bakery"
+                        >
+                            Bakery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="#shop"
+                        >
+                            Shop
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="#about"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link header__link--login"
+                            href="#newsletter"
+                        >
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="header__actions">
+
+
+                <button
+                    class="header__search"
+                    type="button"
+                    aria-label="Search"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        ></circle>
+
+                        <path
+                            d="M16.5 16.5L21 21"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        ></path>
+
+                    </svg>
+
+                </button>
+
+
+                <details class="header__menu">
+
+                    <summary aria-label="Open navigation menu">
+
+                        <span
+                            class="header__menu-icon"
+                            aria-hidden="true"
+                        ></span>
+
+                    </summary>
+
+
+                    <nav
+                        class="header__mobile-nav"
+                        aria-label="Mobile navigation"
+                    >
+
+                        <ul class="header__mobile-list">
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="#home"
+                                >
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="#coffee"
+                                >
+                                    Coffee
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="#bakery"
+                                >
+                                    Bakery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="#shop"
+                                >
+                                    Shop
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="#about"
+                                >
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link header__mobile-link--login"
+                                    href="#newsletter"
+                                >
+                                    Login
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </details>
+
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+    <main id="main">
+
+
+        <!-- =========================
+             HERO
+             ========================= -->
+
+        <section
+            class="hero"
+            id="home"
+            aria-labelledby="hero-title"
+        >
+
+
+            <div
+                class="hero__media"
+                aria-hidden="true"
+            >
+
+                <img
+                    class="hero__image"
+                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1920&q=88"
+                    width="1920"
+                    height="1000"
+                    alt=""
+                    fetchpriority="high"
+                >
+
+            </div>
+
+
+            <div
+                class="hero__overlay"
+                aria-hidden="true"
+            ></div>
+
+
+            <div class="container hero__inner">
+
+                <div class="hero__content">
+
+
+                    <p class="hero__eyebrow">
+                        Welcome
+                    </p>
+
+
+                    <h1
+                        class="hero__title"
+                        id="hero-title"
+                    >
+                        We serve the richest coffee in the city!
+                    </h1>
+
+
+                    <p class="hero__description">
+                        Discover carefully prepared coffee made to bring warmth,
+                        flavor and a special moment to your day.
+                    </p>
+
+
+                    <a
+                        class="hero__button"
+                        href="#coffee"
+                    >
+                        Order Now
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORÍAS
+             ========================= -->
+
+        <section
+            class="categories"
+            aria-label="Coffee categories"
+        >
+
+            <div class="container">
+
+
+                <ul class="categories__list">
+
+
+                    <li>
+
+                        <a
+                            class="categories__item"
+                            href="#coffee"
+                        >
+
+                            <span
+                                class="categories__icon"
+                                aria-hidden="true"
+                            >
+
+                                <svg viewBox="0 0 82 82">
+
+                                    <path
+                                        d="M21 29h37v16c0 12-8 20-19 20S21 57 21 45V29Z"
+                                    ></path>
+
+                                    <path
+                                        d="M58 33h6c8 0 11 5 11 11s-5 11-14 11h-4"
+                                    ></path>
+
+                                    <path
+                                        d="M29 20c0-4 4-5 4-9"
+                                    ></path>
+
+                                    <path
+                                        d="M41 20c0-4 4-5 4-9"
+                                    ></path>
+
+                                </svg>
+
+                            </span>
+
+                            <span>
+                                Hot Coffee
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            class="categories__item"
+                            href="#coffee"
+                        >
+
+                            <span
+                                class="categories__icon"
+                                aria-hidden="true"
+                            >
+
+                                <svg viewBox="0 0 82 82">
+
+                                    <path
+                                        d="M27 19h28l-3 47H30L27 19Z"
+                                    ></path>
+
+                                    <path
+                                        d="M24 19h34"
+                                    ></path>
+
+                                    <path
+                                        d="M37 28v28"
+                                    ></path>
+
+                                    <path
+                                        d="M46 28v28"
+                                    ></path>
+
+                                </svg>
+
+                            </span>
+
+                            <span>
+                                Cold Coffee
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            class="categories__item"
+                            href="#coffee"
+                        >
+
+                            <span
+                                class="categories__icon"
+                                aria-hidden="true"
+                            >
+
+                                <svg viewBox="0 0 82 82">
+
+                                    <path
+                                        d="M19 30h42v18c0 11-8 18-21 18S19 59 19 48V30Z"
+                                    ></path>
+
+                                    <path
+                                        d="M61 35h6c6 0 9 4 9 9s-4 9-11 9h-4"
+                                    ></path>
+
+                                    <path
+                                        d="M28 21h25"
+                                    ></path>
+
+                                </svg>
+
+                            </span>
+
+                            <span>
+                                Cup Coffee
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            class="categories__item"
+                            href="#bakery"
+                        >
+
+                            <span
+                                class="categories__icon"
+                                aria-hidden="true"
+                            >
+
+                                <svg viewBox="0 0 82 82">
+
+                                    <path
+                                        d="M18 57h47"
+                                    ></path>
+
+                                    <path
+                                        d="M23 57l7-29h28l7 29"
+                                    ></path>
+
+                                    <path
+                                        d="M30 28c2-8 18-13 28 0"
+                                    ></path>
+
+                                    <path
+                                        d="M35 40h18"
+                                    ></path>
+
+                                </svg>
+
+                            </span>
+
+                            <span>
+                                Dessert
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SPECIAL COFFEE
+             ========================= -->
+
+        <section
+            class="products section"
+            id="coffee"
+            aria-labelledby="coffee-title"
+        >
+
+            <div class="container">
+
+
+                <header class="section__header products__header">
+
+                    <h2
+                        class="products__title"
+                        id="coffee-title"
+                    >
+                        Our Special Coffee
+                    </h2>
+
+                </header>
+
+
+                <div class="carousel">
+
+
+                    <a
+                        class="carousel__arrow carousel__arrow--left"
+                        href="#coffee-1"
+                        aria-label="Go to first coffee"
+                    >
+                        ‹
+                    </a>
+
+
+                    <div class="carousel__viewport">
+
+
+                        <!-- PRODUCTO 1 -->
+
+                        <article
+                            class="product-card"
+                            id="coffee-1"
+                        >
+
+                            <div class="product-card__media">
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Lungo coffee served in a ceramic cup"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-coffee-1"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-coffee-1"
+                                    aria-label="Add Lungo coffee to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Lungo Coffee
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Smooth espresso with a longer extraction
+                                    and a rich aroma.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- PRODUCTO 2 -->
+
+                        <article
+                            class="product-card"
+                            id="coffee-2"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Cappuccino with latte art"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-coffee-2"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-coffee-2"
+                                    aria-label="Add Cappuccino to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Cappuccino
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Espresso, steamed milk and a soft layer
+                                    of creamy foam.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- PRODUCTO 3 -->
+
+                        <article
+                            class="product-card"
+                            id="coffee-3"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Freshly brewed coffee in a glass cup"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-coffee-3"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-coffee-3"
+                                    aria-label="Add Americano to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Americano
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Bold espresso softened with hot water
+                                    for a clean finish.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- PRODUCTO 4 -->
+
+                        <article
+                            class="product-card"
+                            id="coffee-4"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Iced coffee served with milk"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-coffee-4"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-coffee-4"
+                                    aria-label="Add Iced Latte to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Iced Latte
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Chilled espresso and milk for a refreshing
+                                    coffee break.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    </div>
+
+
+                    <a
+                        class="carousel__arrow carousel__arrow--right"
+                        href="#coffee-4"
+                        aria-label="Go to last coffee"
+                    >
+                        ›
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SPECIAL DESSERT
+             ========================= -->
+
+        <section
+            class="products section"
+            id="bakery"
+            aria-labelledby="dessert-title"
+        >
+
+            <div class="container">
+
+
+                <header class="section__header products__header">
+
+                    <h2
+                        class="products__title"
+                        id="dessert-title"
+                    >
+                        Our Special Dessert
+                    </h2>
+
+                </header>
+
+
+                <div class="carousel">
+
+
+                    <a
+                        class="carousel__arrow carousel__arrow--left"
+                        href="#dessert-1"
+                        aria-label="Go to first dessert"
+                    >
+                        ‹
+                    </a>
+
+
+                    <div class="carousel__viewport">
+
+
+                        <!-- POSTRE 1 -->
+
+                        <article
+                            class="product-card"
+                            id="dessert-1"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Chocolate cake slice"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-dessert-1"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-dessert-1"
+                                    aria-label="Add Chocolate Cake to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Chocolate Cake
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Moist chocolate cake with a soft,
+                                    rich cocoa finish.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- POSTRE 2 -->
+
+                        <article
+                            class="product-card"
+                            id="dessert-2"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Glazed doughnuts"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-dessert-2"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-dessert-2"
+                                    aria-label="Add Glazed Donut to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Glazed Donut
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    A light pastry finished with a delicate
+                                    sweet glaze.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- POSTRE 3 -->
+
+                        <article
+                            class="product-card"
+                            id="dessert-3"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Fresh baked cookies"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-dessert-3"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-dessert-3"
+                                    aria-label="Add Cookies to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Cookies
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Freshly baked cookies with crisp edges
+                                    and a soft center.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                        <!-- POSTRE 4 -->
+
+                        <article
+                            class="product-card"
+                            id="dessert-4"
+                        >
+
+                            <div class="product-card__media">
+
+
+                                <img
+                                    class="product-card__image"
+                                    src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=700&q=85"
+                                    width="334"
+                                    height="364"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="Creamy cheesecake with fruit topping"
+                                >
+
+
+                                <input
+                                    class="product-card__favorite-input visually-hidden"
+                                    type="checkbox"
+                                    id="favorite-dessert-4"
+                                >
+
+
+                                <label
+                                    class="product-card__favorite"
+                                    for="favorite-dessert-4"
+                                    aria-label="Add Cheesecake to favorites"
+                                >
+
+                                    <span aria-hidden="true">
+                                        ♡
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="product-card__content">
+
+
+                                <h3 class="product-card__title">
+                                    Cheesecake
+                                </h3>
+
+
+                                <p class="product-card__description">
+                                    Creamy cheesecake with a smooth texture
+                                    and balanced sweetness.
+                                </p>
+
+
+                                <div class="product-card__bottom">
+
+
+                                    <data
+                                        class="product-card__price"
+                                        value="200"
+                                    >
+                                        Rs. 200
+                                    </data>
+
+
+                                    <a
+                                        class="product-card__button"
+                                        href="#newsletter"
+                                    >
+                                        Order Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </article>
+
+
+                    </div>
+
+
+                    <a
+                        class="carousel__arrow carousel__arrow--right"
+                        href="#dessert-4"
+                        aria-label="Go to last dessert"
+                    >
+                        ›
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROMO
+             ========================= -->
+
+        <section
+            class="promo"
+            id="shop"
+            aria-labelledby="promo-title"
+        >
+
+
+            <img
+                class="promo__image promo__image--left"
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=700&q=80"
+                width="520"
+                height="335"
+                loading="lazy"
+                decoding="async"
+                alt=""
+            >
+
+
+            <div class="container promo__inner">
+
+                <div class="promo__content">
+
+
+                    <h2
+                        class="promo__title"
+                        id="promo-title"
+                    >
+                        Check Out Our Best Coffee Beans
+                    </h2>
+
+
+                    <a
+                        class="promo__button"
+                        href="#coffee"
+                    >
+
+                        Explore Our Products
+
+                        <span aria-hidden="true">
+                            »
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <img
+                class="promo__image promo__image--right"
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=700&q=80"
+                width="503"
+                height="335"
+                loading="lazy"
+                decoding="async"
+                alt=""
+            >
+
+
+        </section>
+
+
+        <!-- =========================
+             TESTIMONIOS
+             ========================= -->
+
+        <section
+            class="testimonials section"
+            id="about"
+            aria-labelledby="testimonials-title"
+        >
+
+            <div class="container">
+
+
+                <header class="testimonials__header">
+
+
+                    <p class="testimonials__eyebrow">
+                        Come and Join
+                    </p>
+
+
+                    <h2
+                        class="testimonials__title"
+                        id="testimonials-title"
+                    >
+                        Our Happy Customers
+                    </h2>
+
+
+                </header>
+
+
+                <div class="testimonials__viewport">
+
+
+                    <figure
+                        class="testimonial-card"
+                        id="t-1"
+                    >
+
+
+                        <figcaption class="testimonial-card__header">
+
+
+                            <img
+                                class="testimonial-card__avatar"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=85"
+                                width="56"
+                                height="56"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Portrait of James Smith"
+                            >
+
+
+                            <div>
+
+                                <p class="testimonial-card__name">
+                                    James Smith
+                                </p>
+
+                                <p class="testimonial-card__role">
+                                    Entrepreneur
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="testimonial-card__rating"
+                                aria-label="5 out of 5 stars"
+                            >
+                                ★★★★★
+                            </div>
+
+
+                        </figcaption>
+
+
+                        <blockquote class="testimonial-card__quote">
+                            “A calm atmosphere, friendly service and coffee that tastes
+                            consistently great. Coffea has become part of my morning routine.”
+                        </blockquote>
+
+
+                    </figure>
+
+
+                    <figure
+                        class="testimonial-card testimonial-card--featured"
+                        id="t-2"
+                    >
+
+
+                        <figcaption class="testimonial-card__header">
+
+
+                            <img
+                                class="testimonial-card__avatar"
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=85"
+                                width="56"
+                                height="56"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Portrait of Emma Johnson"
+                            >
+
+
+                            <div>
+
+                                <p class="testimonial-card__name">
+                                    Emma Johnson
+                                </p>
+
+                                <p class="testimonial-card__role">
+                                    Designer
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="testimonial-card__rating"
+                                aria-label="5 out of 5 stars"
+                            >
+                                ★★★★★
+                            </div>
+
+
+                        </figcaption>
+
+
+                        <blockquote class="testimonial-card__quote">
+                            “The desserts are fresh, the coffee is beautifully prepared
+                            and the whole place feels warm and welcoming.”
+                        </blockquote>
+
+
+                    </figure>
+
+
+                    <figure
+                        class="testimonial-card"
+                        id="t-3"
+                    >
+
+
+                        <figcaption class="testimonial-card__header">
+
+
+                            <img
+                                class="testimonial-card__avatar"
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=85"
+                                width="56"
+                                height="56"
+                                loading="lazy"
+                                decoding="async"
+                                alt="Portrait of Sophia Brown"
+                            >
+
+
+                            <div>
+
+                                <p class="testimonial-card__name">
+                                    Sophia Brown
+                                </p>
+
+                                <p class="testimonial-card__role">
+                                    Photographer
+                                </p>
+
+                            </div>
+
+
+                            <div
+                                class="testimonial-card__rating"
+                                aria-label="5 out of 5 stars"
+                            >
+                                ★★★★★
+                            </div>
+
+
+                        </figcaption>
+
+
+                        <blockquote class="testimonial-card__quote">
+                            “I love the simple menu and the attention to detail.
+                            It is a great place to slow down and enjoy a good cup of coffee.”
+                        </blockquote>
+
+
+                    </figure>
+
+
+                </div>
+
+
+                <nav
+                    class="testimonials__pager"
+                    aria-label="Testimonials pagination"
+                >
+
+                    <a
+                        href="#t-1"
+                        aria-label="Show testimonial 1"
+                    ></a>
+
+                    <a
+                        href="#t-2"
+                        aria-label="Show testimonial 2"
+                    ></a>
+
+                    <a
+                        href="#t-3"
+                        aria-label="Show testimonial 3"
+                    ></a>
+
+                </nav>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEWSLETTER
+             ========================= -->
+
+        <section
+            class="newsletter"
+            id="newsletter"
+            aria-labelledby="newsletter-title"
+        >
+
+
+            <img
+                class="newsletter__beans newsletter__beans--left"
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80"
+                width="482"
+                height="321"
+                loading="lazy"
+                decoding="async"
+                alt=""
+            >
+
+
+            <div class="container newsletter__inner">
+
+
+                <h2
+                    class="newsletter__title"
+                    id="newsletter-title"
+                >
+                    Join in and get 15% off!
+                </h2>
+
+
+                <p class="newsletter__subtitle">
+                    Subscribe to our newsletter and receive special offers.
+                </p>
+
+
+                <form
+                    class="newsletter__form"
+                    action="#"
+                    method="post"
+                >
+
+
+                    <label
+                        class="visually-hidden"
+                        for="newsletter-email"
+                    >
+                        Email address
+                    </label>
+
+
+                    <div class="newsletter__input-wrap">
+
+
+                        <svg
+                            class="newsletter__mail-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="14"
+                                rx="2"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            ></rect>
+
+                            <path
+                                d="M4 7l8 6 8-6"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            ></path>
+
+                        </svg>
+
+
+                        <input
+                            class="newsletter__input"
+                            id="newsletter-email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+
+                    </div>
+
+
+                    <button
+                        class="newsletter__button"
+                        type="submit"
+                    >
+                        Subscribe
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+            <img
+                class="newsletter__beans newsletter__beans--right"
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80"
+                width="482"
+                height="321"
+                loading="lazy"
+                decoding="async"
+                alt=""
+            >
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer
+        class="footer"
+        id="footer"
+    >
+
+        <div class="container footer__inner">
+
+
+            <a
+                class="footer__logo"
+                href="#home"
+                aria-label="Coffea home"
+            >
+                Coffea
+            </a>
+
+
+            <div class="footer__links">
+
+
+                <nav aria-labelledby="footer-privacy">
+
+
+                    <h3
+                        class="footer__heading"
+                        id="footer-privacy"
+                    >
+                        Privacy
+                    </h3>
+
+
+                    <ul class="footer__list">
+
+                        <li>
+                            <a href="#">
+                                Terms
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Privacy
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Cookies
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+                <nav aria-labelledby="footer-services">
+
+
+                    <h3
+                        class="footer__heading"
+                        id="footer-services"
+                    >
+                        Services
+                    </h3>
+
+
+                    <ul class="footer__list">
+
+                        <li>
+                            <a href="#coffee">
+                                Coffee
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#bakery">
+                                Bakery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#shop">
+                                Shop
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+                <nav aria-labelledby="footer-about">
+
+
+                    <h3
+                        class="footer__heading"
+                        id="footer-about"
+                    >
+                        About Us
+                    </h3>
+
+
+                    <ul class="footer__list">
+
+                        <li>
+                            <a href="#about">
+                                Our story
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#about">
+                                Team
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#about">
+                                Careers
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+                <nav aria-labelledby="footer-information">
+
+
+                    <h3
+                        class="footer__heading"
+                        id="footer-information"
+                    >
+                        Information
+                    </h3>
+
+
+                    <ul class="footer__list">
+
+                        <li>
+                            <a href="#newsletter">
+                                Newsletter
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Plans & pricing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Sell your products
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                </nav>
+
+
+            </div>
+
+
+            <div class="footer__social">
+
+
+                <h3 class="footer__heading">
+                    Social Media
+                </h3>
+
+
+
+
+                    <div class="footer__social-list">
+
+
+                        <!-- X / TWITTER -->
+
+                        <a
+                            class="footer__social-link"
+                            href="https://x.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit X"
+                        >
+
+                            <img
+                                class="footer__social-icon"
+                                src="https://cdn.simpleicons.org/x/FFFFFF"
+                                width="24"
+                                height="24"
+                                alt=""
+                            >
+
+                        </a>
+
+
+                        <!-- INSTAGRAM -->
+
+                        <a
+                            class="footer__social-link"
+                            href="https://www.instagram.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit Instagram"
+                        >
+
+                            <img
+                                class="footer__social-icon"
+                                src="https://cdn.simpleicons.org/instagram/FFFFFF"
+                                width="24"
+                                height="24"
+                                alt=""
+                            >
+
+                        </a>
+
+
+                        <!-- FACEBOOK -->
+
+                        <a
+                            class="footer__social-link"
+                            href="https://www.facebook.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit Facebook"
+                        >
+
+                            <img
+                                class="footer__social-icon"
+                                src="https://cdn.simpleicons.org/facebook/FFFFFF"
+                                width="24"
+                                height="24"
+                                alt=""
+                            >
+
+                        </a>
+
+
+                        <!-- LINKEDIN -->
+
+                        <a
+                            class="footer__social-link"
+                            href="https://www.linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit LinkedIn"
+                        >
+
+                            <img
+                                class="footer__social-icon"
+                                src="https://cdn.simpleicons.org/linkedin/FFFFFF"
+                                width="24"
+                                height="24"
+                                alt=""
+                            >
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

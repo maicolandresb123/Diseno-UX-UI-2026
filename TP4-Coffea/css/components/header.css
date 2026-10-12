@@ -1,0 +1,366 @@
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+    position: absolute;
+    top: var(--space-4);
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   CONTENIDO INTERNO
+   ========================= */
+
+.header__inner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.header__logo {
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-logo);
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   NAVEGACIÓN DESKTOP
+   ========================= */
+
+.header__nav {
+    display: none;
+}
+
+
+.header__list {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-7);
+}
+
+
+.header__link {
+    color: var(--color-white);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-md);
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+
+.header__link--login {
+    font-weight: 600;
+}
+
+
+/* =========================
+   ACCIONES DEL HEADER
+   ========================= */
+
+.header__actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================
+   BOTÓN DE BÚSQUEDA
+   ========================= */
+
+.header__search {
+    display: flex;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background-color: var(--color-white);
+    color: var(--color-espresso);
+
+    border-radius: 50%;
+
+    transition:
+        transform 200ms ease,
+        background-color 200ms ease;
+}
+
+
+.header__search svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================
+   MENÚ MOBILE
+   ========================= */
+
+.header__menu {
+    position: relative;
+}
+
+
+.header__menu summary {
+    display: flex;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: var(--color-white);
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+
+.header__menu summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* =========================
+   ÍCONO HAMBURGUESA
+   ========================= */
+
+.header__menu-icon {
+    position: relative;
+
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: var(--color-white);
+
+    border-radius: var(--radius-pill);
+}
+
+
+.header__menu-icon::before,
+.header__menu-icon::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: var(--color-white);
+
+    border-radius: var(--radius-pill);
+
+    transition:
+        transform 200ms ease,
+        top 200ms ease;
+}
+
+
+.header__menu-icon::before {
+    top: -7px;
+}
+
+
+.header__menu-icon::after {
+    top: 7px;
+}
+
+
+/* =========================
+   MENÚ DESPLEGABLE MOBILE
+   ========================= */
+
+.header__mobile-nav {
+    position: absolute;
+
+    top: calc(100% + var(--space-3));
+    right: 0;
+
+    width: min(
+        280px,
+        calc(100vw - 32px)
+    );
+
+    padding: var(--space-4);
+
+    background-color: var(--color-bg);
+
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+.header__mobile-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.header__mobile-link {
+    display: flex;
+
+    min-height: 44px;
+
+    align-items: center;
+
+    padding-inline: var(--space-3);
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-base);
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    border-radius: var(--radius-btn);
+}
+
+
+.header__mobile-link--login {
+    font-weight: 600;
+}
+
+
+/* =========================
+   ESTADO ABIERTO
+   ========================= */
+
+.header__menu[open] .header__menu-icon {
+    background-color: transparent;
+}
+
+
+.header__menu[open] .header__menu-icon::before {
+    top: 0;
+
+    transform: rotate(45deg);
+}
+
+
+.header__menu[open] .header__menu-icon::after {
+    top: 0;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================
+   FOCO
+   ========================= */
+
+.header :focus-visible {
+    outline-color: var(--color-white);
+}
+
+
+.header__mobile-nav :focus-visible {
+    outline-color: var(--color-espresso);
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover: hover) {
+
+    .header__link:hover {
+        opacity: 0.75;
+
+        transform: translateY(-2px);
+    }
+
+
+    .header__mobile-link:hover {
+        background-color: var(--color-sand);
+    }
+
+
+    .header__search:hover {
+        transform: translateY(-2px);
+
+        background-color: var(--color-sand);
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .header {
+        top: 55px;
+    }
+
+
+    .header__nav {
+        display: block;
+
+        margin-left: auto;
+    }
+
+
+    .header__menu {
+        display: none;
+    }
+
+
+    .header__search {
+        width: 61px;
+        height: 61px;
+    }
+
+
+    .header__search svg {
+        width: 24px;
+        height: 24px;
+    }
+
+}

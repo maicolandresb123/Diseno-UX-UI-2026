@@ -1,0 +1,279 @@
+/* =========================
+   NEWSLETTER
+   ========================= */
+
+.newsletter {
+    position: relative;
+
+    min-height: 320px;
+
+    overflow: hidden;
+
+    background-color: var(--color-sand);
+}
+
+
+/* =========================
+   CONTENIDO INTERNO
+   ========================= */
+
+.newsletter__inner {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    min-height: 320px;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TÍTULO
+   ========================= */
+
+.newsletter__title {
+    margin-bottom: var(--space-2);
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-ui);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+
+/* =========================
+   SUBTÍTULO
+   ========================= */
+
+.newsletter__subtitle {
+    margin-bottom: var(--space-6);
+
+    color: var(--color-espresso);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-base);
+    font-weight: 500;
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+.newsletter__form {
+    display: flex;
+
+    width: min(
+        100%,
+        480px
+    );
+
+    flex-direction: column;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================
+   CONTENEDOR DEL INPUT
+   ========================= */
+
+.newsletter__input-wrap {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================
+   ÍCONO DE EMAIL
+   ========================= */
+
+.newsletter__mail-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 16px;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-muted);
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   INPUT
+   ========================= */
+
+.newsletter__input {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding:
+        0
+        var(--space-4)
+        0
+        46px;
+
+    background-color: var(--color-bg);
+    color: var(--color-espresso);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+
+    outline: none;
+}
+
+
+/* =========================
+   FOCO DEL INPUT
+   ========================= */
+
+.newsletter__input:focus-visible {
+    border-color: var(--color-espresso);
+
+    outline: 2px solid var(--color-espresso);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   EMAIL INVÁLIDO
+   ========================= */
+
+.newsletter__input:user-invalid {
+    border-color: #A52A2A;
+}
+
+
+/* =========================
+   BOTÓN SUBSCRIBE
+   ========================= */
+
+.newsletter__button {
+    min-height: 48px;
+
+    padding:
+        0
+        var(--space-7);
+
+    background-color: var(--color-espresso);
+    color: var(--color-bg);
+
+    font-family: var(--font-ui);
+    font-size: var(--fs-base);
+    font-weight: 500;
+
+    border-radius: var(--radius-pill);
+
+    transition:
+        transform 200ms ease,
+        opacity 200ms ease;
+}
+
+
+/* =========================
+   IMÁGENES DECORATIVAS
+   MOBILE
+   ========================= */
+
+.newsletter__beans {
+    display: none;
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover: hover) {
+
+    .newsletter__button:hover {
+        transform: translateY(-2px);
+
+        opacity: 0.92;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+   768px EN ADELANTE
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .newsletter__form {
+        width: auto;
+
+        flex-direction: row;
+    }
+
+
+    .newsletter__input-wrap {
+        width: 364px;
+    }
+
+
+    .newsletter__button {
+        min-width: 130px;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .newsletter__beans {
+        position: absolute;
+
+        top: 0;
+
+        display: block;
+
+        width: min(
+            25vw,
+            482px
+        );
+
+        height: 100%;
+
+        object-fit: cover;
+
+        opacity: 0.35;
+    }
+
+
+    .newsletter__beans--left {
+        left: 0;
+    }
+
+
+    .newsletter__beans--right {
+        right: 0;
+
+        transform: scaleX(-1);
+    }
+
+}

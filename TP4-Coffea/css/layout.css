@@ -1,0 +1,95 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+   ========================= */
+
+.container {
+    width: calc(
+        100% - (var(--gutter-mobile) * 2)
+    );
+
+    max-width: var(--container);
+
+    margin-inline: auto;
+}
+
+
+/* =========================
+   SECCIONES
+   ========================= */
+
+.section {
+    width: 100%;
+
+    padding-block: var(--space-14);
+}
+
+
+/* =========================
+   ENCABEZADO DE SECCIÓN
+   ========================= */
+
+.section__header {
+    margin-bottom: var(--space-10);
+}
+
+
+/* =========================
+   GRID GENERAL
+   ========================= */
+
+.section__grid {
+    display: grid;
+
+    gap: var(--space-6);
+}
+
+
+/* =========================
+   TABLET
+   768px EN ADELANTE
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .container {
+        width: calc(
+            100% - (var(--gutter-tablet) * 2)
+        );
+    }
+
+
+    .section {
+        padding-block: var(--space-16);
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .container {
+        width: calc(
+            100% - (var(--gutter-desktop) * 2)
+        );
+    }
+
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+   1440px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1440px) {
+
+    .container {
+        max-width: var(--container);
+    }
+
+}

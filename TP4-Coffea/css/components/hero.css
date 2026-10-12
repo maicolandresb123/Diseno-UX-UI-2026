@@ -1,0 +1,273 @@
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 640px;
+
+    overflow: hidden;
+
+    background-color: var(--color-espresso);
+    color: var(--color-white);
+}
+
+
+/* =========================
+   IMAGEN PRINCIPAL
+   ========================= */
+
+.hero__media {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+}
+
+
+.hero__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 65% center;
+}
+
+
+/* =========================
+   OVERLAY OSCURO
+   ========================= */
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--color-overlay-strong) 0%,
+            var(--color-overlay) 55%,
+            var(--color-overlay-soft) 100%
+        );
+}
+
+
+/* =========================
+   CONTENEDOR INTERNO
+   ========================= */
+
+.hero__inner {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    min-height: 640px;
+
+    align-items: flex-start;
+
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+
+/* =========================
+   BLOQUE DE TEXTO
+   ========================= */
+
+.hero__content {
+    width: 100%;
+
+    max-width: 557px;
+}
+
+
+/* =========================
+   EYEBROW
+   ========================= */
+
+.hero__eyebrow {
+    margin-bottom: var(--space-10);
+
+    color: var(--color-white);
+
+    font-family: var(--font-body);
+    font-size: var(--fs-lg);
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   TÍTULO PRINCIPAL
+   ========================= */
+
+.hero__title {
+    max-width: 557px;
+
+    margin-bottom: var(--space-14);
+
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-hero);
+    font-weight: 700;
+
+    line-height: 1.14;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+   ========================= */
+
+.hero__description {
+    max-width: 431px;
+
+    margin-bottom: var(--space-14);
+
+    color: var(--color-white);
+
+    font-family: var(--font-body);
+    font-size: var(--fs-md);
+    font-weight: 400;
+
+    line-height: 1.45;
+}
+
+
+/* =========================
+   BOTÓN
+   ========================= */
+
+.hero__button {
+    display: inline-flex;
+
+    min-width: max-content;
+    min-height: 52px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        var(--space-4)
+        var(--space-10);
+
+    background-color: var(--color-white);
+    color: var(--color-espresso);
+
+    font-family: var(--font-body);
+    font-size: var(--fs-md);
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    border-radius: var(--radius-pill);
+
+    transition:
+        transform 200ms ease,
+        background-color 200ms ease;
+}
+
+
+/* =========================
+   FOCO
+   ========================= */
+
+.hero__button:focus-visible {
+    outline-color: var(--color-white);
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+@media (hover: hover) {
+
+    .hero__button:hover {
+        transform: translateY(-2px);
+
+        background-color: var(--color-sand);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+   768px EN ADELANTE
+   ========================= */
+
+@media (min-width: 768px) {
+
+    .hero {
+        min-height: 760px;
+    }
+
+
+    .hero__inner {
+        min-height: 760px;
+
+        padding-top: 190px;
+        padding-bottom: 90px;
+    }
+
+
+    .hero__image {
+        object-position: 70% center;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   1024px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1024px) {
+
+    .hero {
+        height: auto;
+
+        min-height: 1000px;
+    }
+
+
+    .hero__inner {
+        height: auto;
+
+        min-height: 1000px;
+
+        padding-top: 250px;
+        padding-bottom: 100px;
+    }
+
+
+    .hero__image {
+        object-position: right center;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+   1440px EN ADELANTE
+   ========================= */
+
+@media (min-width: 1440px) {
+
+    .hero__inner {
+        padding-top: 294px;
+    }
+
+}
