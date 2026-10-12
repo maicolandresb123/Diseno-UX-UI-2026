@@ -106,7 +106,7 @@
 
     line-height: 1;
 
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
 
     cursor: pointer;
 
