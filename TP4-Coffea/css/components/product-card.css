@@ -1,20 +1,14 @@
-/* =========================
-   SECCIÓN PRODUCTOS
-   ========================= */
+/* Sección productos */
 
 .products {
     background-color: var(--color-bg);
 }
 
-
-/* =========================
-   ENCABEZADO
-   ========================= */
+/* Encabezado */
 
 .products__header {
     text-align: center;
 }
-
 
 .products__title {
     margin: 0;
@@ -30,10 +24,7 @@
     text-transform: uppercase;
 }
 
-
-/* =========================
-   PRODUCT CARD
-   ========================= */
+/* Product card */
 
 .product-card {
     flex: 0 0 82vw;
@@ -55,10 +46,7 @@
         box-shadow 200ms ease;
 }
 
-
-/* =========================
-   IMAGEN
-   ========================= */
+/* Imagen */
 
 .product-card__media {
     position: relative;
@@ -68,13 +56,11 @@
     border-radius: var(--radius-img);
 }
 
-
 .product-card__picture {
     display: block;
 
     width: 100%;
 }
-
 
 .product-card__image {
     width: 100%;
@@ -88,10 +74,7 @@
         transform 200ms ease;
 }
 
-
-/* =========================
-   FAVORITO
-   ========================= */
+/* Favorito */
 
 .product-card__favorite {
     position: absolute;
@@ -120,17 +103,14 @@
     box-shadow: var(--shadow-soft);
 }
 
-
 .product-card__favorite span {
     transform: translateY(-1px);
 }
-
 
 .product-card__favorite-input:checked
 + .product-card__favorite span {
     font-size: 0;
 }
-
 
 .product-card__favorite-input:checked
 + .product-card__favorite span::before {
@@ -139,10 +119,7 @@
     font-size: 28px;
 }
 
-
-/* =========================
-   CONTENIDO
-   ========================= */
+/* Contenido */
 
 .product-card__content {
     display: flex;
@@ -154,10 +131,7 @@
     padding-top: var(--space-4);
 }
 
-
-/* =========================
-   TÍTULO
-   ========================= */
+/* Título */
 
 .product-card__title {
     margin-bottom: var(--space-2);
@@ -171,10 +145,7 @@
     line-height: 1.05;
 }
 
-
-/* =========================
-   DESCRIPCIÓN
-   ========================= */
+/* Descripción */
 
 .product-card__description {
     margin-bottom: var(--space-4);
@@ -188,10 +159,7 @@
     line-height: 1.4;
 }
 
-
-/* =========================
-   PRECIO + BOTÓN
-   ========================= */
+/* Precio + botón */
 
 .product-card__bottom {
     display: flex;
@@ -204,10 +172,7 @@
     margin-top: auto;
 }
 
-
-/* =========================
-   PRECIO
-   ========================= */
+/* Precio */
 
 .product-card__price {
     color: var(--color-maroon);
@@ -217,10 +182,7 @@
     font-weight: 600;
 }
 
-
-/* =========================
-   BOTÓN ORDER NOW
-   ========================= */
+/* Botón order now */
 
 .product-card__button {
     display: inline-flex;
@@ -248,10 +210,7 @@
         opacity 200ms ease;
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -261,26 +220,19 @@
         box-shadow: var(--shadow-card);
     }
 
-
     .product-card:hover
     .product-card__image {
         transform: scale(1.03);
     }
-
 
     .product-card__button:hover {
         transform: translateY(-2px);
 
         opacity: 0.9;
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
@@ -288,18 +240,12 @@
         flex-basis: 38vw;
     }
 
-
     .product-card__description {
         font-size: var(--fs-md);
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -307,11 +253,9 @@
         flex-basis: 366px;
     }
 
-
     .product-card__description {
         font-size: var(--fs-lg);
 
         line-height: 1.4;
     }
-
 }
