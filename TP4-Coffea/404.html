@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -17,7 +16,6 @@
         content="The page you are looking for could not be found."
     >
 
-
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -30,164 +28,416 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&family=Reggae+One&display=swap"
         rel="stylesheet"
     >
-
 
     <link
         rel="stylesheet"
         href="css/main.css"
     >
-
-
-    <style>
-
-        /* =========================
-           PÁGINA 404
-           ========================= */
-
-        .error-page {
-            display: grid;
-
-            min-height: 100vh;
-
-            place-items: center;
-
-            padding: 2rem;
-
-            background-color: #30261C;
-            color: #FFFFFF;
-
-            text-align: center;
-        }
-
-
-        /* =========================
-           CONTENIDO
-           ========================= */
-
-        .error-page__content {
-            max-width: 640px;
-        }
-
-
-        /* =========================
-           NÚMERO 404
-           ========================= */
-
-        .error-page__title {
-            margin-bottom: 1rem;
-
-            color: #FFFFFF;
-
-            font-family: "Playfair Display", serif;
-            font-size: clamp(
-                4rem,
-                14vw,
-                9rem
-            );
-
-            line-height: 1;
-        }
-
-
-        /* =========================
-           TÍTULO
-           ========================= */
-
-        .error-page__subtitle {
-            color: #FFFFFF;
-
-            font-family: "Playfair Display", serif;
-            font-size: clamp(
-                1.75rem,
-                5vw,
-                3rem
-            );
-        }
-
-
-        /* =========================
-           TEXTO
-           ========================= */
-
-        .error-page__text {
-            margin-bottom: 2rem;
-
-            color: rgba(
-                255,
-                255,
-                255,
-                0.8
-            );
-        }
-
-
-        /* =========================
-           BOTÓN
-           ========================= */
-
-        .error-page__button {
-            display: inline-flex;
-
-            min-height: 48px;
-
-            align-items: center;
-            justify-content: center;
-
-            padding:
-                0
-                2rem;
-
-            background-color: #FFFFFF;
-            color: #30261C;
-
-            font-weight: 600;
-
-            border-radius: 100px;
-        }
-
-    </style>
-
 </head>
-
 
 <body>
 
+    <a
+        class="skip-link"
+        href="#main"
+    >
+        Skip to content
+    </a>
 
-    <main class="error-page">
+    <header class="header">
 
+        <div class="container header__inner">
+
+
+            <a
+                class="header__logo"
+                href="index.html#home"
+                aria-label="Coffea home"
+            >
+                coffea
+            </a>
+
+
+            <nav
+                class="header__nav"
+                aria-label="Main navigation"
+            >
+
+                <ul class="header__list">
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="index.html#home"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="index.html#coffee"
+                        >
+                            Coffee
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="index.html#bakery"
+                        >
+                            Bakery
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="index.html#shop"
+                        >
+                            Shop
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link"
+                            href="index.html#about"
+                        >
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="header__link header__link--login"
+                            href="index.html#newsletter"
+                        >
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <div class="header__actions">
+
+
+                <button
+                    class="header__search"
+                    type="button"
+                    aria-label="Search"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="11"
+                            cy="11"
+                            r="7"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        ></circle>
+
+                        <path
+                            d="M16.5 16.5L21 21"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        ></path>
+
+                    </svg>
+
+                </button>
+
+
+                <details class="header__menu">
+
+                    <summary aria-label="Open navigation menu">
+
+                        <span
+                            class="header__menu-icon"
+                            aria-hidden="true"
+                        ></span>
+
+                    </summary>
+
+
+                    <nav
+                        class="header__mobile-nav"
+                        aria-label="Mobile navigation"
+                    >
+
+                        <ul class="header__mobile-list">
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="index.html#home"
+                                >
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="index.html#coffee"
+                                >
+                                    Coffee
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="index.html#bakery"
+                                >
+                                    Bakery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="index.html#shop"
+                                >
+                                    Shop
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link"
+                                    href="index.html#about"
+                                >
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    class="header__mobile-link header__mobile-link--login"
+                                    href="index.html#newsletter"
+                                >
+                                    Login
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </details>
+
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <main
+        class="error-page"
+        id="main"
+    >
         <div class="error-page__content">
 
-
-            <p class="error-page__title">
+            <p class="error-page__code">
                 404
             </p>
 
-
-            <h1 class="error-page__subtitle">
+            <h1 class="error-page__title">
                 This page is not available.
             </h1>
-
 
             <p class="error-page__text">
                 The link may be broken or the page may have been moved.
             </p>
 
-
             <a
                 class="error-page__button"
-                href="/"
+                href="index.html"
             >
                 Back to Coffea
             </a>
 
-
         </div>
-
     </main>
 
+    <footer
+        class="footer"
+        id="footer"
+    >
+        <div class="container footer__inner">
+
+            <a
+                class="footer__logo"
+                href="index.html#home"
+                aria-label="Coffea home"
+            >
+                Coffea
+            </a>
+
+            <nav
+                class="footer__column"
+                aria-labelledby="footer-privacy"
+            >
+                <h3
+                    class="footer__heading"
+                    id="footer-privacy"
+                >
+                    Privacy
+                </h3>
+
+                <ul class="footer__list">
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </nav>
+
+            <nav
+                class="footer__column"
+                aria-labelledby="footer-services"
+            >
+                <h3
+                    class="footer__heading"
+                    id="footer-services"
+                >
+                    Services
+                </h3>
+
+                <ul class="footer__list">
+                    <li><a href="index.html#shop">Shop</a></li>
+                    <li><a href="index.html#coffee">Order ahead</a></li>
+                    <li><a href="index.html#coffee">Menu</a></li>
+                </ul>
+            </nav>
+
+            <nav
+                class="footer__column"
+                aria-labelledby="footer-about"
+            >
+                <h3
+                    class="footer__heading"
+                    id="footer-about"
+                >
+                    About Us
+                </h3>
+
+                <ul class="footer__list">
+                    <li><a href="index.html#about">Find a location</a></li>
+                    <li><a href="index.html#about">About us</a></li>
+                    <li><a href="index.html#about">Our story</a></li>
+                </ul>
+            </nav>
+
+            <nav
+                class="footer__column"
+                aria-labelledby="footer-information"
+            >
+                <h3
+                    class="footer__heading"
+                    id="footer-information"
+                >
+                    Information
+                </h3>
+
+                <ul class="footer__list">
+                    <li><a href="#">Plans &amp; pricing</a></li>
+                    <li><a href="#">Sell your products</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__social">
+                <h3 class="footer__heading">
+                    Social Media
+                </h3>
+
+                <div class="footer__social-list">
+                    <a
+                        class="footer__social-link"
+                        href="https://x.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit X"
+                    >
+                        <img
+                            class="footer__social-icon"
+                            src="https://cdn.simpleicons.org/x/FFFFFF"
+                            width="24"
+                            height="24"
+                            alt=""
+                        >
+                    </a>
+
+                    <a
+                        class="footer__social-link"
+                        href="https://www.instagram.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Instagram"
+                    >
+                        <img
+                            class="footer__social-icon"
+                            src="https://cdn.simpleicons.org/instagram/FFFFFF"
+                            width="24"
+                            height="24"
+                            alt=""
+                        >
+                    </a>
+
+                    <a
+                        class="footer__social-link"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Facebook"
+                    >
+                        <img
+                            class="footer__social-icon"
+                            src="https://cdn.simpleicons.org/facebook/FFFFFF"
+                            width="24"
+                            height="24"
+                            alt=""
+                        >
+                    </a>
+
+                    <a
+                        class="footer__social-link"
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit LinkedIn"
+                    >
+                        <img
+                            class="footer__social-icon"
+                            src="https://cdn.simpleicons.org/linkedin/FFFFFF"
+                            width="24"
+                            height="24"
+                            alt=""
+                        >
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
 </body>
 
