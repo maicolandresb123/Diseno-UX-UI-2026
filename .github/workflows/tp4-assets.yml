@@ -32,6 +32,7 @@ jobs:
             local base="$1"
             local stem="$2"
             local width="$3"
+            curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=82&fm=avif" -o "TP4-Coffea/assets/img/${stem}.avif"
             curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=84&fm=webp" -o "TP4-Coffea/assets/img/${stem}.webp"
             curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=84&fm=jpg" -o "TP4-Coffea/assets/img/${stem}.jpg"
           }
@@ -40,10 +41,13 @@ jobs:
             local base="$1"
             local stem="$2"
             local width="$3"
+            curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=80&fm=avif" -o "TP4-Coffea/assets/img/${stem}-${width}.avif"
             curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=82&fm=webp" -o "TP4-Coffea/assets/img/${stem}-${width}.webp"
           }
 
           HERO="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+          curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=960&q=82&fm=avif" -o TP4-Coffea/assets/img/hero-960.avif
+          curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=84&fm=avif" -o TP4-Coffea/assets/img/hero-1920.avif
           curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=960&q=84&fm=webp" -o TP4-Coffea/assets/img/hero-960.webp
           curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=88&fm=webp" -o TP4-Coffea/assets/img/hero-1920.webp
           curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=88&fm=jpg" -o TP4-Coffea/assets/img/hero.jpg
