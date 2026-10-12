@@ -1,6 +1,4 @@
-/* =========================
-   CATEGORÍAS
-   ========================= */
+/* Categorías */
 
 .categories {
     display: flex;
@@ -14,10 +12,7 @@
     padding-block: var(--space-10);
 }
 
-
-/* =========================
-   LISTA DE CATEGORÍAS
-   ========================= */
+/* Lista de categorías */
 
 .categories__list {
     display: grid;
@@ -36,10 +31,7 @@
     margin-inline: auto;
 }
 
-
-/* =========================
-   CADA CATEGORÍA
-   ========================= */
+/* Cada categoría */
 
 .categories__item {
     display: flex;
@@ -66,10 +58,7 @@
         transform 200ms ease;
 }
 
-
-/* =========================
-   ÍCONO
-   ========================= */
+/* Ícono */
 
 .categories__icon {
     display: grid;
@@ -79,7 +68,6 @@
 
     place-items: center;
 }
-
 
 .categories__icon svg {
     width: 82px;
@@ -94,10 +82,7 @@
     stroke-linejoin: round;
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -106,14 +91,9 @@
 
         transform: translateY(-3px);
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
@@ -128,5 +108,4 @@
             845px
         );
     }
-
 }
