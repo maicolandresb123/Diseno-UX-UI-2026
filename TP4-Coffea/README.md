@@ -53,6 +53,10 @@ No necesita instalación ni compilación.
 
 Se puede abrir `index.html` directamente en el navegador o ejecutar la carpeta con Live Server desde Visual Studio Code.
 
+## Imágenes
+
+Las fotografías usadas en esta versión fueron reemplazadas por imágenes de Unsplash y se guardaron localmente en `assets/img`. Los íconos SVG también están versionados dentro del proyecto.
+
 ## Sitio publicado
 
 Netlify: https://charming-dragon-f39d2f.netlify.app/
