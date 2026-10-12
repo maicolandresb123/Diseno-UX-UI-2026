@@ -1,6 +1,4 @@
-/* =========================
-   PROMO
-   ========================= */
+/* Promo */
 
 .promo {
     position: relative;
@@ -16,10 +14,7 @@
     background-color: var(--color-sand);
 }
 
-
-/* =========================
-   CONTENIDO INTERNO
-   ========================= */
+/* Contenido interno */
 
 .promo__inner {
     position: relative;
@@ -34,10 +29,7 @@
     justify-content: center;
 }
 
-
-/* =========================
-   BLOQUE CENTRAL
-   ========================= */
+/* Bloque central */
 
 .promo__content {
     max-width: 420px;
@@ -45,10 +37,7 @@
     text-align: center;
 }
 
-
-/* =========================
-   TÍTULO
-   ========================= */
+/* Título */
 
 .promo__title {
     max-width: 372px;
@@ -67,10 +56,7 @@
     line-height: 1.25;
 }
 
-
-/* =========================
-   BOTÓN
-   ========================= */
+/* Botón */
 
 .promo__button {
     display: inline-flex;
@@ -101,16 +87,11 @@
         opacity 200ms ease;
 }
 
-
-/* =========================
-   IMÁGENES DECORATIVAS
-   MOBILE
-   ========================= */
+/* Imágenes decorativas */
 
 .promo__picture {
     display: none;
 }
-
 
 .promo__image {
     display: block;
@@ -121,10 +102,7 @@
     object-fit: cover;
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -133,14 +111,9 @@
 
         opacity: 0.92;
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
@@ -160,19 +133,13 @@
         height: 100%;
     }
 
-
     .promo__picture--left
     .promo__image {
         opacity: 0.35;
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -186,19 +153,16 @@
         height: 100%;
     }
 
-
     .promo__picture
     .promo__image {
         opacity: 0.55;
     }
-
 
     .promo__picture--left {
         left: 0;
 
         width: 33%;
     }
-
 
     .promo__picture--right {
         right: 0;
@@ -207,5 +171,4 @@
 
         transform: scaleX(-1);
     }
-
 }
