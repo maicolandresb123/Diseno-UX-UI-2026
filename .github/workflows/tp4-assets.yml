@@ -36,6 +36,13 @@ jobs:
             curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=84&fm=jpg" -o "TP4-Coffea/assets/img/${stem}.jpg"
           }
 
+          download_webp () {
+            local base="$1"
+            local stem="$2"
+            local width="$3"
+            curl -L --fail --retry 3 --silent --show-error "${base}?auto=format&fit=crop&w=${width}&q=82&fm=webp" -o "TP4-Coffea/assets/img/${stem}-${width}.webp"
+          }
+
           HERO="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
           curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=960&q=84&fm=webp" -o TP4-Coffea/assets/img/hero-960.webp
           curl -L --fail --retry 3 --silent --show-error "${HERO}?auto=format&fit=crop&w=1920&q=88&fm=webp" -o TP4-Coffea/assets/img/hero-1920.webp
@@ -58,6 +65,24 @@ jobs:
           download_pair "https://images.unsplash.com/photo-1500648767791-00dcc994a43e" "avatar-1" 224
           download_pair "https://images.unsplash.com/photo-1494790108377-be9c29b29330" "avatar-2" 224
           download_pair "https://images.unsplash.com/photo-1534528741775-53994a69daeb" "avatar-3" 224
+
+          download_webp "https://images.unsplash.com/photo-1509042239860-f550ce710b93" "coffee-1" 334
+          download_webp "https://images.unsplash.com/photo-1512568400610-62da28bc8a13" "coffee-2" 334
+          download_webp "https://images.unsplash.com/photo-1445116572660-236099ec97a0" "coffee-3" 334
+          download_webp "https://images.unsplash.com/photo-1485808191679-5f86510681a2" "coffee-4" 334
+
+          download_webp "https://images.unsplash.com/photo-1578985545062-69928b1d9587" "dessert-1" 334
+          download_webp "https://images.unsplash.com/photo-1551024506-0bccd828d307" "dessert-2" 334
+          download_webp "https://images.unsplash.com/photo-1558961363-fa8fdf82db35" "dessert-3" 334
+          download_webp "https://images.unsplash.com/photo-1587314168485-3236d6710814" "dessert-4" 334
+
+          download_webp "https://images.unsplash.com/photo-1442512595331-e89e73853f31" "promo-hand" 520
+          download_webp "https://images.unsplash.com/photo-1447933601403-0c6688de566e" "promo-beans" 503
+          download_webp "https://images.unsplash.com/photo-1447933601403-0c6688de566e" "newsletter-beans" 482
+
+          download_webp "https://images.unsplash.com/photo-1500648767791-00dcc994a43e" "avatar-1" 112
+          download_webp "https://images.unsplash.com/photo-1494790108377-be9c29b29330" "avatar-2" 112
+          download_webp "https://images.unsplash.com/photo-1534528741775-53994a69daeb" "avatar-3" 112
 
       - name: Create local SVG icons
         shell: bash
