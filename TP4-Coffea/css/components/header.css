@@ -1,6 +1,4 @@
-/* =========================
-   HEADER
-   ========================= */
+/* Header */
 
 .header {
     position: absolute;
@@ -12,10 +10,7 @@
     z-index: 100;
 }
 
-
-/* =========================
-   CONTENIDO INTERNO
-   ========================= */
+/* Contenido interno */
 
 .header__inner {
     display: flex;
@@ -26,10 +21,7 @@
     gap: var(--space-4);
 }
 
-
-/* =========================
-   LOGO
-   ========================= */
+/* Logo */
 
 .header__logo {
     color: var(--color-white);
@@ -41,15 +33,11 @@
     line-height: 1;
 }
 
-
-/* =========================
-   NAVEGACIÓN DESKTOP
-   ========================= */
+/* Navegación desktop */
 
 .header__nav {
     display: none;
 }
-
 
 .header__list {
     display: flex;
@@ -58,7 +46,6 @@
 
     gap: var(--space-7);
 }
-
 
 .header__link {
     color: var(--color-white);
@@ -74,15 +61,11 @@
         transform 200ms ease;
 }
 
-
 .header__link--login {
     font-weight: 600;
 }
 
-
-/* =========================
-   ACCIONES DEL HEADER
-   ========================= */
+/* Acciones del header */
 
 .header__actions {
     display: flex;
@@ -92,10 +75,7 @@
     gap: var(--space-3);
 }
 
-
-/* =========================
-   BOTÓN DE BÚSQUEDA
-   ========================= */
+/* Botón de búsqueda */
 
 .header__search {
     display: flex;
@@ -118,21 +98,16 @@
         background-color 200ms ease;
 }
 
-
 .header__search svg {
     width: 20px;
     height: 20px;
 }
 
-
-/* =========================
-   MENÚ MOBILE
-   ========================= */
+/* Menú mobile */
 
 .header__menu {
     position: relative;
 }
-
 
 .header__menu summary {
     display: flex;
@@ -152,15 +127,11 @@
     list-style: none;
 }
 
-
 .header__menu summary::-webkit-details-marker {
     display: none;
 }
 
-
-/* =========================
-   ÍCONO HAMBURGUESA
-   ========================= */
+/* Ícono hamburguesa */
 
 .header__menu-icon {
     position: relative;
@@ -174,7 +145,6 @@
 
     border-radius: var(--radius-pill);
 }
-
 
 .header__menu-icon::before,
 .header__menu-icon::after {
@@ -195,20 +165,15 @@
         top 200ms ease;
 }
 
-
 .header__menu-icon::before {
     top: -7px;
 }
-
 
 .header__menu-icon::after {
     top: 7px;
 }
 
-
-/* =========================
-   MENÚ DESPLEGABLE MOBILE
-   ========================= */
+/* Menú desplegable mobile */
 
 .header__mobile-nav {
     position: absolute;
@@ -230,13 +195,11 @@
     box-shadow: var(--shadow-soft);
 }
 
-
 .header__mobile-list {
     display: flex;
 
     flex-direction: column;
 }
-
 
 .header__mobile-link {
     display: flex;
@@ -258,20 +221,15 @@
     border-radius: var(--radius-btn);
 }
 
-
 .header__mobile-link--login {
     font-weight: 600;
 }
 
-
-/* =========================
-   ESTADO ABIERTO
-   ========================= */
+/* Estado abierto */
 
 .header__menu[open] .header__menu-icon {
     background-color: transparent;
 }
-
 
 .header__menu[open] .header__menu-icon::before {
     top: 0;
@@ -279,31 +237,23 @@
     transform: rotate(45deg);
 }
 
-
 .header__menu[open] .header__menu-icon::after {
     top: 0;
 
     transform: rotate(-45deg);
 }
 
-
-/* =========================
-   FOCO
-   ========================= */
+/* Foco */
 
 .header :focus-visible {
     outline-color: var(--color-white);
 }
 
-
 .header__mobile-nav :focus-visible {
     outline-color: var(--color-espresso);
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -313,25 +263,18 @@
         transform: translateY(-2px);
     }
 
-
     .header__mobile-link:hover {
         background-color: var(--color-sand);
     }
-
 
     .header__search:hover {
         transform: translateY(-2px);
 
         background-color: var(--color-sand);
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -339,28 +282,23 @@
         top: 55px;
     }
 
-
     .header__nav {
         display: block;
 
         margin-left: auto;
     }
 
-
     .header__menu {
         display: none;
     }
-
 
     .header__search {
         width: 61px;
         height: 61px;
     }
 
-
     .header__search svg {
         width: 24px;
         height: 24px;
     }
-
 }
