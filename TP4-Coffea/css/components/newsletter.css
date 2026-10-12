@@ -157,7 +157,7 @@
    ========================= */
 
 .newsletter__input:user-invalid {
-    border-color: #A52A2A;
+    border-color: var(--color-error);
 }
 
 
