@@ -1,6 +1,4 @@
-/* =========================
-   NEWSLETTER
-   ========================= */
+/* Newsletter */
 
 .newsletter {
     position: relative;
@@ -12,10 +10,7 @@
     background-color: var(--color-sand);
 }
 
-
-/* =========================
-   CONTENIDO INTERNO
-   ========================= */
+/* Contenido interno */
 
 .newsletter__inner {
     position: relative;
@@ -34,10 +29,7 @@
     text-align: center;
 }
 
-
-/* =========================
-   TÍTULO
-   ========================= */
+/* Título */
 
 .newsletter__title {
     margin-bottom: var(--space-2);
@@ -49,10 +41,7 @@
     font-weight: 600;
 }
 
-
-/* =========================
-   SUBTÍTULO
-   ========================= */
+/* Subtítulo */
 
 .newsletter__subtitle {
     margin-bottom: var(--space-6);
@@ -64,10 +53,7 @@
     font-weight: 500;
 }
 
-
-/* =========================
-   FORMULARIO
-   ========================= */
+/* Formulario */
 
 .newsletter__form {
     display: flex;
@@ -82,10 +68,7 @@
     gap: var(--space-3);
 }
 
-
-/* =========================
-   CONTENEDOR DEL INPUT
-   ========================= */
+/* Contenedor del input */
 
 .newsletter__input-wrap {
     position: relative;
@@ -93,10 +76,7 @@
     width: 100%;
 }
 
-
-/* =========================
-   ÍCONO DE EMAIL
-   ========================= */
+/* Ícono de email */
 
 .newsletter__mail-icon {
     position: absolute;
@@ -114,10 +94,7 @@
     pointer-events: none;
 }
 
-
-/* =========================
-   INPUT
-   ========================= */
+/* Input */
 
 .newsletter__input {
     width: 100%;
@@ -139,10 +116,7 @@
     outline: none;
 }
 
-
-/* =========================
-   FOCO DEL INPUT
-   ========================= */
+/* Foco del input */
 
 .newsletter__input:focus-visible {
     border-color: var(--color-espresso);
@@ -151,19 +125,13 @@
     outline-offset: 2px;
 }
 
-
-/* =========================
-   EMAIL INVÁLIDO
-   ========================= */
+/* Email inválido */
 
 .newsletter__input:user-invalid {
     border-color: var(--color-error);
 }
 
-
-/* =========================
-   BOTÓN SUBSCRIBE
-   ========================= */
+/* Botón subscribe */
 
 .newsletter__button {
     min-height: 48px;
@@ -186,16 +154,11 @@
         opacity 200ms ease;
 }
 
-
-/* =========================
-   IMÁGENES DECORATIVAS
-   MOBILE
-   ========================= */
+/* Imágenes decorativas */
 
 .newsletter__beans-picture {
     display: none;
 }
-
 
 .newsletter__beans {
     display: block;
@@ -206,10 +169,7 @@
     object-fit: cover;
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -218,14 +178,9 @@
 
         opacity: 0.92;
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
@@ -235,23 +190,16 @@
         flex-direction: row;
     }
 
-
     .newsletter__input-wrap {
         width: 364px;
     }
 
-
     .newsletter__button {
         min-width: 130px;
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -270,21 +218,17 @@
         height: 100%;
     }
 
-
     .newsletter__beans {
         opacity: 0.35;
     }
 
-
     .newsletter__beans-picture--left {
         left: 0;
     }
-
 
     .newsletter__beans-picture--right {
         right: 0;
 
         transform: scaleX(-1);
     }
-
 }
