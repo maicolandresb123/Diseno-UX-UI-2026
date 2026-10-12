@@ -123,6 +123,14 @@
    AVATAR
    ========================= */
 
+.testimonial-card__avatar-picture {
+    display: block;
+
+    width: 56px;
+    height: 56px;
+}
+
+
 .testimonial-card__avatar {
     width: 56px;
     height: 56px;
