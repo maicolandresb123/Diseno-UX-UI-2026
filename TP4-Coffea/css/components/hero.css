@@ -1,6 +1,4 @@
-/* =========================
-   HERO
-   ========================= */
+/* Hero */
 
 .hero {
     position: relative;
@@ -13,10 +11,7 @@
     color: var(--color-white);
 }
 
-
-/* =========================
-   IMAGEN PRINCIPAL
-   ========================= */
+/* Imagen principal */
 
 .hero__media {
     position: absolute;
@@ -25,14 +20,12 @@
     z-index: 0;
 }
 
-
 .hero__picture {
     display: block;
 
     width: 100%;
     height: 100%;
 }
-
 
 .hero__image {
     width: 100%;
@@ -42,10 +35,7 @@
     object-position: 65% center;
 }
 
-
-/* =========================
-   OVERLAY OSCURO
-   ========================= */
+/* Overlay oscuro */
 
 .hero__overlay {
     position: absolute;
@@ -62,10 +52,7 @@
         );
 }
 
-
-/* =========================
-   CONTENEDOR INTERNO
-   ========================= */
+/* Contenedor interno */
 
 .hero__inner {
     position: relative;
@@ -82,10 +69,7 @@
     padding-bottom: 80px;
 }
 
-
-/* =========================
-   BLOQUE DE TEXTO
-   ========================= */
+/* Bloque de texto */
 
 .hero__content {
     width: 100%;
@@ -93,10 +77,7 @@
     max-width: 557px;
 }
 
-
-/* =========================
-   EYEBROW
-   ========================= */
+/* Eyebrow */
 
 .hero__eyebrow {
     margin-bottom: var(--space-10);
@@ -112,10 +93,7 @@
     text-transform: uppercase;
 }
 
-
-/* =========================
-   TÍTULO PRINCIPAL
-   ========================= */
+/* Título principal */
 
 .hero__title {
     max-width: 557px;
@@ -131,10 +109,7 @@
     line-height: 1.14;
 }
 
-
-/* =========================
-   DESCRIPCIÓN
-   ========================= */
+/* Descripción */
 
 .hero__description {
     max-width: 431px;
@@ -150,10 +125,7 @@
     line-height: 1.45;
 }
 
-
-/* =========================
-   BOTÓN
-   ========================= */
+/* Botón */
 
 .hero__button {
     display: inline-flex;
@@ -184,19 +156,13 @@
         background-color 200ms ease;
 }
 
-
-/* =========================
-   FOCO
-   ========================= */
+/* Foco */
 
 .hero__button:focus-visible {
     outline-color: var(--color-white);
 }
 
-
-/* =========================
-   HOVER
-   ========================= */
+/* Hover */
 
 @media (hover: hover) {
 
@@ -205,21 +171,15 @@
 
         background-color: var(--color-sand);
     }
-
 }
 
-
-/* =========================
-   TABLET
-   768px EN ADELANTE
-   ========================= */
+/* Tablet */
 
 @media (min-width: 768px) {
 
     .hero {
         min-height: 760px;
     }
-
 
     .hero__inner {
         min-height: 760px;
@@ -228,18 +188,12 @@
         padding-bottom: 90px;
     }
 
-
     .hero__image {
         object-position: 70% center;
     }
-
 }
 
-
-/* =========================
-   DESKTOP
-   1024px EN ADELANTE
-   ========================= */
+/* Desktop */
 
 @media (min-width: 1024px) {
 
@@ -248,7 +202,6 @@
 
         min-height: 1000px;
     }
-
 
     .hero__inner {
         height: auto;
@@ -259,23 +212,16 @@
         padding-bottom: 100px;
     }
 
-
     .hero__image {
         object-position: right center;
     }
-
 }
 
-
-/* =========================
-   DESKTOP GRANDE
-   1440px EN ADELANTE
-   ========================= */
+/* Desktop grande */
 
 @media (min-width: 1440px) {
 
     .hero__inner {
         padding-top: 294px;
     }
-
 }
