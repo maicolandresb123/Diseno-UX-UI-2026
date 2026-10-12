@@ -107,8 +107,18 @@
    MOBILE
    ========================= */
 
-.promo__image {
+.promo__picture {
     display: none;
+}
+
+
+.promo__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
 }
 
 
@@ -134,7 +144,7 @@
 
 @media (min-width: 768px) {
 
-    .promo__image--left {
+    .promo__picture--left {
         position: absolute;
 
         bottom: 0;
@@ -148,9 +158,11 @@
         );
 
         height: 100%;
+    }
 
-        object-fit: cover;
 
+    .promo__picture--left
+    .promo__image {
         opacity: 0.35;
     }
 
@@ -164,7 +176,7 @@
 
 @media (min-width: 1024px) {
 
-    .promo__image {
+    .promo__picture {
         position: absolute;
 
         bottom: 0;
@@ -172,21 +184,23 @@
         display: block;
 
         height: 100%;
+    }
 
-        object-fit: cover;
 
+    .promo__picture
+    .promo__image {
         opacity: 0.55;
     }
 
 
-    .promo__image--left {
+    .promo__picture--left {
         left: 0;
 
         width: 33%;
     }
 
 
-    .promo__image--right {
+    .promo__picture--right {
         right: 0;
 
         width: 31%;
