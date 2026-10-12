@@ -19,30 +19,6 @@
 .footer__inner {
     display: grid;
 
-    gap: var(--space-10);
-}
-
-
-/* =========================
-   LOGO
-   ========================= */
-
-.footer__logo {
-    color: var(--color-white);
-
-    font-family: var(--font-display);
-    font-size: var(--fs-logo);
-    font-weight: 700;
-}
-
-
-/* =========================
-   BLOQUE DE LINKS
-   ========================= */
-
-.footer__links {
-    display: grid;
-
     grid-template-columns: repeat(
         2,
         minmax(0, 1fr)
@@ -51,22 +27,45 @@
     gap:
         var(--space-10)
         var(--space-6);
-
-    min-width: 0;
 }
 
 
-.footer__links nav {
+/* =========================
+   LOGO
+   ========================= */
+
+.footer__logo {
+    grid-column: 1 / -1;
+
+    color: var(--color-white);
+
+    font-family: var(--font-display);
+    font-size: var(--fs-logo);
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   COLUMNAS
+   ========================= */
+
+.footer__column,
+.footer__social {
     min-width: 0;
 }
 
 
 /* =========================
-   TÍTULOS GENERALES
+   TÍTULOS
    ========================= */
 
 .footer__heading {
-    margin-bottom: var(--space-6);
+    margin:
+        0
+        0
+        var(--space-4);
 
     color: var(--color-white);
 
@@ -74,7 +73,7 @@
     font-size: var(--fs-footer-h);
     font-weight: 500;
 
-    line-height: 1.25;
+    line-height: 1.2;
 
     text-transform: uppercase;
 }
@@ -93,10 +92,6 @@
 }
 
 
-/* =========================
-   ENLACES
-   ========================= */
-
 .footer__list a {
     display: inline-flex;
 
@@ -113,77 +108,43 @@
     line-height: 1.35;
 
     opacity: 0.9;
+
+    transition:
+        opacity 200ms ease;
 }
 
 
 /* =========================
-   SOCIAL MEDIA
+   REDES SOCIALES
    ========================= */
 
 .footer__social {
-    min-width: 0;
+    grid-column: 1 / -1;
 }
 
-
-/* TÍTULO SOCIAL MEDIA */
-
-.footer__social .footer__heading {
-    display: inline-block;
-
-    margin-bottom: 14px;
-
-    color: var(--color-white);
-
-    font-family: var(--font-display);
-    font-size: 12px;
-    font-weight: 500;
-
-    line-height: 1.2;
-
-    text-decoration: underline;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================
-   LISTA DE REDES
-   ========================= */
 
 .footer__social-list {
     display: flex;
 
     align-items: center;
 
-    justify-content: flex-start;
-
-    gap: 10px;
+    gap: 0;
 
     flex-wrap: nowrap;
 }
 
 
-/* =========================
-   ENLACE DE RED SOCIAL
-   ========================= */
-
 .footer__social-link {
-    display: flex;
+    display: grid;
 
-    width: 18px;
-    height: 18px;
+    width: 44px;
+    height: 44px;
 
-    flex: 0 0 18px;
+    flex: 0 0 44px;
 
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 
     padding: 0;
-
-    background-color: transparent;
-
-    border: 0;
-    border-radius: 0;
 
     opacity: 0.9;
 
@@ -193,23 +154,11 @@
 }
 
 
-/* ELIMINAR LETRAS ANTERIORES */
-
-.footer__social-link::before,
-.footer__social-link::after {
-    content: none !important;
-}
-
-
-/* =========================
-   LOGOTIPO
-   ========================= */
-
 .footer__social-icon {
     display: block;
 
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
 
     object-fit: contain;
 }
@@ -230,14 +179,13 @@
 
 @media (hover: hover) {
 
-    .footer__list a:hover {
+    .footer__list a:hover,
+    .footer__social-link:hover {
         opacity: 0.7;
     }
 
 
     .footer__social-link:hover {
-        opacity: 1;
-
         transform: translateY(-2px);
     }
 
@@ -251,11 +199,21 @@
 
 @media (min-width: 768px) {
 
-    .footer__links {
+    .footer__inner {
         grid-template-columns: repeat(
-            2,
+            3,
             minmax(0, 1fr)
         );
+    }
+
+
+    .footer__logo {
+        grid-column: auto;
+    }
+
+
+    .footer__social {
+        grid-column: auto;
     }
 
 }
@@ -268,43 +226,6 @@
 
 @media (min-width: 1024px) {
 
-    .footer__inner {
-        grid-template-columns:
-            140px
-            minmax(0, 1fr);
-
-        align-items: start;
-    }
-
-
-    .footer__links {
-        grid-template-columns: repeat(
-            4,
-            minmax(0, 1fr)
-        );
-
-        grid-column: 2;
-    }
-
-
-    .footer__social {
-        grid-column: 1 / -1;
-
-        justify-self: center;
-
-        text-align: left;
-    }
-
-}
-
-
-/* =========================
-   DESKTOP GRANDE
-   1440px EN ADELANTE
-   ========================= */
-
-@media (min-width: 1440px) {
-
     .footer {
         display: flex;
 
@@ -315,24 +236,47 @@
     .footer__inner {
         grid-template-columns:
             150px
-            minmax(0, 1fr)
+            170px
+            170px
+            190px
+            210px
             180px;
 
-        gap: var(--space-10);
+        align-items: start;
+        justify-content: space-between;
+
+        column-gap: var(--space-10);
     }
 
 
-    .footer__links {
-        grid-column: auto;
+    .footer__heading {
+        font-size: var(--fs-sm);
     }
 
 
-    .footer__social {
-        grid-column: auto;
+    .footer__list {
+        gap: var(--space-2);
+    }
 
-        justify-self: start;
 
-        text-align: left;
+    .footer__list a {
+        min-height: auto;
+
+        font-size: var(--fs-xs);
+    }
+
+
+    .footer__social-link {
+        width: 24px;
+        height: 24px;
+
+        flex-basis: 24px;
+    }
+
+
+    .footer__social-icon {
+        width: 14px;
+        height: 14px;
     }
 
 }
