@@ -1,6 +1,4 @@
-/* =========================
-   VISUALMENTE OCULTO
-   ========================= */
+/* Visualmente oculto */
 
 .visually-hidden,
 .sr-only {
@@ -20,10 +18,7 @@
     border: 0;
 }
 
-
-/* =========================
-   SKIP LINK
-   ========================= */
+/* Skip link */
 
 .skip-link {
     position: fixed;
@@ -47,7 +42,6 @@
 
     transform: translateY(-200%);
 }
-
 
 .skip-link:focus {
     transform: translateY(0);
