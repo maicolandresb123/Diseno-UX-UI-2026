@@ -126,9 +126,16 @@ Comprobar:
 
 ## Assets
 
-El PRD solicita exportar y versionar en `assets/` las imágenes e íconos originales del Figma, optimizados en AVIF/WebP con fallback JPG cuando corresponda.
+Los recursos visuales utilizados por la implementación están versionados localmente dentro de `assets/`.
 
-La estructura técnica ya está preparada para esos assets. Antes de la entrega final se deben reemplazar las imágenes remotas de desarrollo por los archivos exportados del diseño original o por imágenes con licencia confirmada.
+- `assets/img/`: hero, cafés, postres, CTA, newsletter y avatares.
+- `assets/icons/`: categorías, búsqueda, favorito, flechas, chevron, estrella, correo y redes sociales.
+- Las fotografías tienen variantes AVIF y WebP, con JPG como fallback.
+- Las imágenes principales usan `<picture>`, `srcset`, `sizes`, `width` y `height`.
+- El hero cuenta con variantes de 960 px y 1920 px.
+- Las imágenes de cards y avatares incluyen tamaños responsivos para reducir transferencia innecesaria.
+
+Los raster locales corresponden a la selección visual usada durante el desarrollo de esta implementación. Si se dispone de los archivos fuente originales del Figma de la cátedra, pueden sustituirse conservando los mismos nombres y estructura sin modificar la arquitectura del proyecto.
 
 ## Autor
 
