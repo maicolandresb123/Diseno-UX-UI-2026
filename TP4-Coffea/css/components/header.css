@@ -111,7 +111,7 @@
     background-color: var(--color-white);
     color: var(--color-espresso);
 
-    border-radius: 50%;
+    border-radius: var(--radius-circle);
 
     transition:
         transform 200ms ease,
