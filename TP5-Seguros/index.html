@@ -168,9 +168,16 @@
 
           <div role="group" class="field sm:col-span-2">
             <label for="valor">Valor del equipo</label>
-            <div class="relative">
-              <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-[var(--muted)]">$</span>
-              <input id="valor" name="valor" type="text" inputmode="numeric" class="pl-7" placeholder="600.000">
+            <div class="money-field">
+              <span class="money-field__prefix" aria-hidden="true">$</span>
+              <input
+                id="valor"
+                name="valor"
+                type="text"
+                inputmode="numeric"
+                class="money-field__input"
+                placeholder="600.000"
+              >
             </div>
             <p class="field-help">Entre $100.000 y $2.500.000.</p>
             <p class="field-error" id="valor-error" role="alert" hidden></p>
