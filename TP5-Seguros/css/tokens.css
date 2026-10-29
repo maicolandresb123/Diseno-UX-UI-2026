@@ -167,12 +167,6 @@ body {
   background: var(--primary-50);
 }
 
-@media (max-width: 1023px) {
-  .summary-card {
-    order: -1;
-  }
-}
-
 @media (max-width: 639px) {
   .stepper small {
     max-width: 56px;

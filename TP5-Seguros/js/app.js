@@ -235,6 +235,13 @@ function configurarNavegacion() {
 
     if (accion === "reiniciar") {
       reiniciarSolicitud();
+
+      const botonPagar = document.querySelector("#btn-pagar");
+      if (botonPagar) {
+        botonPagar.disabled = false;
+        botonPagar.textContent = "Pagar";
+      }
+
       render();
       actualizarBotonEquipo();
       actualizarBotonTitular();

@@ -340,10 +340,7 @@
             </div>
           </div>
 
-          <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-            <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
-            <button type="submit" class="btn" id="btn-continuar-pago" disabled>Continuar al pago</button>
-          </div>
+
         </form>
 
         <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen">
@@ -354,6 +351,11 @@
             <div class="border-t border-[var(--border)] pt-3 flex justify-between gap-4"><dt class="font-semibold">Mensual</dt><dd data-resumen="cuota" class="font-extrabold text-[var(--primary)]">$ 3.000</dd></div>
           </dl>
         </aside>
+      </div>
+
+      <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+        <button type="submit" form="form-datos" class="btn" id="btn-continuar-pago" disabled>Continuar al pago</button>
       </div>
     </section>
 
@@ -419,10 +421,7 @@
             </div>
           </div>
 
-          <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-            <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
-            <button type="submit" class="btn" id="btn-pagar">Pagar</button>
-          </div>
+
         </form>
 
         <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen final">
@@ -435,6 +434,11 @@
             <div class="border-t border-[var(--border)] pt-3 flex justify-between gap-4"><dt class="font-semibold">Total mensual</dt><dd data-resumen="cuota" class="font-extrabold text-[var(--primary)]">$ 3.000</dd></div>
           </dl>
         </aside>
+      </div>
+
+      <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+        <button type="submit" form="form-pago" class="btn" id="btn-pagar">Pagar</button>
       </div>
     </section>
 
