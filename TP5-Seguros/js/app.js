@@ -5,13 +5,132 @@ import {
   actualizarPlan,
   actualizarTitular,
   actualizarPago,
+  actualizarCuotas,
   reiniciarSolicitud
 } from "./estado.js";
 
 import { render } from "./render.js";
 
+import {
+  validarEquipo,
+  validarTitular,
+  validarPago,
+  validarMarca,
+  validarModelo,
+  validarValor,
+  validarAntiguedad,
+  validarNombre,
+  validarApellido,
+  validarDni,
+  validarNacimiento,
+  validarEmail,
+  validarCelular,
+  validarTerminos,
+  sinErrores
+} from "./validaciones.js";
+
+import {
+  cargarPlanes,
+  calcularCuotas
+} from "./cotizador.js";
+
+let planes = [];
+
+const validadoresEquipo = {
+  marca: validarMarca,
+  modelo: validarModelo,
+  valor: validarValor
+};
+
+const validadoresTitular = {
+  nombre: validarNombre,
+  apellido: validarApellido,
+  dni: validarDni,
+  nacimiento: validarNacimiento,
+  email: validarEmail,
+  celular: validarCelular,
+  terminos: validarTerminos
+};
+
 function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
+}
+
+function mostrarError(campo, mensaje) {
+  const selector = campo === "titular"
+    ? "#titular-tarjeta"
+    : `#${campo}`;
+
+  const input = document.querySelector(selector);
+  const error = document.querySelector(`#${campo === "titular" ? "titular-tarjeta" : campo}-error`);
+
+  if (error) {
+    error.textContent = mensaje ?? "";
+    error.hidden = !mensaje;
+  }
+
+  if (input) {
+    const grupo = input.closest(".field");
+
+    if (mensaje) {
+      grupo?.setAttribute("data-invalid", "");
+      input.setAttribute("aria-invalid", "true");
+
+      if (error?.id) {
+        input.setAttribute("aria-describedby", error.id);
+      }
+    } else {
+      grupo?.removeAttribute("data-invalid");
+      input.removeAttribute("aria-invalid");
+
+      if (input.getAttribute("aria-describedby") === error?.id) {
+        input.removeAttribute("aria-describedby");
+      }
+    }
+  }
+}
+
+function mostrarErrorAntiguedad(mensaje) {
+  const error = document.querySelector("#antiguedad-error");
+
+  if (error) {
+    error.textContent = mensaje ?? "";
+    error.hidden = !mensaje;
+  }
+}
+
+function mostrarErrores(errores) {
+  Object.entries(errores).forEach(([campo, error]) => {
+    if (campo === "antiguedad") {
+      mostrarErrorAntiguedad(error);
+    } else {
+      mostrarError(campo, error);
+    }
+  });
+}
+
+function enfocarPrimerError(errores) {
+  const campo = Object.keys(errores).find((nombre) => errores[nombre]);
+
+  if (!campo) return;
+
+  const selector = campo === "antiguedad"
+    ? 'input[name="antiguedad"]'
+    : campo === "titular"
+      ? "#titular-tarjeta"
+      : `#${campo}`;
+
+  document.querySelector(selector)?.focus();
+}
+
+function actualizarBotonEquipo() {
+  const boton = document.querySelector("#btn-ver-planes");
+  if (boton) boton.disabled = !sinErrores(validarEquipo(solicitud.equipo));
+}
+
+function actualizarBotonTitular() {
+  const boton = document.querySelector("#btn-continuar-pago");
+  if (boton) boton.disabled = !sinErrores(validarTitular(solicitud.titular));
 }
 
 function guardarEquipoDesdeCampo(elemento) {
@@ -28,6 +147,7 @@ function guardarEquipoDesdeCampo(elemento) {
   }
 
   actualizarEquipo(campo, valor);
+  actualizarBotonEquipo();
 }
 
 function guardarTitularDesdeCampo(elemento) {
@@ -42,6 +162,7 @@ function guardarTitularDesdeCampo(elemento) {
     : elemento.value;
 
   actualizarTitular(campo, valor);
+  actualizarBotonTitular();
 }
 
 function guardarPagoDesdeCampo(elemento) {
@@ -61,6 +182,8 @@ function guardarPagoDesdeCampo(elemento) {
 function irYRender(paso) {
   irAPaso(paso);
   render();
+  actualizarBotonEquipo();
+  actualizarBotonTitular();
 }
 
 function configurarNavegacion() {
@@ -90,6 +213,8 @@ function configurarNavegacion() {
     if (accion === "reiniciar") {
       reiniciarSolicitud();
       render();
+      actualizarBotonEquipo();
+      actualizarBotonTitular();
     }
   });
 }
@@ -99,14 +224,61 @@ function configurarEstadoEquipo() {
 
   formulario?.addEventListener("input", (evento) => {
     guardarEquipoDesdeCampo(evento.target);
+
+    const campo = evento.target.name;
+    const validador = validadoresEquipo[campo];
+
+    if (validador && evento.target.getAttribute("aria-invalid") === "true") {
+      const valor = campo === "valor"
+        ? solicitud.equipo.valor
+        : evento.target.value;
+
+      mostrarError(campo, validador(valor));
+    }
   });
 
   formulario?.addEventListener("change", (evento) => {
     guardarEquipoDesdeCampo(evento.target);
+
+    if (evento.target.name === "antiguedad") {
+      mostrarErrorAntiguedad(
+        validarAntiguedad(solicitud.equipo.antiguedad)
+      );
+    }
+  });
+
+  formulario?.addEventListener("focusout", (evento) => {
+    const campo = evento.target.name;
+    const validador = validadoresEquipo[campo];
+
+    if (!validador) return;
+
+    const valor = campo === "valor"
+      ? solicitud.equipo.valor
+      : evento.target.value;
+
+    mostrarError(campo, validador(valor));
   });
 
   formulario?.addEventListener("submit", (evento) => {
     evento.preventDefault();
+
+    const errores = validarEquipo(solicitud.equipo);
+    mostrarErrores(errores);
+
+    if (!sinErrores(errores)) {
+      enfocarPrimerError(errores);
+      return;
+    }
+
+    const cuotas = calcularCuotas(
+      solicitud.equipo.valor,
+      solicitud.equipo.antiguedad,
+      planes
+    );
+
+    actualizarCuotas(cuotas);
+    irYRender(2);
   });
 }
 
@@ -126,14 +298,50 @@ function configurarTitular() {
 
   formulario?.addEventListener("input", (evento) => {
     guardarTitularDesdeCampo(evento.target);
+
+    const campo = evento.target.name;
+    const validador = validadoresTitular[campo];
+
+    if (validador && evento.target.getAttribute("aria-invalid") === "true") {
+      mostrarError(campo, validador(
+        evento.target.type === "checkbox"
+          ? evento.target.checked
+          : evento.target.value
+      ));
+    }
   });
 
   formulario?.addEventListener("change", (evento) => {
     guardarTitularDesdeCampo(evento.target);
+
+    if (evento.target.name === "terminos") {
+      mostrarError("terminos", validarTerminos(evento.target.checked));
+    }
+  });
+
+  formulario?.addEventListener("focusout", (evento) => {
+    const campo = evento.target.name;
+    const validador = validadoresTitular[campo];
+
+    if (!validador || evento.target.type === "checkbox") {
+      return;
+    }
+
+    mostrarError(campo, validador(evento.target.value));
   });
 
   formulario?.addEventListener("submit", (evento) => {
     evento.preventDefault();
+
+    const errores = validarTitular(solicitud.titular);
+    mostrarErrores(errores);
+
+    if (!sinErrores(errores)) {
+      enfocarPrimerError(errores);
+      return;
+    }
+
+    irYRender(4);
   });
 }
 
@@ -150,16 +358,33 @@ function configurarPago() {
 
   formulario?.addEventListener("submit", (evento) => {
     evento.preventDefault();
+
+    const errores = validarPago(solicitud.pago);
+    mostrarErrores(errores);
+
+    if (!sinErrores(errores)) {
+      enfocarPrimerError(errores);
+    }
   });
 }
 
-function iniciarApp() {
+async function iniciarApp() {
+  try {
+    planes = await cargarPlanes();
+  } catch (error) {
+    console.error(error);
+    alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");
+  }
+
   configurarNavegacion();
   configurarEstadoEquipo();
   configurarPlan();
   configurarTitular();
   configurarPago();
+
   render();
+  actualizarBotonEquipo();
+  actualizarBotonTitular();
 }
 
 iniciarApp();

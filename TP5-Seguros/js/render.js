@@ -63,6 +63,17 @@ export function renderStepper() {
   });
 }
 
+export function renderCuotas() {
+  document.querySelectorAll("[data-cuota]").forEach((elemento) => {
+    const plan = elemento.dataset.cuota;
+    const cuota = solicitud.cuotas[plan] ?? 0;
+
+    elemento.textContent = cuota
+      ? formatoARS.format(cuota)
+      : "A calcular";
+  });
+}
+
 export function renderResumen() {
   const equipo = textoEquipo();
   const valor = solicitud.equipo.valor
@@ -172,6 +183,7 @@ export function renderExito() {
 export function render() {
   renderPantallas();
   renderStepper();
+  renderCuotas();
   renderResumen();
   renderFormularios();
   renderExito();
