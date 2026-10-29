@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cubrí Seguros | Seguro de celular</title>
+  <meta name="description" content="Flujo de contratación digital de seguro de celular.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.1.0/dist/basecoat.cdn.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="css/tokens.css">
+</head>
+
+<body class="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+  <header class="border-b border-[var(--border)] bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#" class="flex items-center gap-2 font-extrabold tracking-tight text-[var(--primary-700)]" aria-label="Cubrí Seguros, inicio">
+        <span class="grid h-9 w-9 place-items-center rounded-xl bg-[var(--primary)] text-white">C</span>
+        <span>Cubrí Seguros</span>
+      </a>
+
+      <div class="flex items-center gap-2 text-sm font-medium text-[var(--muted)]">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+        </svg>
+        Compra segura
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01 Inicio / Catálogo -->
+    <section data-paso="0" class="mx-auto max-w-6xl px-5 py-8 lg:px-8 lg:py-14">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div>
+          <span class="badge mb-4" data-variant="secondary">Seguro 100% digital</span>
+          <h1 class="max-w-xl text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            Protegé lo que más usás, de forma simple.
+          </h1>
+          <p class="mt-4 max-w-lg text-base leading-7 text-[var(--muted)] lg:text-lg">
+            Elegí qué querés asegurar, cotizá online y recibí tu póliza en pocos minutos.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3 text-sm text-[var(--muted)]">
+            <span class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-[var(--success)]"></span>
+              Cotización online
+            </span>
+            <span class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-[var(--success)]"></span>
+              Pago simulado
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <div class="mb-4">
+            <h2 class="text-xl font-bold">¿Qué querés asegurar?</h2>
+            <p class="mt-1 text-sm text-[var(--muted)]">Elegí un producto para comenzar.</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <article class="card border-[var(--primary)] bg-[var(--primary-50)]">
+              <div class="p-4 sm:p-5">
+                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-white text-[var(--primary)] shadow-sm">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+                    <path d="M10 18h4"></path>
+                  </svg>
+                </div>
+                <h3 class="font-bold">Celular</h3>
+                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Robo y daños accidentales.</p>
+                <button class="btn mt-5 w-full" data-action="iniciar">Cotizar</button>
+              </div>
+            </article>
+
+            <article class="card opacity-70">
+              <div class="p-4 sm:p-5">
+                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--bg)] text-[var(--muted)]">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 11 9-8 9 8"></path>
+                    <path d="M5 10v10h14V10"></path>
+                  </svg>
+                </div>
+                <h3 class="font-bold">Hogar</h3>
+                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Protección para tu casa.</p>
+                <span class="badge mt-5" data-variant="secondary">Próximamente</span>
+              </div>
+            </article>
+
+            <article class="card opacity-70">
+              <div class="p-4 sm:p-5">
+                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--bg)] text-[var(--muted)]">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="6" cy="17" r="3"></circle>
+                    <circle cx="18" cy="17" r="3"></circle>
+                    <path d="m6 17 4-9 4 9m-6-5h8"></path>
+                  </svg>
+                </div>
+                <h3 class="font-bold">Bicicleta</h3>
+                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Cobertura para moverte tranquilo.</p>
+                <span class="badge mt-5" data-variant="secondary">Próximamente</span>
+              </div>
+            </article>
+
+            <article class="card opacity-70">
+              <div class="p-4 sm:p-5">
+                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--bg)] text-[var(--muted)]">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18"></path>
+                    <path d="M6 21V8l6-5 6 5v13"></path>
+                    <path d="M9 12h6"></path>
+                  </svg>
+                </div>
+                <h3 class="font-bold">Viaje</h3>
+                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Asistencia para tus viajes.</p>
+                <span class="badge mt-5" data-variant="secondary">Próximamente</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Cotizar -->
+    <section data-paso="1" hidden class="mx-auto max-w-6xl px-5 py-7 lg:px-8 lg:py-10">
+      <div class="mb-8">
+        <p class="text-sm font-semibold text-[var(--primary)]">Paso 1 de 4</p>
+        <h2 class="mt-1 text-2xl font-extrabold">Contanos sobre tu celular</h2>
+        <p class="mt-2 text-sm text-[var(--muted)]">Usamos estos datos para calcular las opciones de cobertura.</p>
+      </div>
+
+      <ol class="stepper mb-8" aria-label="Progreso de contratación">
+        <li data-step="1" data-status="active"><span>1</span><small>Cotizar</small></li>
+        <li data-step="2"><span>2</span><small>Plan</small></li>
+        <li data-step="3"><span>3</span><small>Datos</small></li>
+        <li data-step="4"><span>4</span><small>Pago</small></li>
+      </ol>
+
+      <form id="form-cotizar" class="card mx-auto max-w-3xl p-5 sm:p-7" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div role="group" class="field">
+            <label for="marca">Marca</label>
+            <select id="marca" name="marca">
+              <option value="">Elegí una marca</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Apple">Apple</option>
+              <option value="Motorola">Motorola</option>
+              <option value="Xiaomi">Xiaomi</option>
+              <option value="Otra">Otra</option>
+            </select>
+            <p class="field-help">Seleccioná la marca del equipo.</p>
+            <p class="field-error" id="marca-error" role="alert" hidden></p>
+          </div>
+
+          <div role="group" class="field">
+            <label for="modelo">Modelo</label>
+            <input id="modelo" name="modelo" type="text" placeholder="Ej.: Galaxy A55">
+            <p class="field-help">Entre 2 y 40 caracteres.</p>
+            <p class="field-error" id="modelo-error" role="alert" hidden></p>
+          </div>
+
+          <div role="group" class="field sm:col-span-2">
+            <label for="valor">Valor del equipo</label>
+            <div class="relative">
+              <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-[var(--muted)]">$</span>
+              <input id="valor" name="valor" type="text" inputmode="numeric" class="pl-7" placeholder="600.000">
+            </div>
+            <p class="field-help">Entre $100.000 y $2.500.000.</p>
+            <p class="field-error" id="valor-error" role="alert" hidden></p>
+          </div>
+
+          <fieldset class="sm:col-span-2">
+            <legend class="mb-2 text-sm font-semibold">Antigüedad</legend>
+            <div class="grid gap-2 sm:grid-cols-3">
+              <label class="choice-chip">
+                <input type="radio" name="antiguedad" value="menos-1">
+                <span>Menos de 1 año</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="antiguedad" value="1-2">
+                <span>1 a 2 años</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="antiguedad" value="mas-2">
+                <span>Más de 2 años</span>
+              </label>
+            </div>
+            <p class="field-error mt-2" id="antiguedad-error" role="alert" hidden></p>
+          </fieldset>
+        </div>
+
+        <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+          <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+          <button type="submit" class="btn" id="btn-ver-planes" disabled>Ver planes</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 03 Elegir plan -->
+    <section data-paso="2" hidden class="mx-auto max-w-6xl px-5 py-7 lg:px-8 lg:py-10">
+      <div class="mb-8">
+        <p class="text-sm font-semibold text-[var(--primary)]">Paso 2 de 4</p>
+        <h2 class="mt-1 text-2xl font-extrabold">Elegí el plan que mejor te quede</h2>
+        <p class="mt-2 text-sm text-[var(--muted)]">Podés cambiarlo antes de pagar.</p>
+      </div>
+
+      <ol class="stepper mb-8" aria-label="Progreso de contratación">
+        <li data-step="1" data-status="complete"><span>✓</span><small>Cotizar</small></li>
+        <li data-step="2" data-status="active"><span>2</span><small>Plan</small></li>
+        <li data-step="3"><span>3</span><small>Datos</small></li>
+        <li data-step="4"><span>4</span><small>Pago</small></li>
+      </ol>
+
+      <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
+        <div id="planes" class="grid gap-4 lg:grid-cols-3">
+          <label class="plan-card">
+            <input type="radio" name="plan" value="basico">
+            <div class="card h-full p-5">
+              <h3 class="text-lg font-bold">Básico</h3>
+              <p class="mt-3"><strong class="text-2xl" data-cuota="basico">$ 2.000</strong><span class="text-sm text-[var(--muted)]"> / mes</span></p>
+              <ul class="mt-5 space-y-2 text-sm text-[var(--muted)]">
+                <li>✓ Robo con violencia</li>
+              </ul>
+            </div>
+          </label>
+
+          <label class="plan-card">
+            <input type="radio" name="plan" value="plus" checked>
+            <div class="card h-full border-[var(--primary)] bg-[var(--primary-50)] p-5">
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="text-lg font-bold">Plus</h3>
+                <span class="badge">Recomendado</span>
+              </div>
+              <p class="mt-3"><strong class="text-2xl" data-cuota="plus">$ 3.000</strong><span class="text-sm text-[var(--muted)]"> / mes</span></p>
+              <ul class="mt-5 space-y-2 text-sm text-[var(--muted)]">
+                <li>✓ Robo con violencia</li>
+                <li>✓ Rotura de pantalla</li>
+              </ul>
+            </div>
+          </label>
+
+          <label class="plan-card">
+            <input type="radio" name="plan" value="premium">
+            <div class="card h-full p-5">
+              <h3 class="text-lg font-bold">Premium</h3>
+              <p class="mt-3"><strong class="text-2xl" data-cuota="premium">$ 4.500</strong><span class="text-sm text-[var(--muted)]"> / mes</span></p>
+              <ul class="mt-5 space-y-2 text-sm text-[var(--muted)]">
+                <li>✓ Robo con violencia</li>
+                <li>✓ Rotura total</li>
+                <li>✓ Hurto / pérdida</li>
+              </ul>
+            </div>
+          </label>
+        </div>
+
+        <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen">
+          <h3 class="font-bold">Resumen</h3>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="text-right font-medium">Samsung Galaxy A55</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Valor</dt><dd data-resumen="valor" class="font-medium">$ 600.000</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">Plus</dd></div>
+            <div class="border-t border-[var(--border)] pt-3 flex justify-between gap-4"><dt class="font-semibold">Total mensual</dt><dd data-resumen="cuota" class="font-extrabold text-[var(--primary)]">$ 3.000</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+        <button type="button" class="btn" data-action="continuar-plan">Continuar</button>
+      </div>
+    </section>
+
+    <!-- 04 Datos personales -->
+    <section data-paso="3" hidden class="mx-auto max-w-6xl px-5 py-7 lg:px-8 lg:py-10">
+      <div class="mb-8">
+        <p class="text-sm font-semibold text-[var(--primary)]">Paso 3 de 4</p>
+        <h2 class="mt-1 text-2xl font-extrabold">Tus datos personales</h2>
+        <p class="mt-2 text-sm text-[var(--muted)]">Necesitamos estos datos para emitir la póliza.</p>
+      </div>
+
+      <ol class="stepper mb-8" aria-label="Progreso de contratación">
+        <li data-step="1" data-status="complete"><span>✓</span><small>Cotizar</small></li>
+        <li data-step="2" data-status="complete"><span>✓</span><small>Plan</small></li>
+        <li data-step="3" data-status="active"><span>3</span><small>Datos</small></li>
+        <li data-step="4"><span>4</span><small>Pago</small></li>
+      </ol>
+
+      <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
+        <form id="form-datos" class="card p-5 sm:p-7" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div role="group" class="field">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="given-name">
+              <p class="field-error" id="nombre-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="apellido">Apellido</label>
+              <input id="apellido" name="apellido" type="text" autocomplete="family-name">
+              <p class="field-error" id="apellido-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="dni">DNI</label>
+              <input id="dni" name="dni" type="text" inputmode="numeric" placeholder="12345678">
+              <p class="field-error" id="dni-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="nacimiento">Fecha de nacimiento</label>
+              <input id="nacimiento" name="nacimiento" type="date">
+              <p class="field-error" id="nacimiento-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@email.com">
+              <p class="field-error" id="email-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="celular">Celular</label>
+              <input id="celular" name="celular" type="tel" autocomplete="tel" placeholder="11 5555-1234">
+              <p class="field-error" id="celular-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field sm:col-span-2">
+              <label class="flex items-start gap-3 font-normal">
+                <input id="terminos" name="terminos" type="checkbox" class="mt-1">
+                <span>Acepto los términos y condiciones de contratación.</span>
+              </label>
+              <p class="field-error" id="terminos-error" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+            <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+            <button type="submit" class="btn" id="btn-continuar-pago" disabled>Continuar al pago</button>
+          </div>
+        </form>
+
+        <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen">
+          <h3 class="font-bold">Tu cobertura</h3>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="text-right font-medium">Samsung Galaxy A55</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">Plus</dd></div>
+            <div class="border-t border-[var(--border)] pt-3 flex justify-between gap-4"><dt class="font-semibold">Mensual</dt><dd data-resumen="cuota" class="font-extrabold text-[var(--primary)]">$ 3.000</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 05 Pago -->
+    <section data-paso="4" hidden class="mx-auto max-w-6xl px-5 py-7 lg:px-8 lg:py-10">
+      <div class="mb-8">
+        <p class="text-sm font-semibold text-[var(--primary)]">Paso 4 de 4</p>
+        <h2 class="mt-1 text-2xl font-extrabold">Confirmá y pagá</h2>
+        <p class="mt-2 text-sm text-[var(--muted)]">El pago es una simulación para esta práctica.</p>
+      </div>
+
+      <ol class="stepper mb-8" aria-label="Progreso de contratación">
+        <li data-step="1" data-status="complete"><span>✓</span><small>Cotizar</small></li>
+        <li data-step="2" data-status="complete"><span>✓</span><small>Plan</small></li>
+        <li data-step="3" data-status="complete"><span>✓</span><small>Datos</small></li>
+        <li data-step="4" data-status="active"><span>4</span><small>Pago</small></li>
+      </ol>
+
+      <div class="grid gap-8 lg:grid-cols-[1fr_380px]">
+        <form id="form-pago" class="card p-5 sm:p-7" novalidate>
+          <div class="alert mb-6">
+            <strong>Pago simulado.</strong>
+            Usá únicamente los números de tarjeta de prueba indicados en la consigna.
+          </div>
+
+          <fieldset>
+            <legend class="mb-3 text-sm font-semibold">Medio de pago</legend>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="choice-chip">
+                <input type="radio" name="metodo" value="credito" checked>
+                <span>Crédito</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="metodo" value="debito">
+                <span>Débito</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="mt-6 grid gap-5 sm:grid-cols-2">
+            <div role="group" class="field sm:col-span-2">
+              <label for="tarjeta">Número de tarjeta</label>
+              <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4111 1111 1111 1111">
+              <p class="field-error" id="tarjeta-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="vencimiento">Vencimiento</label>
+              <input id="vencimiento" name="vencimiento" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA">
+              <p class="field-error" id="vencimiento-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field">
+              <label for="cvv">CVV</label>
+              <input id="cvv" name="cvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="3" placeholder="123">
+              <p class="field-error" id="cvv-error" role="alert" hidden></p>
+            </div>
+
+            <div role="group" class="field sm:col-span-2">
+              <label for="titular-tarjeta">Titular de la tarjeta</label>
+              <input id="titular-tarjeta" name="titularTarjeta" type="text" autocomplete="cc-name">
+              <p class="field-error" id="titular-tarjeta-error" role="alert" hidden></p>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+            <button type="button" class="btn" data-variant="outline" data-action="volver">Volver</button>
+            <button type="submit" class="btn" id="btn-pagar">Pagar</button>
+          </div>
+        </form>
+
+        <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen final">
+          <h3 class="font-bold">Resumen final</h3>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Seguro</dt><dd class="font-medium">Celular</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="text-right font-medium">Samsung Galaxy A55</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">Plus</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Titular</dt><dd data-resumen="titular" class="text-right font-medium">Juan Pérez</dd></div>
+            <div class="border-t border-[var(--border)] pt-3 flex justify-between gap-4"><dt class="font-semibold">Total mensual</dt><dd data-resumen="cuota" class="font-extrabold text-[var(--primary)]">$ 3.000</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 06 Éxito -->
+    <section data-paso="5" hidden class="mx-auto max-w-2xl px-5 py-12 text-center lg:py-20">
+      <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-emerald-100 text-[var(--success)]">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="m5 12 4 4L19 6"></path>
+        </svg>
+      </div>
+      <span class="badge mt-5" data-variant="secondary">Contratación exitosa</span>
+      <h2 class="mt-4 text-3xl font-extrabold">¡Listo, <span data-exito="nombre">Juan</span>!</h2>
+      <p class="mx-auto mt-3 max-w-lg text-[var(--muted)]">
+        Tu seguro ya está activo. Enviamos la confirmación a <strong data-exito="email">juan@email.com</strong>.
+      </p>
+
+      <div class="card mt-8 p-6 text-left">
+        <p class="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Número de póliza</p>
+        <p class="mt-1 text-xl font-extrabold text-[var(--primary-700)]" data-exito="poliza">POL-2026-000001</p>
+        <dl class="mt-5 space-y-3 text-sm">
+          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="font-medium">Samsung Galaxy A55</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">Plus</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Cuota</dt><dd data-resumen="cuota" class="font-medium">$ 3.000</dd></div>
+        </dl>
+      </div>
+
+      <button type="button" class="btn mt-7" data-variant="ghost" data-action="reiniciar">Volver al inicio</button>
+    </section>
+
+    <!-- 07 Error -->
+    <section data-paso="6" hidden class="mx-auto max-w-2xl px-5 py-12 text-center lg:py-20">
+      <div class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-red-100 text-[var(--error)]">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 8v5"></path>
+          <path d="M12 17h.01"></path>
+          <circle cx="12" cy="12" r="9"></circle>
+        </svg>
+      </div>
+      <h2 class="mt-5 text-3xl font-extrabold">No pudimos procesar el pago</h2>
+      <p class="mx-auto mt-3 max-w-lg text-[var(--muted)]">
+        La tarjeta fue rechazada. Tus datos siguen guardados para que puedas intentar nuevamente.
+      </p>
+
+      <div class="alert mt-7 text-left" data-variant="destructive">
+        <strong>Tarjeta rechazada.</strong> Probá otra vez o cambiá el medio de pago.
+      </div>
+
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
+        <button type="button" class="btn" data-action="reintentar">Reintentar pago</button>
+        <button type="button" class="btn" data-variant="outline" data-action="cambiar-medio">Cambiar medio de pago</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--border)] bg-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <p>Práctica de Diseño UX-UI · 2026</p>
+      <p>Cubrí Seguros · Demo académica</p>
+    </div>
+  </footer>
+</body>
+</html>
