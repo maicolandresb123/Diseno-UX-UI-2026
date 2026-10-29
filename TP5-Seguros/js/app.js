@@ -10,7 +10,10 @@ import {
   reiniciarSolicitud
 } from "./estado.js";
 
-import { render } from "./render.js";
+import {
+  render,
+  renderPlanes
+} from "./render.js";
 
 import {
   validarEquipo,
@@ -443,6 +446,7 @@ function configurarPago() {
 async function iniciarApp() {
   try {
     planes = await cargarPlanes();
+    renderPlanes(planes);
   } catch (error) {
     console.error(error);
     alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");

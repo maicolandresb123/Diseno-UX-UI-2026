@@ -63,6 +63,46 @@ export function renderStepper() {
   });
 }
 
+export function renderPlanes(planes) {
+  const contenedor = document.querySelector("#planes");
+
+  if (!contenedor) return;
+
+  contenedor.innerHTML = planes.map((plan) => {
+    const recomendado = plan.recomendado
+      ? '<span class="badge">Recomendado</span>'
+      : "";
+
+    const coberturas = plan.coberturas
+      .map((cobertura) => `<li>✓ ${cobertura}</li>`)
+      .join("");
+
+    const seleccionada = plan.id === solicitud.plan ? "checked" : "";
+    const clasesCard = plan.recomendado
+      ? "card h-full border-[var(--primary)] bg-[var(--primary-50)] p-5"
+      : "card h-full p-5";
+
+    return `
+      <label class="plan-card">
+        <input type="radio" name="plan" value="${plan.id}" ${seleccionada}>
+        <div class="${clasesCard}">
+          <div class="flex items-start justify-between gap-2">
+            <h3 class="text-lg font-bold">${plan.nombre}</h3>
+            ${recomendado}
+          </div>
+          <p class="mt-3">
+            <strong class="text-2xl" data-cuota="${plan.id}">A calcular</strong>
+            <span class="text-sm text-[var(--muted)]"> / mes</span>
+          </p>
+          <ul class="mt-5 space-y-2 text-sm text-[var(--muted)]">
+            ${coberturas}
+          </ul>
+        </div>
+      </label>
+    `;
+  }).join("");
+}
+
 export function renderCuotas() {
   document.querySelectorAll("[data-cuota]").forEach((elemento) => {
     const plan = elemento.dataset.cuota;
