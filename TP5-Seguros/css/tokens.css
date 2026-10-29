@@ -227,3 +227,21 @@ body {
   border-color: var(--error);
   box-shadow: 0 0 0 3px rgb(220 38 38 / 0.08);
 }
+
+
+/* Resumen mobile fijo sobre las acciones */
+@media (max-width: 1023px) {
+  .summary-card {
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    border-color: var(--primary);
+    box-shadow: 0 -8px 24px rgb(15 23 42 / 0.08);
+  }
+}
+
+@media (min-width: 1024px) {
+  .summary-card {
+    bottom: auto;
+  }
+}

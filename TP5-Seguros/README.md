@@ -85,6 +85,10 @@ No se deben usar datos reales de tarjetas.
 - Se trabaja mobile-first y a partir de `lg` se usa el layout de dos columnas indicado para desktop.
 - Se usan componentes de Basecoat cuando están disponibles y Tailwind para layout y responsive.
 
+## Bonus
+
+No se implementaron bonus. Se priorizó completar y probar correctamente todos los requisitos obligatorios del flujo.
+
 ## Capturas
 
 Las capturas finales de mobile 390 px y desktop 1440 px se agregan antes de la entrega, una vez publicado el sitio.
