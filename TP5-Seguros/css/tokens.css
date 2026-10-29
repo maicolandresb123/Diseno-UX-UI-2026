@@ -95,37 +95,51 @@ body {
 
 .plan-card .card {
   position: relative;
+  background: #FFFFFF;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.plan-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.plan-card__radio {
+  position: relative;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: #FFFFFF;
   transition:
     border-color 160ms ease,
     background-color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
+    box-shadow 160ms ease;
 }
 
 .plan-card:has(input:checked) .card {
+  border: 2px solid var(--primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgb(79 70 229 / 0.12);
+}
+
+.plan-card:has(input:checked) .plan-card__radio {
   border-color: var(--primary);
-  background: var(--primary-50);
-  box-shadow:
-    0 0 0 2px rgb(79 70 229 / 0.18),
-    0 8px 20px rgb(79 70 229 / 0.08);
-  transform: translateY(-2px);
-}
-
-.plan-card:has(input:checked) .card::after {
-  content: "Seleccionado";
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
   background: var(--primary);
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
+  box-shadow: 0 0 0 2px rgb(79 70 229 / 0.08);
 }
 
-.plan-card:has(input:checked) .badge {
-  margin-right: 5.8rem;
+.plan-card:has(input:checked) .plan-card__radio::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 999px;
+  background: #FFFFFF;
 }
 
 .stepper {

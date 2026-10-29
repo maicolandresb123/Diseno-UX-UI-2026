@@ -84,9 +84,12 @@ export function renderPlanes(planes) {
       <label class="plan-card">
         <input type="radio" name="plan" value="${plan.id}" ${seleccionada}>
         <div class="${clasesCard}">
-          <div class="flex items-start justify-between gap-2">
-            <h3 class="text-lg font-bold">${plan.nombre}</h3>
-            ${recomendado}
+          <div class="plan-card__header">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-lg font-bold">${plan.nombre}</h3>
+              ${recomendado}
+            </div>
+            <span class="plan-card__radio" aria-hidden="true"></span>
           </div>
           <p class="mt-3">
             <strong class="text-2xl" data-cuota="${plan.id}">A calcular</strong>
