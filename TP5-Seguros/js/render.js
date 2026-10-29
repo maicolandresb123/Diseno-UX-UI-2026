@@ -78,9 +78,7 @@ export function renderPlanes(planes) {
       .join("");
 
     const seleccionada = plan.id === solicitud.plan ? "checked" : "";
-    const clasesCard = plan.recomendado
-      ? "card h-full border-[var(--primary)] bg-[var(--primary-50)] p-5"
-      : "card h-full p-5";
+    const clasesCard = "card h-full p-5";
 
     return `
       <label class="plan-card">
