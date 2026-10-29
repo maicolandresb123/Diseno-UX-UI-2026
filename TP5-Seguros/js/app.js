@@ -316,13 +316,15 @@ function configurarEstadoEquipo() {
 }
 
 function configurarPlan() {
-  document.querySelectorAll('input[name="plan"]').forEach((radio) => {
-    radio.addEventListener("change", () => {
-      if (radio.checked) {
-        actualizarPlan(radio.value);
-        render();
-      }
-    });
+  const contenedor = document.querySelector("#planes");
+
+  contenedor?.addEventListener("change", (evento) => {
+    const radio = evento.target.closest('input[name="plan"]');
+
+    if (!radio || !radio.checked) return;
+
+    actualizarPlan(radio.value);
+    render();
   });
 }
 
@@ -444,14 +446,6 @@ function configurarPago() {
 }
 
 async function iniciarApp() {
-  try {
-    planes = await cargarPlanes();
-    renderPlanes(planes);
-  } catch (error) {
-    console.error(error);
-    alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");
-  }
-
   configurarNavegacion();
   configurarEstadoEquipo();
   configurarPlan();
@@ -461,6 +455,15 @@ async function iniciarApp() {
   render();
   actualizarBotonEquipo();
   actualizarBotonTitular();
+
+  try {
+    planes = await cargarPlanes();
+    renderPlanes(planes);
+    render();
+  } catch (error) {
+    console.error(error);
+    alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");
+  }
 }
 
 iniciarApp();
