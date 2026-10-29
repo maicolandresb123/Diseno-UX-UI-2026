@@ -6,6 +6,7 @@ import {
   actualizarTitular,
   actualizarPago,
   actualizarCuotas,
+  guardarPoliza,
   reiniciarSolicitud
 } from "./estado.js";
 
@@ -26,6 +27,10 @@ import {
   validarEmail,
   validarCelular,
   validarTerminos,
+  validarTarjeta,
+  validarVencimiento,
+  validarCvv,
+  validarTitularTarjeta,
   sinErrores
 } from "./validaciones.js";
 
@@ -33,6 +38,11 @@ import {
   cargarPlanes,
   calcularCuotas
 } from "./cotizador.js";
+
+import {
+  simularPago,
+  generarPoliza
+} from "./pago.js";
 
 let planes = [];
 
@@ -50,6 +60,13 @@ const validadoresTitular = {
   email: validarEmail,
   celular: validarCelular,
   terminos: validarTerminos
+};
+
+const validadoresPago = {
+  tarjeta: validarTarjeta,
+  vencimiento: validarVencimiento,
+  cvv: validarCvv,
+  titularTarjeta: validarTitularTarjeta
 };
 
 function limpiarNumero(valor) {
@@ -206,8 +223,14 @@ function configurarNavegacion() {
       irYRender(3);
     }
 
-    if (accion === "reintentar" || accion === "cambiar-medio") {
+    if (accion === "reintentar") {
       irYRender(4);
+      document.querySelector("#tarjeta")?.focus();
+    }
+
+    if (accion === "cambiar-medio") {
+      irYRender(4);
+      document.querySelector('input[name="metodo"]')?.focus();
     }
 
     if (accion === "reiniciar") {
@@ -347,16 +370,41 @@ function configurarTitular() {
 
 function configurarPago() {
   const formulario = document.querySelector("#form-pago");
+  const botonPagar = document.querySelector("#btn-pagar");
 
   formulario?.addEventListener("input", (evento) => {
     guardarPagoDesdeCampo(evento.target);
+
+    const campo = evento.target.name;
+    const validador = validadoresPago[campo];
+
+    if (validador && evento.target.getAttribute("aria-invalid") === "true") {
+      const campoEstado = campo === "titularTarjeta" ? "titular" : campo;
+      mostrarError(
+        campoEstado,
+        validador(solicitud.pago[campoEstado])
+      );
+    }
   });
 
   formulario?.addEventListener("change", (evento) => {
     guardarPagoDesdeCampo(evento.target);
   });
 
-  formulario?.addEventListener("submit", (evento) => {
+  formulario?.addEventListener("focusout", (evento) => {
+    const campo = evento.target.name;
+    const validador = validadoresPago[campo];
+
+    if (!validador) return;
+
+    const campoEstado = campo === "titularTarjeta" ? "titular" : campo;
+    mostrarError(
+      campoEstado,
+      validador(solicitud.pago[campoEstado])
+    );
+  });
+
+  formulario?.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     const errores = validarPago(solicitud.pago);
@@ -364,7 +412,24 @@ function configurarPago() {
 
     if (!sinErrores(errores)) {
       enfocarPrimerError(errores);
+      return;
     }
+
+    botonPagar.disabled = true;
+    botonPagar.textContent = "Procesando…";
+
+    const resultado = await simularPago(solicitud.pago.tarjeta);
+
+    if (resultado.ok) {
+      const poliza = generarPoliza();
+      guardarPoliza(poliza);
+      irYRender(5);
+      return;
+    }
+
+    botonPagar.disabled = false;
+    botonPagar.textContent = "Pagar";
+    irYRender(6);
   });
 }
 
