@@ -188,6 +188,27 @@ function guardarTitularDesdeCampo(elemento) {
     : elemento.value;
 
   actualizarTitular(campo, valor);
+}
+
+function sincronizarTitularDesdeFormulario() {
+  const campos = [
+    "nombre",
+    "apellido",
+    "dni",
+    "nacimiento",
+    "email",
+    "celular",
+    "terminos"
+  ];
+
+  campos.forEach((campo) => {
+    const elemento = document.querySelector(`#${campo}`);
+
+    if (!elemento) return;
+
+    guardarTitularDesdeCampo(elemento);
+  });
+
   actualizarBotonTitular();
 }
 
@@ -234,6 +255,10 @@ function configurarNavegacion() {
 
     if (accion === "continuar-plan") {
       irYRender(3);
+
+      setTimeout(() => {
+        sincronizarTitularDesdeFormulario();
+      }, 100);
     }
 
     if (accion === "reintentar") {
@@ -290,6 +315,10 @@ function configurarEstadoEquipo() {
     }
   });
 
+  formulario?.addEventListener("focusin", () => {
+    sincronizarTitularDesdeFormulario();
+  });
+
   formulario?.addEventListener("focusout", (evento) => {
     const campo = evento.target.name;
     const validador = validadoresEquipo[campo];
@@ -342,7 +371,7 @@ function configurarTitular() {
   const formulario = document.querySelector("#form-datos");
 
   formulario?.addEventListener("input", (evento) => {
-    guardarTitularDesdeCampo(evento.target);
+    sincronizarTitularDesdeFormulario();
 
     const campo = evento.target.name;
     const validador = validadoresTitular[campo];
@@ -357,7 +386,7 @@ function configurarTitular() {
   });
 
   formulario?.addEventListener("change", (evento) => {
-    guardarTitularDesdeCampo(evento.target);
+    sincronizarTitularDesdeFormulario();
 
     if (evento.target.name === "terminos") {
       mostrarError("terminos", validarTerminos(evento.target.checked));
