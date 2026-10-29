@@ -214,6 +214,10 @@ function configurarNavegacion() {
 
     const accion = boton.dataset.action;
 
+    if (boton.tagName === "A") {
+      evento.preventDefault();
+    }
+
     if (accion === "iniciar") {
       irYRender(1);
     }
