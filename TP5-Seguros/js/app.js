@@ -49,6 +49,8 @@ import {
 
 let planes = [];
 
+const formatoNumeroAR = new Intl.NumberFormat("es-AR");
+
 const validadoresEquipo = {
   marca: validarMarca,
   modelo: validarModelo,
@@ -164,6 +166,10 @@ function guardarEquipoDesdeCampo(elemento) {
 
   if (campo === "valor") {
     valor = limpiarNumero(valor);
+
+    elemento.value = valor
+      ? formatoNumeroAR.format(valor)
+      : "";
   }
 
   actualizarEquipo(campo, valor);
