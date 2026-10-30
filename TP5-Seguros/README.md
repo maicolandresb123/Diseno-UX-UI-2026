@@ -2,7 +2,7 @@
 
 Trabajo práctico de Diseño UX-UI 2026.
 
-El proyecto reproduce el flujo de contratación de un seguro de celular tomando como referencia el Figma indicado en la consigna. Está desarrollado con HTML5, Tailwind CSS v4, Basecoat UI y JavaScript vanilla.
+El proyecto reproduce el flujo obligatorio de contratación de un seguro de celular tomando como referencia el Figma indicado en la consigna. Está desarrollado con HTML5, Tailwind CSS v4, Basecoat UI y JavaScript vanilla.
 
 ## Cómo ejecutarlo
 
@@ -24,7 +24,8 @@ TP5-Seguros/
 ├── css/
 │   └── tokens.css
 ├── data/
-│   └── planes.json
+│   ├── planes.json
+│   └── planes-bicicleta.json
 ├── js/
 │   ├── app.js
 │   ├── estado.js
@@ -87,7 +88,19 @@ No se deben usar datos reales de tarjetas.
 
 ## Bonus
 
-No se implementaron bonus. Se priorizó completar y probar correctamente todos los requisitos obligatorios del flujo.
+Se implementó **Seguro de Bicicleta** reutilizando el mismo flujo de contratación.
+
+El bonus comparte el estado general, stepper, datos personales, resumen, pago simulado y pantallas de éxito/error. Para Bicicleta se definieron estas reglas como decisión propia de implementación:
+
+- Campos de cotización: marca, tipo de bicicleta, valor y antigüedad.
+- Valor permitido: $50.000 a $5.000.000.
+- Básico: 3,6 % anual — robo con violencia.
+- Plus: 5,4 % anual — robo con violencia + daño accidental.
+- Premium: 7,2 % anual — robo con violencia + daño accidental + hurto/pérdida.
+- Plus queda preseleccionado y marcado como recomendado.
+- Se reutilizan los mismos factores de antigüedad del cotizador principal.
+
+Estas reglas pertenecen únicamente al bonus. Las reglas obligatorias del seguro de Celular se mantienen sin cambios.
 
 ## Capturas
 
