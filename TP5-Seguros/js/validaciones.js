@@ -44,14 +44,25 @@ export function validarDni(valor) {
 }
 
 export function validarNacimiento(valor) {
-  if (vacio(valor)) {
-    return "Tenés que ser mayor de edad";
+  const texto = String(valor ?? "").trim();
+  const coincidencia = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[0-2])\/(\d{4})$/.exec(texto);
+
+  if (!coincidencia) {
+    return "Ingresá una fecha válida";
   }
 
-  const nacimiento = new Date(`${valor}T00:00:00`);
+  const dia = Number(coincidencia[1]);
+  const mes = Number(coincidencia[2]);
+  const anio = Number(coincidencia[3]);
 
-  if (Number.isNaN(nacimiento.getTime())) {
-    return "Tenés que ser mayor de edad";
+  const nacimiento = new Date(anio, mes - 1, dia);
+
+  if (
+    nacimiento.getFullYear() !== anio ||
+    nacimiento.getMonth() !== mes - 1 ||
+    nacimiento.getDate() !== dia
+  ) {
+    return "Ingresá una fecha válida";
   }
 
   const hoy = new Date();
