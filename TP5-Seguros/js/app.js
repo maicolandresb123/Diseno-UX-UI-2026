@@ -78,6 +78,29 @@ function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
 }
 
+function formatearNacimiento(valor) {
+  const texto = String(valor ?? "").trim();
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
+    const [anio, mes, dia] = texto.split("-");
+    return `${dia}/${mes}/${anio}`;
+  }
+
+  const limpio = texto
+    .replace(/\D/g, "")
+    .slice(0, 8);
+
+  if (limpio.length <= 2) {
+    return limpio;
+  }
+
+  if (limpio.length <= 4) {
+    return `${limpio.slice(0, 2)}/${limpio.slice(2)}`;
+  }
+
+  return `${limpio.slice(0, 2)}/${limpio.slice(2, 4)}/${limpio.slice(4, 8)}`;
+}
+
 function formatearDni(valor) {
   const limpio = String(valor ?? "")
     .replace(/\D/g, "")
@@ -245,6 +268,11 @@ function guardarTitularDesdeCampo(elemento) {
 
     elemento.value = formatearDni(limpio);
     valor = limpio;
+  }
+
+  if (campo === "nacimiento") {
+    valor = formatearNacimiento(elemento.value);
+    elemento.value = valor;
   }
 
   actualizarTitular(campo, valor);
