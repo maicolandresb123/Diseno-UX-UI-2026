@@ -283,7 +283,14 @@
 
             <div role="group" class="field">
               <label for="nacimiento">Fecha de nacimiento</label>
-              <input id="nacimiento" name="nacimiento" type="date">
+              <input
+                id="nacimiento"
+                name="nacimiento"
+                type="text"
+                inputmode="numeric"
+                maxlength="10"
+                placeholder="DD/MM/AAAA"
+              >
               <p class="field-error" id="nacimiento-error" role="alert" hidden></p>
             </div>
 
