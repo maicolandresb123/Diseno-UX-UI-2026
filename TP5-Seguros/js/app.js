@@ -78,6 +78,16 @@ function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
 }
 
+function normalizarCelularAutofill(valor) {
+  let limpio = String(valor ?? "").replace(/\D/g, "");
+
+  if (limpio.startsWith("54") && limpio.length === 12) {
+    limpio = limpio.slice(2);
+  }
+
+  return limpio;
+}
+
 function mostrarError(campo, mensaje) {
   const selector = campo === "titular"
     ? "#titular-tarjeta"
@@ -206,6 +216,14 @@ function sincronizarTitularDesdeFormulario() {
 
     if (!elemento) return;
 
+    if (campo === "celular" && elemento.value) {
+      const celularNormalizado = normalizarCelularAutofill(elemento.value);
+
+      if (celularNormalizado.length === 10) {
+        elemento.value = celularNormalizado;
+      }
+    }
+
     guardarTitularDesdeCampo(elemento);
   });
 
@@ -258,6 +276,7 @@ function configurarNavegacion() {
 
       setTimeout(() => {
         sincronizarTitularDesdeFormulario();
+        observarAutocompletadoTitular();
       }, 100);
     }
 
@@ -367,8 +386,32 @@ function configurarPlan() {
   });
 }
 
+function observarAutocompletadoTitular() {
+  let intentos = 0;
+
+  const intervalo = setInterval(() => {
+    if (solicitud.paso !== 3) {
+      clearInterval(intervalo);
+      return;
+    }
+
+    sincronizarTitularDesdeFormulario();
+    intentos += 1;
+
+    if (intentos >= 24) {
+      clearInterval(intervalo);
+    }
+  }, 250);
+}
+
 function configurarTitular() {
   const formulario = document.querySelector("#form-datos");
+
+  formulario?.addEventListener("animationstart", (evento) => {
+    if (evento.animationName === "autofill-detect") {
+      setTimeout(sincronizarTitularDesdeFormulario, 0);
+    }
+  });
 
   formulario?.addEventListener("input", (evento) => {
     sincronizarTitularDesdeFormulario();
@@ -406,6 +449,8 @@ function configurarTitular() {
 
   formulario?.addEventListener("submit", (evento) => {
     evento.preventDefault();
+
+    sincronizarTitularDesdeFormulario();
 
     const errores = validarTitular(solicitud.titular);
     mostrarErrores(errores);

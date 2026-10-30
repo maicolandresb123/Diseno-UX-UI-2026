@@ -289,3 +289,15 @@ body {
     bottom: auto;
   }
 }
+
+
+/* Detecta campos completados por el navegador */
+@keyframes autofill-detect {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+input:-webkit-autofill {
+  animation-name: autofill-detect;
+  animation-duration: 0.01s;
+}
