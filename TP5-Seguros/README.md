@@ -1,8 +1,12 @@
 # TP5 - Contratación digital de seguros
 
-Trabajo práctico de Diseño UX-UI 2026.
+Trabajo práctico de **Diseño UX-UI 2026**.
 
 El proyecto reproduce el flujo obligatorio de contratación de un seguro de celular tomando como referencia el Figma indicado en la consigna. Está desarrollado con HTML5, Tailwind CSS v4, Basecoat UI y JavaScript vanilla.
+
+## Sitio publicado
+
+**Netlify:** https://tp5-seguros.netlify.app/
 
 ## Cómo ejecutarlo
 
@@ -21,6 +25,20 @@ npx serve .
 ```text
 TP5-Seguros/
 ├── index.html
+├── assets/
+│   └── screenshots/
+│       ├── mobile-inicio.png
+│       ├── mobile-cotizacion.png
+│       ├── mobile-planes.png
+│       ├── mobile-datos.png
+│       ├── mobile-pago.png
+│       ├── mobile-error.png
+│       ├── mobile-exito.png
+│       ├── desktop-cotizacion.png
+│       ├── desktop-planes.png
+│       ├── desktop-datos.png
+│       ├── desktop-pago.png
+│       └── flujo-responsive-general.jpg
 ├── css/
 │   └── tokens.css
 ├── data/
@@ -85,6 +103,7 @@ No se deben usar datos reales de tarjetas.
 - Los planes se cargan desde `data/planes.json`.
 - Se trabaja mobile-first y a partir de `lg` se usa el layout de dos columnas indicado para desktop.
 - Se usan componentes de Basecoat cuando están disponibles y Tailwind para layout y responsive.
+- Se mantuvo una jerarquía visual simple, con stepper de progreso, validaciones visibles y resúmenes persistentes para acompañar al usuario durante la contratación.
 
 ## Bonus
 
@@ -102,13 +121,70 @@ El bonus comparte el estado general, stepper, datos personales, resumen, pago si
 
 Estas reglas pertenecen únicamente al bonus. Las reglas obligatorias del seguro de Celular se mantienen sin cambios.
 
-## Capturas
+## Capturas responsive
 
-Las capturas finales de mobile 390 px y desktop 1440 px se agregan antes de la entrega, una vez publicado el sitio.
+La interfaz fue verificada en los tamaños solicitados para la entrega:
+
+- **Mobile:** 390 px de ancho.
+- **Desktop:** 1440 px de ancho.
+
+### Vista general
+
+![Flujo responsive de Cubrí Seguros](assets/screenshots/flujo-responsive-general.jpg)
+
+### Mobile
+
+#### Inicio / catálogo
+
+![Inicio mobile](assets/screenshots/mobile-inicio.png)
+
+#### Paso 1 - Cotización
+
+![Cotización mobile](assets/screenshots/mobile-cotizacion.png)
+
+#### Paso 2 - Selección de plan
+
+![Planes mobile](assets/screenshots/mobile-planes.png)
+
+#### Paso 3 - Datos personales
+
+![Datos personales mobile](assets/screenshots/mobile-datos.png)
+
+#### Paso 4 - Pago
+
+![Pago mobile](assets/screenshots/mobile-pago.png)
+
+#### Pago rechazado
+
+![Pago rechazado mobile](assets/screenshots/mobile-error.png)
+
+#### Contratación exitosa
+
+![Contratación exitosa mobile](assets/screenshots/mobile-exito.png)
+
+### Desktop
+
+#### Paso 1 - Cotización
+
+![Cotización desktop](assets/screenshots/desktop-cotizacion.png)
+
+#### Paso 2 - Selección de plan
+
+![Planes desktop](assets/screenshots/desktop-planes.png)
+
+#### Paso 3 - Datos personales
+
+![Datos personales desktop](assets/screenshots/desktop-datos.png)
+
+#### Paso 4 - Pago
+
+![Pago desktop](assets/screenshots/desktop-pago.png)
 
 ## Publicación
 
-URL: pendiente de publicación.
+El sitio se encuentra publicado y disponible en:
+
+**https://tp5-seguros.netlify.app/**
 
 ## Autor
 
