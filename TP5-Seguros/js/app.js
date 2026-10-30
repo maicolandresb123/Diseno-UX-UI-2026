@@ -1,6 +1,7 @@
 import {
   solicitud,
   irAPaso,
+  seleccionarProducto,
   actualizarEquipo,
   actualizarPlan,
   actualizarTitular,
@@ -23,6 +24,7 @@ import {
   validarModelo,
   validarValor,
   validarAntiguedad,
+  validarTipoBicicleta,
   validarNombre,
   validarApellido,
   validarDni,
@@ -51,11 +53,19 @@ let planes = [];
 
 const formatoNumeroAR = new Intl.NumberFormat("es-AR");
 
-const validadoresEquipo = {
-  marca: validarMarca,
-  modelo: validarModelo,
-  valor: validarValor
-};
+function validadoresEquipoActuales() {
+  return solicitud.producto === "bicicleta"
+    ? {
+        marca: validarMarca,
+        tipo: validarTipoBicicleta,
+        valor: (valor) => validarValor(valor, "bicicleta")
+      }
+    : {
+        marca: validarMarca,
+        modelo: validarModelo,
+        valor: (valor) => validarValor(valor, "celular")
+      };
+}
 
 const validadoresTitular = {
   nombre: validarNombre,
@@ -221,7 +231,11 @@ function enfocarPrimerError(errores) {
 
 function actualizarBotonEquipo() {
   const boton = document.querySelector("#btn-ver-planes");
-  if (boton) boton.disabled = !sinErrores(validarEquipo(solicitud.equipo));
+  if (boton) {
+    boton.disabled = !sinErrores(
+      validarEquipo(solicitud.equipo, solicitud.producto)
+    );
+  }
 }
 
 function actualizarBotonTitular() {
@@ -342,8 +356,29 @@ function irYRender(paso) {
   actualizarBotonTitular();
 }
 
+async function cargarPlanesActuales() {
+  planes = await cargarPlanes(solicitud.producto);
+  renderPlanes(planes);
+  render();
+}
+
+async function iniciarProducto(producto) {
+  seleccionarProducto(producto);
+  irAPaso(1);
+  render();
+
+  try {
+    await cargarPlanesActuales();
+  } catch (error) {
+    console.error(error);
+    alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");
+  }
+
+  actualizarBotonEquipo();
+}
+
 function configurarNavegacion() {
-  document.addEventListener("click", (evento) => {
+  document.addEventListener("click", async (evento) => {
     const boton = evento.target.closest("[data-action]");
 
     if (!boton) return;
@@ -355,7 +390,7 @@ function configurarNavegacion() {
     }
 
     if (accion === "iniciar") {
-      irYRender(1);
+      await iniciarProducto(boton.dataset.producto || "celular");
     }
 
     if (accion === "volver") {
@@ -404,7 +439,7 @@ function configurarEstadoEquipo() {
     guardarEquipoDesdeCampo(evento.target);
 
     const campo = evento.target.name;
-    const validador = validadoresEquipo[campo];
+    const validador = validadoresEquipoActuales()[campo];
 
     if (validador && evento.target.getAttribute("aria-invalid") === "true") {
       const valor = campo === "valor"
@@ -425,13 +460,9 @@ function configurarEstadoEquipo() {
     }
   });
 
-  formulario?.addEventListener("focusin", () => {
-    sincronizarTitularDesdeFormulario();
-  });
-
   formulario?.addEventListener("focusout", (evento) => {
     const campo = evento.target.name;
-    const validador = validadoresEquipo[campo];
+    const validador = validadoresEquipoActuales()[campo];
 
     if (!validador) return;
 
@@ -445,7 +476,7 @@ function configurarEstadoEquipo() {
   formulario?.addEventListener("submit", (evento) => {
     evento.preventDefault();
 
-    const errores = validarEquipo(solicitud.equipo);
+    const errores = validarEquipo(solicitud.equipo, solicitud.producto);
     mostrarErrores(errores);
 
     if (!sinErrores(errores)) {
@@ -633,14 +664,6 @@ async function iniciarApp() {
   actualizarBotonEquipo();
   actualizarBotonTitular();
 
-  try {
-    planes = await cargarPlanes();
-    renderPlanes(planes);
-    render();
-  } catch (error) {
-    console.error(error);
-    alert("No se pudieron cargar los planes. Abrí el proyecto con Live Server.");
-  }
 }
 
 iniciarApp();
