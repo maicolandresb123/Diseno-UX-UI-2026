@@ -78,6 +78,23 @@ function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
 }
 
+function formatearNumeroTarjeta(valor) {
+  const limpio = String(valor ?? "")
+    .replace(/\D/g, "")
+    .slice(0, 16);
+
+  return limpio.replace(/(\d{4})(?=\d)/g, "$1 ");
+}
+
+function actualizarContadorTarjeta(valor) {
+  const cantidad = String(valor ?? "").replace(/\D/g, "").length;
+  const contador = document.querySelector("#tarjeta-contador");
+
+  if (contador) {
+    contador.textContent = `${cantidad}/16`;
+  }
+}
+
 function normalizarCelularAutofill(valor) {
   let limpio = String(valor ?? "").replace(/\D/g, "");
 
@@ -241,7 +258,15 @@ function guardarPagoDesdeCampo(elemento) {
     return;
   }
 
-  actualizarPago(campo, elemento.value);
+  let valor = elemento.value;
+
+  if (campo === "tarjeta") {
+    valor = formatearNumeroTarjeta(valor);
+    elemento.value = valor;
+    actualizarContadorTarjeta(valor);
+  }
+
+  actualizarPago(campo, valor);
 }
 
 function irYRender(paso) {
@@ -499,6 +524,8 @@ function configurarPago() {
       validador(solicitud.pago[campoEstado])
     );
   });
+
+  actualizarContadorTarjeta(solicitud.pago.tarjeta);
 
   formulario?.addEventListener("submit", async (evento) => {
     evento.preventDefault();
