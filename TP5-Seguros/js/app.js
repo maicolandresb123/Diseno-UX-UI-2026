@@ -542,11 +542,10 @@ function configurarTitular() {
     const validador = validadoresTitular[campo];
 
     if (validador && evento.target.getAttribute("aria-invalid") === "true") {
-      mostrarError(campo, validador(
-        evento.target.type === "checkbox"
-          ? evento.target.checked
-          : evento.target.value
-      ));
+      mostrarError(
+        campo,
+        validador(solicitud.titular[campo])
+      );
     }
   });
 
@@ -566,7 +565,10 @@ function configurarTitular() {
       return;
     }
 
-    mostrarError(campo, validador(evento.target.value));
+    mostrarError(
+      campo,
+      validador(solicitud.titular[campo])
+    );
   });
 
   formulario?.addEventListener("submit", (evento) => {
