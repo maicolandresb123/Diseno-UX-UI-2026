@@ -366,7 +366,19 @@
           <div class="mt-6 grid gap-5 sm:grid-cols-2">
             <div role="group" class="field sm:col-span-2">
               <label for="tarjeta">Número de tarjeta</label>
-              <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4111 1111 1111 1111">
+              <input
+                id="tarjeta"
+                name="tarjeta"
+                type="text"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                maxlength="19"
+                placeholder="4111 1111 1111 1111"
+              >
+              <div class="flex items-center justify-between gap-3">
+                <p class="field-help">16 dígitos · 4 grupos de 4</p>
+                <p class="field-help" id="tarjeta-contador" aria-live="polite">0/16</p>
+              </div>
               <p class="field-error" id="tarjeta-error" role="alert" hidden></p>
             </div>
 
