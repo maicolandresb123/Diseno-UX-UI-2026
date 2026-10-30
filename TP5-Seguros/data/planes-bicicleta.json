@@ -2,20 +2,20 @@
   {
     "id": "basico",
     "nombre": "Básico",
-    "tasaAnual": 0.03,
+    "tasaAnual": 0.036,
     "coberturas": ["Robo con violencia"]
   },
   {
     "id": "plus",
     "nombre": "Plus",
-    "tasaAnual": 0.05,
+    "tasaAnual": 0.054,
     "recomendado": true,
     "coberturas": ["Robo con violencia", "Daño accidental"]
   },
   {
     "id": "premium",
     "nombre": "Premium",
-    "tasaAnual": 0.07,
+    "tasaAnual": 0.072,
     "coberturas": ["Robo con violencia", "Daño accidental", "Hurto / pérdida"]
   }
 ]
