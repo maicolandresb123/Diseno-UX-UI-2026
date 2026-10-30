@@ -4,8 +4,14 @@ const factores = {
   "mas-2": 1.25
 };
 
-export async function cargarPlanes() {
-  const url = new URL("../data/planes.json", import.meta.url);
+const archivosPlanes = {
+  celular: "../data/planes.json",
+  bicicleta: "../data/planes-bicicleta.json"
+};
+
+export async function cargarPlanes(producto = "celular") {
+  const archivo = archivosPlanes[producto] ?? archivosPlanes.celular;
+  const url = new URL(archivo, import.meta.url);
   const respuesta = await fetch(url);
 
   if (!respuesta.ok) {
