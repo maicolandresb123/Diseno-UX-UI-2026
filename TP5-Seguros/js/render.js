@@ -219,7 +219,7 @@ export function renderFormularios() {
 
   const marca = document.querySelector("#marca");
   const modelo = document.querySelector("#modelo");
-  const tipo = document.querySelector("#tipo-bicicleta");
+  const tipo = document.querySelector("#tipo");
   const valor = document.querySelector("#valor");
 
   if (marca) marca.value = equipo.marca;
