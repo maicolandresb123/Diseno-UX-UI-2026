@@ -384,7 +384,15 @@
 
             <div role="group" class="field">
               <label for="vencimiento">Vencimiento</label>
-              <input id="vencimiento" name="vencimiento" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA">
+              <input
+                id="vencimiento"
+                name="vencimiento"
+                type="text"
+                inputmode="numeric"
+                autocomplete="cc-exp"
+                maxlength="5"
+                placeholder="MM/AA"
+              >
               <p class="field-error" id="vencimiento-error" role="alert" hidden></p>
             </div>
 
