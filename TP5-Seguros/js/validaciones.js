@@ -13,12 +13,20 @@ export function validarModelo(valor) {
     : null;
 }
 
-export function validarValor(valor) {
+export function validarValor(valor, producto = "celular") {
   const numero = Number(valor);
+  const minimo = producto === "bicicleta" ? 50000 : 100000;
+  const maximo = producto === "bicicleta" ? 5000000 : 2500000;
 
-  return !Number.isFinite(numero) || numero < 100000 || numero > 2500000
-    ? "El valor debe estar entre $100.000 y $2.500.000"
+  return !Number.isFinite(numero) || numero < minimo || numero > maximo
+    ? producto === "bicicleta"
+      ? "El valor debe estar entre $50.000 y $5.000.000"
+      : "El valor debe estar entre $100.000 y $2.500.000"
     : null;
+}
+
+export function validarTipoBicicleta(valor) {
+  return vacio(valor) ? "Elegí el tipo de bicicleta" : null;
 }
 
 export function validarAntiguedad(valor) {
@@ -139,13 +147,20 @@ export function validarTitularTarjeta(valor) {
     : null;
 }
 
-export function validarEquipo(equipo) {
-  return {
+export function validarEquipo(equipo, producto = "celular") {
+  const errores = {
     marca: validarMarca(equipo.marca),
-    modelo: validarModelo(equipo.modelo),
-    valor: validarValor(equipo.valor),
+    valor: validarValor(equipo.valor, producto),
     antiguedad: validarAntiguedad(equipo.antiguedad)
   };
+
+  if (producto === "bicicleta") {
+    errores.tipo = validarTipoBicicleta(equipo.tipo);
+  } else {
+    errores.modelo = validarModelo(equipo.modelo);
+  }
+
+  return errores;
 }
 
 export function validarTitular(titular) {
