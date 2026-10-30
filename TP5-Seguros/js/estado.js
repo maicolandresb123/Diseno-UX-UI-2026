@@ -1,9 +1,11 @@
 export const solicitud = {
   paso: 0,
+  producto: "celular",
 
   equipo: {
     marca: "",
     modelo: "",
+    tipo: "",
     valor: 0,
     antiguedad: ""
   },
@@ -41,6 +43,26 @@ export function irAPaso(paso) {
   solicitud.paso = paso;
 }
 
+export function seleccionarProducto(producto) {
+  solicitud.producto = producto;
+
+  solicitud.equipo = {
+    marca: "",
+    modelo: "",
+    tipo: "",
+    valor: 0,
+    antiguedad: ""
+  };
+
+  solicitud.plan = "plus";
+  solicitud.cuotas = {
+    basico: 0,
+    plus: 0,
+    premium: 0
+  };
+  solicitud.poliza = null;
+}
+
 export function actualizarEquipo(campo, valor) {
   solicitud.equipo[campo] = valor;
 }
@@ -67,10 +89,12 @@ export function guardarPoliza(poliza) {
 
 export function reiniciarSolicitud() {
   solicitud.paso = 0;
+  solicitud.producto = "celular";
 
   solicitud.equipo = {
     marca: "",
     modelo: "",
+    tipo: "",
     valor: 0,
     antiguedad: ""
   };
