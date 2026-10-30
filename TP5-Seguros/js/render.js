@@ -6,14 +6,37 @@ const formatoARS = new Intl.NumberFormat("es-AR", {
   maximumFractionDigits: 0
 });
 
-function textoEquipo() {
-  const { marca, modelo } = solicitud.equipo;
+const configuracionProducto = {
+  celular: {
+    nombre: "Celular",
+    titulo: "Contanos sobre tu celular",
+    subtitulo: "Usamos estos datos para calcular las opciones de cobertura.",
+    marcas: ["Samsung", "Apple", "Motorola", "Xiaomi", "Otra"],
+    valorLabel: "Valor del equipo",
+    valorAyuda: "Entre $100.000 y $2.500.000."
+  },
+  bicicleta: {
+    nombre: "Bicicleta",
+    titulo: "Contanos sobre tu bicicleta",
+    subtitulo: "Con estos datos calculamos la cobertura para tu bicicleta.",
+    marcas: ["Venzo", "Top Mega", "Fire Bird", "Specialized", "Trek", "Otra"],
+    valorLabel: "Valor de la bicicleta",
+    valorAyuda: "Entre $50.000 y $5.000.000."
+  }
+};
 
-  if (!marca && !modelo) {
-    return "Sin completar";
+function configActual() {
+  return configuracionProducto[solicitud.producto] ?? configuracionProducto.celular;
+}
+
+function textoEquipo() {
+  const { marca, modelo, tipo } = solicitud.equipo;
+
+  if (solicitud.producto === "bicicleta") {
+    return [marca, tipo].filter(Boolean).join(" ") || "Sin completar";
   }
 
-  return [marca, modelo].filter(Boolean).join(" ");
+  return [marca, modelo].filter(Boolean).join(" ") || "Sin completar";
 }
 
 function nombrePlan() {
@@ -61,6 +84,41 @@ export function renderStepper() {
       }
     });
   });
+}
+
+export function renderCotizador() {
+  const config = configActual();
+  const titulo = document.querySelector("#cotizador-titulo");
+  const subtitulo = document.querySelector("#cotizador-subtitulo");
+  const marca = document.querySelector("#marca");
+  const ayudaMarca = document.querySelector("#marca-ayuda");
+  const campoModelo = document.querySelector("#campo-modelo");
+  const campoTipo = document.querySelector("#campo-tipo-bicicleta");
+  const valorLabel = document.querySelector("#valor-label");
+  const valorAyuda = document.querySelector("#valor-ayuda");
+
+  if (titulo) titulo.textContent = config.titulo;
+  if (subtitulo) subtitulo.textContent = config.subtitulo;
+
+  if (ayudaMarca) {
+    ayudaMarca.textContent = solicitud.producto === "bicicleta"
+      ? "Seleccioná la marca de la bicicleta."
+      : "Seleccioná la marca del equipo.";
+  }
+
+  if (marca) {
+    const actual = solicitud.equipo.marca;
+    marca.innerHTML = [
+      '<option value="">Elegí una marca</option>',
+      ...config.marcas.map((opcion) => `<option value="${opcion}">${opcion}</option>`)
+    ].join("");
+    marca.value = actual;
+  }
+
+  if (campoModelo) campoModelo.hidden = solicitud.producto === "bicicleta";
+  if (campoTipo) campoTipo.hidden = solicitud.producto !== "bicicleta";
+  if (valorLabel) valorLabel.textContent = config.valorLabel;
+  if (valorAyuda) valorAyuda.textContent = config.valorAyuda;
 }
 
 export function renderPlanes(planes) {
@@ -116,6 +174,7 @@ export function renderCuotas() {
 }
 
 export function renderResumen() {
+  const config = configActual();
   const equipo = textoEquipo();
   const valor = solicitud.equipo.valor
     ? formatoARS.format(solicitud.equipo.valor)
@@ -124,6 +183,10 @@ export function renderResumen() {
   const cuota = cuotaActual()
     ? formatoARS.format(cuotaActual())
     : "A calcular";
+
+  document.querySelectorAll('[data-resumen="seguro"]').forEach((elemento) => {
+    elemento.textContent = config.nombre;
+  });
 
   document.querySelectorAll('[data-resumen="equipo"]').forEach((elemento) => {
     elemento.textContent = equipo;
@@ -156,10 +219,12 @@ export function renderFormularios() {
 
   const marca = document.querySelector("#marca");
   const modelo = document.querySelector("#modelo");
+  const tipo = document.querySelector("#tipo-bicicleta");
   const valor = document.querySelector("#valor");
 
   if (marca) marca.value = equipo.marca;
   if (modelo) modelo.value = equipo.modelo;
+  if (tipo) tipo.value = equipo.tipo;
   if (valor) {
     valor.value = equipo.valor
       ? new Intl.NumberFormat("es-AR").format(equipo.valor)
@@ -224,6 +289,7 @@ export function renderExito() {
 export function render() {
   renderPantallas();
   renderStepper();
+  renderCotizador();
   renderCuotas();
   renderResumen();
   renderFormularios();
