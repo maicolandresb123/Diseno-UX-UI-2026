@@ -78,6 +78,18 @@ function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
 }
 
+function formatearVencimiento(valor) {
+  const limpio = String(valor ?? "")
+    .replace(/\D/g, "")
+    .slice(0, 4);
+
+  if (limpio.length <= 2) {
+    return limpio;
+  }
+
+  return `${limpio.slice(0, 2)}/${limpio.slice(2)}`;
+}
+
 function formatearNumeroTarjeta(valor) {
   const limpio = String(valor ?? "")
     .replace(/\D/g, "")
@@ -264,6 +276,11 @@ function guardarPagoDesdeCampo(elemento) {
     valor = formatearNumeroTarjeta(valor);
     elemento.value = valor;
     actualizarContadorTarjeta(valor);
+  }
+
+  if (campo === "vencimiento") {
+    valor = formatearVencimiento(valor);
+    elemento.value = valor;
   }
 
   actualizarPago(campo, valor);
