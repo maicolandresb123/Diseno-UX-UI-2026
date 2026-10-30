@@ -78,6 +78,18 @@ function limpiarNumero(valor) {
   return Number(String(valor).replace(/\D/g, "")) || 0;
 }
 
+function formatearDni(valor) {
+  const limpio = String(valor ?? "")
+    .replace(/\D/g, "")
+    .slice(0, 8);
+
+  if (!limpio) {
+    return "";
+  }
+
+  return limpio.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 function formatearVencimiento(valor) {
   const limpio = String(valor ?? "")
     .replace(/\D/g, "")
@@ -222,9 +234,18 @@ function guardarTitularDesdeCampo(elemento) {
     return;
   }
 
-  const valor = elemento.type === "checkbox"
+  let valor = elemento.type === "checkbox"
     ? elemento.checked
     : elemento.value;
+
+  if (campo === "dni") {
+    const limpio = String(elemento.value)
+      .replace(/\D/g, "")
+      .slice(0, 8);
+
+    elemento.value = formatearDni(limpio);
+    valor = limpio;
+  }
 
   actualizarTitular(campo, valor);
 }
