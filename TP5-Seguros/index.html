@@ -76,7 +76,7 @@
                 </div>
                 <h3 class="font-bold">Celular</h3>
                 <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Robo y daños accidentales.</p>
-                <button type="button" class="btn mt-5 w-full" data-action="iniciar">Cotizar</button>
+                <button type="button" class="btn mt-5 w-full" data-action="iniciar" data-producto="celular">Cotizar</button>
               </div>
             </article>
 
@@ -94,18 +94,21 @@
               </div>
             </article>
 
-            <article class="card opacity-70">
+            <article class="card border-[var(--primary)] bg-white">
               <div class="p-4 sm:p-5">
-                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--bg)] text-[var(--muted)]">
+                <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-[var(--primary-50)] text-[var(--primary)]">
                   <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="6" cy="17" r="3"></circle>
                     <circle cx="18" cy="17" r="3"></circle>
                     <path d="m6 17 4-9 4 9m-6-5h8"></path>
                   </svg>
                 </div>
-                <h3 class="font-bold">Bicicleta</h3>
-                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Cobertura para moverte tranquilo.</p>
-                <span class="badge mt-5" data-variant="secondary">Próximamente</span>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="font-bold">Bicicleta</h3>
+                  <span class="badge">Bonus</span>
+                </div>
+                <p class="mt-1 text-xs leading-5 text-[var(--muted)] sm:text-sm">Robo y daños para tu bicicleta.</p>
+                <button type="button" class="btn mt-5 w-full" data-action="iniciar" data-producto="bicicleta">Cotizar</button>
               </div>
             </article>
 
@@ -132,8 +135,8 @@
     <section data-paso="1" hidden class="mx-auto max-w-6xl px-5 py-7 lg:px-8 lg:py-10">
       <div class="mb-8">
         <p class="text-sm font-semibold text-[var(--primary)]">Paso 1 de 4</p>
-        <h2 class="mt-1 text-2xl font-extrabold">Contanos sobre tu celular</h2>
-        <p class="mt-2 text-sm text-[var(--muted)]">Usamos estos datos para calcular las opciones de cobertura.</p>
+        <h2 class="mt-1 text-2xl font-extrabold" id="cotizador-titulo">Contanos sobre tu celular</h2>
+        <p class="mt-2 text-sm text-[var(--muted)]" id="cotizador-subtitulo">Usamos estos datos para calcular las opciones de cobertura.</p>
       </div>
 
       <ol class="stepper mb-8" aria-label="Progreso de contratación">
@@ -147,27 +150,34 @@
         <div class="grid gap-5 sm:grid-cols-2">
           <div role="group" class="field">
             <label for="marca">Marca</label>
-            <select id="marca" name="marca">
-              <option value="">Elegí una marca</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Apple">Apple</option>
-              <option value="Motorola">Motorola</option>
-              <option value="Xiaomi">Xiaomi</option>
-              <option value="Otra">Otra</option>
-            </select>
-            <p class="field-help">Seleccioná la marca del equipo.</p>
+            <select id="marca" name="marca"></select>
+            <p class="field-help" id="marca-ayuda">Seleccioná la marca del equipo.</p>
             <p class="field-error" id="marca-error" role="alert" hidden></p>
           </div>
 
-          <div role="group" class="field">
+          <div role="group" class="field" id="campo-modelo">
             <label for="modelo">Modelo</label>
             <input id="modelo" name="modelo" type="text" placeholder="Ej.: Galaxy A55">
             <p class="field-help">Entre 2 y 40 caracteres.</p>
             <p class="field-error" id="modelo-error" role="alert" hidden></p>
           </div>
 
+          <div role="group" class="field" id="campo-tipo-bicicleta" hidden>
+            <label for="tipo-bicicleta">Tipo de bicicleta</label>
+            <select id="tipo-bicicleta" name="tipo">
+              <option value="">Elegí un tipo</option>
+              <option value="Urbana">Urbana</option>
+              <option value="Mountain Bike">Mountain Bike</option>
+              <option value="Ruta">Ruta</option>
+              <option value="Eléctrica">Eléctrica</option>
+              <option value="Otra">Otra</option>
+            </select>
+            <p class="field-help">Elegí el tipo que mejor describe tu bicicleta.</p>
+            <p class="field-error" id="tipo-error" role="alert" hidden></p>
+          </div>
+
           <div role="group" class="field sm:col-span-2">
-            <label for="valor">Valor del equipo</label>
+            <label for="valor" id="valor-label">Valor del equipo</label>
             <div class="money-field">
               <span class="money-field__prefix" aria-hidden="true">$</span>
               <input
@@ -179,7 +189,7 @@
                 placeholder="600.000"
               >
             </div>
-            <p class="field-help">Entre $100.000 y $2.500.000.</p>
+            <p class="field-help" id="valor-ayuda">Entre $100.000 y $2.500.000.</p>
             <p class="field-error" id="valor-error" role="alert" hidden></p>
           </div>
 
@@ -422,7 +432,7 @@
         <aside class="card summary-card p-5 lg:sticky lg:top-5 lg:self-start" aria-label="Resumen final">
           <h3 class="font-bold">Resumen final</h3>
           <dl class="mt-4 space-y-3 text-sm">
-            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Seguro</dt><dd class="font-medium">Celular</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Seguro</dt><dd data-resumen="seguro" class="font-medium">Celular</dd></div>
             <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="text-right font-medium">—</dd></div>
             <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">—</dd></div>
             <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Titular</dt><dd data-resumen="titular" class="text-right font-medium">—</dd></div>
@@ -454,7 +464,8 @@
         <p class="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Número de póliza</p>
         <p class="mt-1 text-xl font-extrabold text-[var(--primary-700)]" data-exito="poliza">—</p>
         <dl class="mt-5 space-y-3 text-sm">
-          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Equipo</dt><dd data-resumen="equipo" class="font-medium">—</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Seguro</dt><dd data-resumen="seguro" class="font-medium">Celular</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Detalle</dt><dd data-resumen="equipo" class="font-medium">—</dd></div>
           <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Plan</dt><dd data-resumen="plan" class="font-medium">—</dd></div>
           <div class="flex justify-between gap-4"><dt class="text-[var(--muted)]">Cuota</dt><dd data-resumen="cuota" class="font-medium">—</dd></div>
         </dl>
