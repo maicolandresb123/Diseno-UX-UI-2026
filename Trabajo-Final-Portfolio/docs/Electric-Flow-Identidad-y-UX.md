@@ -32,7 +32,7 @@ Para asegurar contraste en el tema claro, el texto de acento emplea un cian oscu
 
 El docente solicita una página de presentación con **nueve secciones** y navegación por anclas. La página principal las conserva todas:
 
-1. Header con navegación a anclas y botón de tema.
+1. Header con menú multipágina y botón de tema. En Inicio se incluye un índice adicional con anclas a cada sección para la consigna.
 2. Hero con nombre, rol, valor, botones y zona geográfica.
 3. Métricas con cuatro cifras verificables.
 4. Skills con cuatro categorías de competencias.
@@ -42,8 +42,9 @@ El docente solicita una página de presentación con **nueve secciones** y naveg
 8. Contacto con llamada a la acción, correo y acceso a la página dedicada.
 9. Footer con navegación repetida, año y créditos tecnológicos.
 
-Como **extensión**, se ofrecen páginas estáticas independientes:
+Como **extensión profesional**, cada opción del menú principal abre una página estática independiente:
 
+- `skills.html` — seis áreas tecnológicas, herramientas y pruebas de aplicación en proyectos.
 - `proyectos.html` — catálogo completo y filtros.
 - `experiencia.html` — SC, cuatro áreas de Intellymation y experiencias anteriores.
 - `formacion.html` — UADER, Coderhouse, IBM, AVEVA y otros.
@@ -51,7 +52,7 @@ Como **extensión**, se ofrecen páginas estáticas independientes:
 - `contacto.html` — formulario progresivo que abre el cliente de correo.
 - `caso-sc.html`, `caso-agrimensura.html`, `caso-cubri.html` — casos.
 
-La navegación principal retorna a las anclas de la página inicial y las CTA permiten abrir las páginas independientes. Se prioriza que un reclutador entienda experiencia y pueda contactar rápidamente.
+La **navegación global abre páginas completas**: Inicio, Skills, Proyectos, Experiencia, Formación, Sobre mí y Contacto. La página `index.html` mantiene la navegación por anclas en un índice secundario («En esta página») para cumplir la estructura one-page exigida por la cátedra. Se prioriza que un reclutador encuentre cada especialidad sin desplazarse por toda la portada.
 
 ## 3. Animaciones y accesibilidad
 

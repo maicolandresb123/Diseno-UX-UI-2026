@@ -4,7 +4,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = ['index.html', 'proyectos.html', 'experiencia.html', 'formacion.html',
+PAGES = ['index.html', 'skills.html', 'proyectos.html', 'experiencia.html', 'formacion.html',
          'sobre-mi.html', 'contacto.html', 'caso-sc.html', 'caso-cubri.html',
          'caso-agrimensura.html', '404.html']
 
@@ -21,7 +21,7 @@ class PortfolioTests(unittest.TestCase):
     def setUp(self):
         self.pages={p:(ROOT/p).read_text(encoding='utf8') for p in PAGES}
     def test_all_pages_exist(self):
-        self.assertEqual(len(self.pages), 10)
+        self.assertEqual(len(self.pages), 11)
     def test_html_semantics(self):
         for filename,source in self.pages.items():
             with self.subTest(page=filename):
@@ -56,6 +56,41 @@ class PortfolioTests(unittest.TestCase):
         self.assertIn('aria-expanded',js)
         self.assertIn('data-theme',js)
         self.assertNotIn('ReactDOM',js)
+    def test_navigation_to_independent_pages(self):
+        expected = {
+            'Inicio': 'index.html',
+            'Skills': 'skills.html',
+            'Proyectos': 'proyectos.html',
+            'Experiencia': 'experiencia.html',
+            'Formación': 'formacion.html',
+            'Sobre mí': 'sobre-mi.html',
+            'Contacto': 'contacto.html',
+        }
+        from bs4 import BeautifulSoup
+        for filename,source in self.pages.items():
+            with self.subTest(page=filename):
+                dom=BeautifulSoup(source,'html.parser')
+                nav=dom.select_one('nav#nav-principal')
+                self.assertIsNotNone(nav)
+                entries={a.get_text(' ',strip=True):a.get('href') for a in nav.select('a')}
+                for label,route in expected.items():
+                    self.assertEqual(entries.get(label),route)
+                active=nav.select('a[aria-current="page"]')
+                self.assertEqual(len(active),0 if filename=='404.html' else 1)
+        home=BeautifulSoup(self.pages['index.html'],'html.parser')
+        for fragment in ['metricas','skills','proyectos','experiencia','formacion','sobre-mi','contacto']:
+            self.assertIsNotNone(home.select_one(f'.home-directory a[href="#{fragment}"]'))
+
+    def test_skills_page_is_detailed_and_independent(self):
+        from bs4 import BeautifulSoup
+        dom=BeautifulSoup(self.pages['skills.html'],'html.parser')
+        self.assertEqual(len(dom.select('.skills-focus-card')),6)
+        self.assertEqual(len(dom.select('.skills-workflow-track li')),4)
+        self.assertIn('ERP para Agrimensura',dom.get_text())
+        self.assertIn('Cubrí Seguros',dom.get_text())
+        self.assertIn('Intellymation',dom.get_text())
+        self.assertEqual(dom.select_one('nav#nav-principal a[aria-current="page"]').get('href'),'skills.html')
+
     def test_project_content(self):
         page=self.pages['proyectos.html']
         for project in ['SC Soluciones Conectadas','ERP Agrimensura','CRM Comercial','Cubrí Seguros','Coffea']:
@@ -114,7 +149,7 @@ class CertificateAndSCExtras(unittest.TestCase):
     def test_nav_internal_pages_preserve_home_anchors(self):
         home=(ROOT/'index.html').read_text(encoding='utf-8')
         self.assertIn('href="#proyectos"',home)
-        for page in ['formacion.html','experiencia.html','proyectos.html','sobre-mi.html','contacto.html']:
+        for page in ['skills.html','formacion.html','experiencia.html','proyectos.html','sobre-mi.html','contacto.html']:
             t=(ROOT/page).read_text(encoding='utf-8')
             self.assertIn('href="proyectos.html"',t)
             self.assertIn('href="experiencia.html"',t)

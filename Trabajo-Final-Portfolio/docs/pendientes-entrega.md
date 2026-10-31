@@ -9,7 +9,7 @@
 - [x] Wireframes completos de la página mobile y desktop en Figma (primera iteración).
 - [x] Variables, tipografía y componentes reutilizables en Figma.
 - [x] Primera portada de alta fidelidad desktop/mobile en Figma.
-- [x] Código HTML/CSS/JS del portfolio Electric Flow, páginas independientes, tres casos internos y 404.
+- [x] Código HTML/CSS/JS del portfolio Electric Flow, siete páginas principales independientes, tres casos internos y 404.
 - [x] 9 secciones de información obligatorias.
 - [x] 6 proyectos seleccionados y 3 páginas de casos de estudio explicados.
 - [x] Identidad MB: SVG principal, logotipos horizontal claro/oscuro, tema persistente y animaciones accesibles.
@@ -26,7 +26,7 @@
 - [ ] Test moderado de prototipo con **3 personas reales**; documentar hallazgos y cambios.
 - [ ] Revisión de web maquetada con **2 compañeros** y registrar correcciones.
 - [ ] Abrir el proyecto desde una URL HTTPS pública con **Netlify conectado a GitHub** y deploy automático de `main`.
-- [ ] Registrar al menos **10 commits incrementales descriptivos** en el historial de desarrollo del trabajo final.
+- [x] Registrar al menos **10 commits incrementales descriptivos** en el historial de desarrollo del trabajo final (verificar rama antes de la entrega).
 - [ ] Ejecutar Lighthouse en **mobile**, buscar 90+ en cada una de sus 4 métricas y guardar captura real.
 - [ ] Revisar accesibilidad WCAG 2.2 AA en el sitio desplegado (teclado, foco, contraste, no scroll horizontal, axe/WAVE opcional).
 - [x] Open Graph con imagen pública absoluta.
@@ -41,7 +41,7 @@
 - [x] Generar 43 previews WEBP de las credenciales disponibles, con protección de los DNI incluidos en YPF.
 - [x] Integrar visor interactivo accesible con `<dialog>`, controles, búsqueda combinada y filtros.
 - [x] Añadir vista de demos SC en vivo de carga voluntaria, con enlace externo alternativo.
-- [x] Enlazar directamente las páginas individuales desde menús internos y conservar anclas en home.
+- [x] Convertir todo el menú global en navegación entre páginas independientes, incluida Skills, y conservar anclas en un índice propio de Inicio.
 - [ ] Confirmar la interfaz completa en dispositivo y navegador reales.
 - [ ] Completar test de usabilidad con tres personas y documentar hallazgos y correcciones.
 - [ ] Completar prototipo de alta fidelidad de todas las páginas en Figma.

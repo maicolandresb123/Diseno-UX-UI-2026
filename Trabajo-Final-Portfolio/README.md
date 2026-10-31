@@ -18,8 +18,9 @@ La identidad visual elegida por el autor es **MB / Maikol Betancourt — Systems
 
 Incluye botón de **modo claro/oscuro** con persistencia, animación de workflows, efecto de barrido en botones, halos en tarjetas y aparición progresiva al hacer scroll. El contenido permanece accesible con `prefers-reduced-motion`. Las animaciones son originales, tomando como referencia general [Uiverse](https://uiverse.io/elements), no es un template copiado. El apartado personal toma como referencia general de estructura la página «Nosotros» de Click, pero usa fotografía y textos propios.
 
-**Conservamos las nueve secciones en `index.html` para cumplir la consigna one-page**, y agregamos páginas independientes para explorar el contenido en profundidad:
+**Conservamos las nueve secciones en `index.html` y un índice interno de navegación por anclas para cumplir la consigna one-page**, y agregamos páginas independientes para explorar el contenido en profundidad:
 
+- `skills.html`: página independiente de habilidades con seis áreas y evidencias de aplicación.
 - `sobre-mi.html`: retrato profesional propio y perfil orientado a oportunidades laborales.
 - `proyectos.html`: seis proyectos, filtros y links a demos/casos.
 - `experiencia.html`: recorrido laboral y cuatro áreas de Intellymation.
@@ -40,7 +41,7 @@ Mostrar de manera clara experiencia laboral, habilidades, formación y proyectos
 - **Visor con `<dialog>` nativo**: abrir miniatura, navegar entre documentos visibles, cerrar con Escape, cerrar desde el botón y volver al elemento original. Los certificados IBM incluyen enlaces oficiales de Credly.
 - **Protección de datos**: solo se versionan imágenes WEBP sin metadatos; el DNI de los certificados de Fundación YPF está oculto y no se añaden PDFs originales con información personal. El certificado inmobiliario se excluye por completo.
 - **SC real sin exponer clientes**: `caso-sc.html` incorpora un explorador de demos en vivo cargadas **solo por acción del usuario**, con acceso alternativo directo a SC cuando el servidor remoto no permite incrustación. Las demos SC contienen datos ficticios.
-- **Navegación híbrida**: `index.html` conserva las nueve secciones y anclas que pide la consigna, mientras el menú de páginas interiores enlaza directamente a Proyectos, Experiencia, Formación, Sobre mí y Contacto.
+- **Navegación híbrida**: el menú principal de **todas las páginas** abre archivos independientes (Inicio, Skills, Proyectos, Experiencia, Formación, Sobre mí y Contacto); `index.html` conserva un índice adicional de anclas a las secciones resumidas para respetar el requisito one-page del docente.
 
 **Prueba local:** `python -m unittest discover -s tests -v`. La revisión de comportamiento con navegador y los resultados de Lighthouse siguen siendo comprobaciones independientes que no se sustituyen por tests estáticos.
 
