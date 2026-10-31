@@ -25,7 +25,8 @@
 - [ ] Registrar al menos **10 commits incrementales descriptivos** en el historial de desarrollo del trabajo final.
 - [ ] Ejecutar Lighthouse en **mobile**, buscar 90+ en cada una de sus 4 métricas y guardar captura real.
 - [ ] Revisar accesibilidad WCAG 2.2 AA en el sitio desplegado (teclado, foco, contraste, no scroll horizontal, axe/WAVE opcional).
-- [ ] Agregar URL pública al README y metadatos OG con imagen absoluta.
+- [x] Open Graph con imagen pública absoluta.
+- [ ] Agregar URL pública final al README y comprobar su previsualización en redes.
 - [ ] Preparar PDF o presentación (máximo **10 diapositivas**) del proceso UX, benchmark, concepto, decisiones, hallazgos y 2 capturas comparativas.
 - [ ] Verificar el acceso de lectura al Figma para el profesor.
 

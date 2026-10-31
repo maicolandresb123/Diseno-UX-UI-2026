@@ -86,7 +86,7 @@ Para utilizar Netlify con el repositorio de la materia, importar el repositorio 
 4. Branch de producción: `main`.
 5. Guardar y verificar que el deploy se actualice al realizar un nuevo push.
 
-Se incluyó `netlify.toml` con 404 personalizado y cabeceras de seguridad. **La conexión debe quedar efectivamente activa antes de entregar.** Añadir después la URL final al README y los metadatos Open Graph.
+Se incluyó `netlify.toml` con 404 personalizado y cabeceras de seguridad. **La conexión debe quedar efectivamente activa antes de entregar.** Añadir después la URL final al README y verificar la vista previa de Open Graph. La imagen OG tiene URL absoluta apuntando al recurso público del repositorio.
 
 ## Uso de herramientas de IA
 
