@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="172" viewBox="0 0 830 172" role="img" aria-labelledby="title desc">
+<title id="title">Maikol Betancourt — identidad Electric Flow</title><desc id="desc">Monograma MB conectado por un circuito y marca personal Systems Automation Software.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2563EB"/><stop offset=".5" stop-color="#38BDF8"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+<rect x="10" y="10" width="150" height="150" rx="31" fill="#0A1020" stroke="#334669" stroke-width="3"/>
+<path d="M35 107V52L56 83 77 52V107" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="13" fill="none"/>
+<path d="M91 51V107M92 51H115Q136 51 136 66Q136 79 116 79H92M92 79H118Q139 79 139 93Q139 107 116 107H92" fill="none" stroke="#EAF2FF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 131H58L70 119H112L124 131H145" stroke="url(#g)" stroke-width="4" fill="none" stroke-linecap="round"/>
+<circle cx="30" cy="131" r="5" fill="#38BDF8"/><circle cx="145" cy="131" r="5" fill="#8B5CF6"/>
+<text x="192" y="78" font-family="Space Grotesk,Inter,Arial,sans-serif" font-weight="700" font-size="48" letter-spacing="-1" fill="#0F172A">Maikol Betancourt</text>
+<text x="194" y="118" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="16" letter-spacing="2.1" fill="#475569">SYSTEMS  ·  AUTOMATION  ·  SOFTWARE</text>
+<path d="M194 137H718" fill="none" stroke="url(#g)" stroke-width="2.5"/><circle cx="718" cy="137" r="5" fill="#8B5CF6"/>
+</svg>
