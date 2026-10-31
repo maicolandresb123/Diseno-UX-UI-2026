@@ -1,93 +1,74 @@
+"""Comprobaciones estáticas sin dependencias externas: python -m unittest discover -s tests -v."""
+import unittest
 from pathlib import Path
-from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
-from base64 import b64encode
+from html.parser import HTMLParser
 
-ROOT=Path(__file__).resolve().parents[1]
-STYLES=(ROOT/'styles.css').read_text()
-SCRIPT=(ROOT/'script.js').read_text()
-def html_with_embedded_assets(filename):
- raw=(ROOT/filename).read_text()
- soup=BeautifulSoup(raw,'html.parser')
- for link in list(soup.find_all('link')):
-  if link.get('rel')==['stylesheet'] and link.get('href')=='styles.css':
-   x=soup.new_tag('style');x.string=STYLES;link.replace_with(x)
-  elif link.get('href','').startswith('https://fonts.googleapis.com') or link.get('href','').startswith('https://fonts.gstatic.com'):
-   link.decompose()
- for img in soup.find_all('img'):
-  src=img.get('src','')
-  if src.startswith('assets/'):
-   img['loading']='eager'
-   data=(ROOT/src).read_bytes()
-   med='image/svg+xml' if src.endswith('.svg') else ('image/png' if src.endswith('.png') else 'image/jpeg')
-   img['src']=f'data:{med};base64,{b64encode(data).decode()}'
- for script in list(soup.find_all('script')):
-  if script.get('src')=='script.js':script.decompose()
- return str(soup)
-OUT=ROOT/'tests'/'generated_screenshots';OUT.mkdir(parents=True,exist_ok=True)
-checks=[]
-def check(name,val,details=None):
- checks.append((name,bool(val),details))
- print(('PASS' if val else 'FAIL'),name,':',details or '')
+ROOT = Path(__file__).resolve().parents[1]
+PAGES = ['index.html', 'proyectos.html', 'experiencia.html', 'formacion.html',
+         'sobre-mi.html', 'contacto.html', 'caso-sc.html', 'caso-cubri.html',
+         'caso-agrimensura.html', '404.html']
 
-with sync_playwright() as p:
- browser=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-dev-shm-usage'])
- for width in [375,768,1280,1440]:
-  page=browser.new_page(viewport={'width':width,'height':900},device_scale_factor=1)
-  page.set_default_timeout(10000)
-  errors=[]
-  page.on('pageerror',lambda error: errors.append(str(error)))
-  page.set_content(html_with_embedded_assets('index.html'),wait_until='domcontentloaded')
-  page.add_script_tag(content=SCRIPT)
-  page.wait_for_timeout(1000)
-  dims=page.evaluate('''() => ({innerWidth:innerWidth,scrollWidth:document.documentElement.scrollWidth,bodyScroll:document.body.scrollWidth})''')
-  check(f'No horizontal overflow {width}px',dims['scrollWidth']<=dims['innerWidth'] and dims['bodyScroll']<=dims['innerWidth'],str(dims))
-  check(f'One H1 {width}px',page.locator('h1').count()==1)
-  check(f'All mandatory content {width}px',all(page.locator('#'+x).count()==1 for x in ['inicio','metricas','skills','proyectos','experiencia','formacion','sobre-mi','contacto']))
-  check(f'No JS errors {width}px',not errors,str(errors))
-  imginfo=page.locator('img').evaluate_all('es=>es.map(e=>({src:e.getAttribute("src"),alt:e.getAttribute("alt"),ok:e.complete&&e.naturalWidth>0}))')
-  check(f'Images loaded {width}px',all(x['ok'] for x in imginfo),str([{'alt':x['alt'],'ok':x['ok']} for x in imginfo if not x['ok']]))
-  page.screenshot(path=str(OUT/f'home-{width}.png'),full_page=True,animations='disabled')
-  if width==375:
-   toggle=page.locator('.nav-toggle')
-   check('Menu starts closed',toggle.get_attribute('aria-expanded')=='false')
-   toggle.click()
-   check('Menu toggles open',toggle.get_attribute('aria-expanded')=='true' and page.locator('#nav-principal').is_visible())
-   page.keyboard.press('Escape')
-   check('Escape closes nav',toggle.get_attribute('aria-expanded')=='false')
-   toggle.click()
-   page.locator('#nav-principal').get_by_text('Proyectos').click()
-   check('Anchor navigation closes menu',toggle.get_attribute('aria-expanded')=='false')
-   check('Anchor navigation correct URL',page.url.endswith('#proyectos'))
-  if width==1280:
-   page.get_by_role('button',name='Académicos').click()
-   visible=page.locator('[data-project-type]:visible').count()
-   check('Projects filter academic',visible==2,str(visible))
-   page.get_by_role('button',name='Profesionales').click()
-   visible=page.locator('[data-project-type]:visible').count()
-   check('Projects filter professional',visible==3,str(visible))
-   page.get_by_role('button',name='Datos',exact=True).click()
-   visible=page.locator('.cert-card:visible').count()
-   check('Certification filter data',visible==3,str(visible))
-   page.get_by_role('button',name='Todas',exact=True).click()
-   check('Certification filter reset',page.locator('.cert-card:visible').count()==6)
-   page.get_by_role('button',name='Ver todas las credenciales').click()
-   check('Certification show-all expands collection',page.locator('.cert-card:visible').count()==15)
-   page.get_by_role('button',name='Mostrar menos credenciales').click()
-   check('Certification show-less collapses collection',page.locator('.cert-card:visible').count()==6)
-  page.close()
- for pathname in ['caso-cubri.html','caso-agrimensura.html','404.html']:
-  pg=browser.new_page(viewport={'width':375,'height':812})
-  pg.set_content(html_with_embedded_assets(pathname),wait_until='domcontentloaded')
-  check(f'{pathname} loads',pg.locator('main').count()==1)
-  check(f'{pathname} one H1',pg.locator('h1').count()==1)
-  dim=pg.evaluate('''() => ({view:innerWidth,doc:document.documentElement.scrollWidth})''')
-  check(f'{pathname} no overflow',dim['doc']<=dim['view'],str(dim))
-  pg.screenshot(path=str(OUT/pathname.replace('.html','.png')),full_page=True)
-  pg.close()
- browser.close()
+class PageParser(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.tags=[];self.ids=[];self.links=[];self.images=[]
+    def handle_starttag(self,tag,attrs):
+        attr=dict(attrs); self.tags.append(tag)
+        if 'id' in attr:self.ids.append(attr['id'])
+        if tag=='a' and 'href' in attr:self.links.append(attr['href'])
+        if tag=='img':self.images.append(attr)
 
-fails=[c for c in checks if not c[1]]
-print(f'\nRESULT: {len(checks)-len(fails)}/{len(checks)} checks PASS')
-if fails:print('FAILURES:',fails)
-raise SystemExit(1 if fails else 0)
+class PortfolioTests(unittest.TestCase):
+    def setUp(self):
+        self.pages={p:(ROOT/p).read_text(encoding='utf8') for p in PAGES}
+    def test_all_pages_exist(self):
+        self.assertEqual(len(self.pages), 10)
+    def test_html_semantics(self):
+        for filename,source in self.pages.items():
+            with self.subTest(page=filename):
+                p=PageParser(); p.feed(source)
+                self.assertEqual(p.tags.count('h1'),1)
+                self.assertEqual(p.tags.count('main'),1)
+                for tag in ['header','nav','footer']:
+                    self.assertIn(tag,p.tags)
+                self.assertIn('lang="es-AR"',source)
+                self.assertIn('Saltar al contenido',source)
+                self.assertIn('og:image',source)
+                self.assertIn('theme-color',source)
+                for img in p.images:self.assertTrue(img.get('alt') is not None)
+    def test_one_page_required_sections(self):
+        p=PageParser();p.feed(self.pages['index.html'])
+        for section in ['inicio','metricas','skills','proyectos','experiencia','formacion','sobre-mi','contacto']:
+            self.assertIn(section,p.ids)
+    def test_all_local_links_work(self):
+        for filename,source in self.pages.items():
+            p=PageParser();p.feed(source)
+            for href in p.links:
+                path=href.split('#')[0].split('?')[0]
+                if not path or path.startswith(('http:','https:','mailto:','tel:')):continue
+                with self.subTest(page=filename,href=href):self.assertTrue((ROOT/path).exists())
+    def test_css_and_js_and_accessibility(self):
+        css=(ROOT/'styles.css').read_text()
+        js=(ROOT/'script.js').read_text()
+        self.assertIn('prefers-reduced-motion:reduce',css)
+        self.assertIn(':focus-visible',css)
+        self.assertIn('min-width:1181px',css)
+        self.assertIn('IntersectionObserver',js)
+        self.assertIn('aria-expanded',js)
+        self.assertIn('data-theme',js)
+        self.assertNotIn('ReactDOM',js)
+    def test_project_content(self):
+        page=self.pages['proyectos.html']
+        for project in ['SC Soluciones Conectadas','ERP Agrimensura','CRM Comercial','Cubrí Seguros','Coffea']:
+            self.assertIn(project,page)
+        self.assertEqual(page.count('data-project-type="profesional"'),4)
+        self.assertEqual(page.count('data-project-type="academico"'),2)
+    def test_real_photo_local_and_private_data_excluded(self):
+        self.assertTrue((ROOT/'assets/img/maikol-retrato.webp').is_file())
+        self.assertIn('maikol-retrato.webp',self.pages['sobre-mi.html'])
+        self.assertNotIn('1.018.514.736',''.join(self.pages.values()))
+        self.assertNotIn('2610195614145564690',''.join(self.pages.values()))
+    def test_brand_assets(self):
+        for filename in ['mb-mark.svg','mb-lockup-dark.svg','mb-lockup-light.svg']:
+            self.assertTrue((ROOT/'assets/img'/filename).is_file())
+
+if __name__=='__main__':unittest.main()

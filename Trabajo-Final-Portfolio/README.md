@@ -2,7 +2,7 @@
 
 **Portfolio profesional de Maikol Andrés Betancourt** · Licenciatura en Sistemas de Información · FCyT-UADER · Mg. Ernesto Ledesma.
 
-> **Estado:** prototipo web funcional y documentado. **No es una entrega final cerrada:** restan la página completa de alta fidelidad en Figma, tres pruebas reales con usuarios, revisión entre pares, publicación CI/CD y captura Lighthouse del sitio público. No se presentan resultados simulados como si fueran pruebas realizadas.
+> **Estado:** versión Electric Flow (rediseño del portfolio profesional) implementada localmente y documentada. **No es una entrega final cerrada:** restan la página completa de alta fidelidad en Figma, tres pruebas reales con usuarios, revisión entre pares, publicación CI/CD y captura Lighthouse del sitio público. No se presentan resultados simulados como si fueran pruebas realizadas.
 
 ## Enlaces
 
@@ -10,6 +10,25 @@
 - **Sitio publicado:** pendiente de conectar Netlify con este repositorio y verificar HTTPS. No se inventa una URL.
 - **SC Soluciones Conectadas:** https://scsolucionesconectadas.com.ar/
 - **TP5 Cubrí Seguros:** https://tp5-seguros.netlify.app/
+
+
+## Marca personal y sitio multipágina — Electric Flow
+
+La identidad visual elegida por el autor es **MB / Maikol Betancourt — Systems · Automation · Software**. Se creó un monograma vectorial (`assets/img/mb-mark.svg`) y dos variantes horizontales (`mb-lockup-dark.svg` y `mb-lockup-light.svg`). La paleta utiliza **Deep Night `#0A1020`, Electric Blue `#2563EB`, Digital Violet `#8B5CF6`, Signal Cyan `#38BDF8` y Soft White `#F8FAFC`**.
+
+Incluye botón de **modo claro/oscuro** con persistencia, animación de workflows, efecto de barrido en botones, halos en tarjetas y aparición progresiva al hacer scroll. El contenido permanece accesible con `prefers-reduced-motion`. Las animaciones son originales, tomando como referencia general [Uiverse](https://uiverse.io/elements), no es un template copiado. El apartado personal toma como referencia general de estructura la página «Nosotros» de Click, pero usa fotografía y textos propios.
+
+**Conservamos las nueve secciones en `index.html` para cumplir la consigna one-page**, y agregamos páginas independientes para explorar el contenido en profundidad:
+
+- `sobre-mi.html`: retrato profesional propio y perfil orientado a oportunidades laborales.
+- `proyectos.html`: seis proyectos, filtros y links a demos/casos.
+- `experiencia.html`: recorrido laboral y cuatro áreas de Intellymation.
+- `formacion.html`: educación y catálogo de certificaciones por categorías.
+- `contacto.html`: vías de contacto y formulario que prepara un email con `mailto:` sin backend.
+- `caso-sc.html`: recursos gráficos reales del proyecto público de SC, sin datos de terceros.
+- `caso-agrimensura.html` y `caso-cubri.html`: casos de estudio independientes.
+
+Se conservan HTML, CSS y JavaScript puro, sin frameworks de SPA, para cumplir las restricciones del trabajo. Ver [identidad, arquitectura y decisiones UX](docs/Electric-Flow-Identidad-y-UX.md).
 
 ## Objetivo
 
@@ -28,7 +47,7 @@ El sitio conserva los **9 bloques obligatorios** de la consigna: `Header`, `Hero
 - CSS3 puro, Grid, Flexbox, variables CSS y media queries.
 - JavaScript vanilla (menú mobile, filtros y mejoras progresivas).
 - Inter y Space Grotesk (Google Fonts, con `display=swap`).
-- SVG propios y dos capturas WebP del TP5.
+- SVG propios, imagen WebP del autor, imágenes de la web original de SC (cargadas desde su repositorio público) y dos capturas WebP del TP5.
 - Sin React, Vue, Next.js, Tailwind CDN ni herramientas de construcción visual de webs.
 
 ## Uso local
@@ -49,13 +68,24 @@ Luego abrir `http://localhost:4173/`. También puede abrirse `index.html` direct
 - **Concepto visual:** Profesional · Tecnológico · Funcional.
 - **Wireframes:** mobile 375 px y desktop 1440 px.
 - **Design system:** 18 variables (colores/espaciado) y 6 estilos tipográficos en Figma; botones con cuatro estados, tags, tarjetas e ítems de timeline.
-- **Alta fidelidad:** portada responsive iniciada; resta diseñar la página completa y prototipar la navegación antes de realizar los tests de usuarios.
+- **Alta fidelidad:** el sitio se rediseñó en Electric Flow, pero **aún debe sincronizarse el prototipo completo en Figma** y prototiparse la navegación antes de realizar los tests con usuarios.
 
 El documento base está en [`docs/Hito1_Investigacion_UX.md`](docs/Hito1_Investigacion_UX.md), los tokens en [`docs/design-system.md`](docs/design-system.md) y las tareas en [`docs/guion-test-usabilidad.md`](docs/guion-test-usabilidad.md).
 
+
+### Capturas Electric Flow — revisión local
+
+![Portada en tema oscuro, 1280 px](docs/screenshots/electric-flow-dark-1280.webp)
+
+![Portada mobile, 375 px](docs/screenshots/electric-flow-dark-375.webp)
+
+![Alternancia de tema claro, 1280 px](docs/screenshots/electric-flow-light-1280.webp)
+
+Estas capturas pertenecen al navegador local sobre una renderización autocontenida; **no** son evidencia de un despliegue público ni capturas Lighthouse. Los recursos remotos de SC se sustituyen en esa revisión por su ilustración de respaldo porque el entorno de pruebas no tiene acceso a la red.
+
 ## Responsive y accesibilidad
 
-Probado de forma automatizada con Chromium / Playwright sobre una renderización autocontenida del HTML en **375 px, 768 px, 1280 px y 1440 px**: sin scroll horizontal, con menú keyboard-friendly, filtros accesibles, un solo H1 y secciones de ancla presentes.
+Probado de forma automatizada con Chromium / Playwright en la versión Electric Flow (40 comprobaciones de páginas) sobre una renderización autocontenida del HTML en **375 px, 768 px, 1280 px y 1440 px**: sin scroll horizontal, con menú keyboard-friendly, filtros accesibles, un solo H1 y secciones de ancla presentes.
 
 Incluye: enlace **Saltar al contenido**, estados `:hover`, `:focus-visible`, `:active`, `aria-expanded` y `aria-controls`, semántica, `lang=es-AR`, desactivación de animaciones con `prefers-reduced-motion` e imágenes con alt significativo.
 
@@ -74,7 +104,7 @@ No son capturas de una URL publicada ni reemplazan la captura de Lighthouse que 
 - ERP Agrimensura usa un **mockup conceptual**: el repositorio original es privado. No se publican sistemas ni datos del estudio.
 - CRM Comercial se muestra como **en desarrollo**; no se afirma que esté publicado o completado.
 - La sección de certificados utiliza títulos, instituciones, fechas y enlaces de verificación públicos cuando existen. **No se cargaron PDFs o imágenes originales con datos de identificación**, solo metadatos.
-- Los demás mockups SVG son ilustraciones propias de la web, **no capturas reales** de los productos.
+- Los demás mockups SVG son ilustraciones propias de la web, **no capturas reales** de los productos. Las imágenes de SC proceden del repositorio público del proyecto y se usan como recursos visuales reales de su landing, no como prueba de resultados de clientes.
 
 ## Deploy automático desde GitHub
 

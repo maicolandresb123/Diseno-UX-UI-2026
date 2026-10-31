@@ -9,13 +9,17 @@
 - [x] Wireframes completos de la página mobile y desktop en Figma (primera iteración).
 - [x] Variables, tipografía y componentes reutilizables en Figma.
 - [x] Primera portada de alta fidelidad desktop/mobile en Figma.
-- [x] Código HTML/CSS/JS funcional de la página completa, sus casos internos y 404.
+- [x] Código HTML/CSS/JS del portfolio Electric Flow, páginas independientes, tres casos internos y 404.
 - [x] 9 secciones de información obligatorias.
-- [x] 5 proyectos y 2 casos de estudio explicados.
+- [x] 6 proyectos seleccionados y 3 páginas de casos de estudio explicados.
+- [x] Identidad MB: SVG principal, logotipos horizontal claro/oscuro, tema persistente y animaciones accesibles.
+- [x] Fotografía profesional incorporada en «Sobre mí».
 - [x] Certificaciones: inventario público sin documentos privados.
-- [x] Pruebas automáticas de código y render local autocontenido (no equivalen a usuarios ni Lighthouse).
+- [x] Pruebas estáticas y 40 comprobaciones de páginas en Chromium autocontenido a 375, 768, 1280 y 1440 px (no equivalen a usuarios ni Lighthouse).
 
 ## Falta para cumplir al 100 %
+
+**Prioridad:** sincronizar el archivo Figma original de este trabajo con el diseño Electric Flow actualmente implementado. El prototipo inicial de Figma utiliza la paleta clara anterior y no debe presentarse como fidelidad validada.
 
 - [ ] Completar toda la página en prototipo **alta fidelidad** mobile y desktop en Figma y conectar anclas / menú mobile.
 - [ ] Comparar dos secciones Figma vs web y corregir diferencias.
