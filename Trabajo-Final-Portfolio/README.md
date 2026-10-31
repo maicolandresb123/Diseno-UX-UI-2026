@@ -155,3 +155,13 @@ Archivos: `assets/img/sc-demo-{medica,hoteleria,logistica}-interfaz.webp`. Se ut
 El ERP Agrimensura y el CRM interno no se muestran como capturas reales mientras no existan imágenes autorizadas y anonimizadas de esos sistemas. Los SVG de esos proyectos están rotulados como conceptuales.
 
 Se corrigió además un error tipográfico en la apertura de la colección AVEVA al buscar certificados.
+
+## V7 — ERP, Coffea y auditoría frente al TP final
+
+- Se incorporaron **capturas auténticas aportadas por el autor**: portada de Coffea y dos vistas del ERP Agrimensura. No se pudieron obtener capturas directas mediante navegador del entorno (sin acceso a URLs externas y ERP requiere sesión privada).
+- Las vistas de Agrimensura fueron **anonimizadas** antes de incorporarse: usuario, contraseña y métricas operativas están difuminadas. Nunca se subieron los archivos originales al repositorio.
+- El catálogo utiliza imágenes reales para ERP y Coffea. Se creó [`caso-coffea.html`](caso-coffea.html) y el caso de Agrimensura documenta dos interfaces.
+- La página Inicio mantiene las nueve partes del TP y sus anclas de navegación **dentro del Header**, además de conservar enlaces a páginas independientes.
+- Se añadieron aprendizajes en las tarjetas de los seis proyectos y se representa el resumen laboral como timeline ordenado.
+- [Auditoría del trabajo final contra la consigna original](docs/Auditoria_TP_Final_2026_v7.md).
+- [Referencias visuales para importación y sincronización futura de Figma](docs/figma-import/INSTRUCCIONES.md). **Figma no pudo actualizarse directamente**: el servicio devolvió límite de llamadas del plan Starter. No se presenta este material como prototipo final completado.
