@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="800" viewBox="0 0 720 800" role="img" aria-label="Ilustración de un espacio técnico con pantallas, diagramas y herramientas de software">
+<defs><linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5efff"/><stop offset="1" stop-color="#d9f5f2"/></linearGradient></defs>
+<rect width="720" height="800" rx="36" fill="url(#p)"/><circle cx="550" cy="200" r="150" fill="#bfdbfe" opacity=".8"/>
+<path d="M80 620h560" stroke="#93a9c2" stroke-width="20" stroke-linecap="round"/>
+<rect x="108" y="225" width="504" height="345" rx="24" fill="#142b49"/>
+<rect x="126" y="244" width="468" height="306" rx="12" fill="#f8fafc"/>
+<rect x="152" y="277" width="187" height="101" rx="12" fill="#dbeafe"/>
+<rect x="366" y="277" width="192" height="101" rx="12" fill="#e0e7ff"/>
+<rect x="152" y="403" width="406" height="111" rx="12" fill="#e8f7f5"/>
+<path d="M175 345l44-35 44 22 44-32" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+<path d="M388 343l40-26 38 16 40-36 28 9" fill="none" stroke="#0f766e" stroke-width="6" stroke-linecap="round"/>
+<rect x="179" y="430" width="156" height="12" rx="6" fill="#94a3b8"/>
+<rect x="179" y="463" width="212" height="9" rx="4" fill="#b8c8d8"/>
+<rect x="426" y="430" width="100" height="47" rx="12" fill="#2563eb"/>
+<path d="M300 572h120l26 48H273z" fill="#506c8e"/><rect x="260" y="623" width="200" height="22" rx="11" fill="#8296aa"/>
+<rect x="480" y="638" width="94" height="48" rx="18" fill="#fff" stroke="#c9d8e7" stroke-width="4"/>
+<path d="M515 640v35" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M515 661h34" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+<circle cx="130" cy="135" r="16" fill="#2563eb"/><circle cx="194" cy="98" r="10" fill="#0f766e"/><path d="M146 130L184 103" stroke="#94a3b8" stroke-width="4"/>
+<text x="360" y="740" font-family="Arial, sans-serif" font-size="23" text-anchor="middle" fill="#244267">Sistemas · Datos · Automatización</text>
+</svg>
