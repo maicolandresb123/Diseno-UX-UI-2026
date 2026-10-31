@@ -72,3 +72,50 @@ class PortfolioTests(unittest.TestCase):
             self.assertTrue((ROOT/'assets/img'/filename).is_file())
 
 if __name__=='__main__':unittest.main()
+
+class CertificateAndSCExtras(unittest.TestCase):
+    def test_43_certificates_have_safe_images(self):
+        import json
+        entries=json.loads((ROOT/'assets/certificados/catalogo.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(entries),43)
+        self.assertEqual(sum(e['issuer']=='AVEVA' for e in entries),29)
+        self.assertEqual(len(set(e['image'] for e in entries)),43)
+        for e in entries:
+            path=ROOT/e['image']
+            with self.subTest(name=e['title']):
+                self.assertTrue(path.is_file(),path)
+                self.assertGreater(path.stat().st_size,1000)
+                self.assertLess(path.stat().st_size,350000)
+                self.assertEqual(path.suffix,'.webp')
+                self.assertNotIn('DNI',e['title'])
+
+    def test_gallery_dialog_and_interaction(self):
+        text=(ROOT/'formacion.html').read_text(encoding='utf-8')
+        script=(ROOT/'script.js').read_text(encoding='utf-8')
+        self.assertEqual(text.count('data-cert-category='),43)
+        self.assertEqual(text.count('data-cert-preview'),43)
+        self.assertIn('<dialog id="cert-modal"',text)
+        self.assertIn('id="cert-search"',text)
+        self.assertIn('id="aveva-collection"',text)
+        self.assertIn('certDialog.showModal()',script)
+        self.assertIn("lastCertTrigger?.focus()",script)
+        self.assertIn("certDialog.addEventListener('keydown'",script)
+        self.assertNotIn('19095824',text)
+
+    def test_sc_live_demo_load_is_opt_in(self):
+        text=(ROOT/'caso-sc.html').read_text(encoding='utf-8')
+        from html.parser import HTMLParser
+        self.assertEqual(text.count('data-sc-demo='),3)
+        self.assertIn('id="sc-demo-frame"',text)
+        self.assertIn('loading="lazy"',text)
+        self.assertIn('id="sc-demo-direct"',text)
+        self.assertNotIn('<iframe src="https://',text)
+
+    def test_nav_internal_pages_preserve_home_anchors(self):
+        home=(ROOT/'index.html').read_text(encoding='utf-8')
+        self.assertIn('href="#proyectos"',home)
+        for page in ['formacion.html','experiencia.html','proyectos.html','sobre-mi.html','contacto.html']:
+            t=(ROOT/page).read_text(encoding='utf-8')
+            self.assertIn('href="proyectos.html"',t)
+            self.assertIn('href="experiencia.html"',t)
+            self.assertIn('href="contacto.html"',t)

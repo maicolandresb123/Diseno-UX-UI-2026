@@ -35,3 +35,15 @@
 - [ ] Verificar el acceso de lectura al Figma para el profesor.
 
 **Nota:** fecha original de consigna: 10/11/2026; el desarrollo puede continuar de acuerdo con el ritmo del alumno. No dar por entregado hasta completar todos los puntos críticos.
+
+### Iteración galería de certificados y SC
+
+- [x] Generar 43 previews WEBP de las credenciales disponibles, con protección de los DNI incluidos en YPF.
+- [x] Integrar visor interactivo accesible con `<dialog>`, controles, búsqueda combinada y filtros.
+- [x] Añadir vista de demos SC en vivo de carga voluntaria, con enlace externo alternativo.
+- [x] Enlazar directamente las páginas individuales desde menús internos y conservar anclas en home.
+- [ ] Confirmar la interfaz completa en dispositivo y navegador reales.
+- [ ] Completar test de usabilidad con tres personas y documentar hallazgos y correcciones.
+- [ ] Completar prototipo de alta fidelidad de todas las páginas en Figma.
+- [ ] Lighthouse móvil >=90 en los cuatro indicadores y captura.
+- [ ] Desplegar desde GitHub con CI/CD y verificar URL HTTPS.
