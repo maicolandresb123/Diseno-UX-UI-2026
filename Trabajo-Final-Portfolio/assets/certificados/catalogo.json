@@ -1,0 +1,393 @@
+[
+  {
+    "id": "coderhouse-data-analytics",
+    "title": "Data Analytics",
+    "issuer": "Coderhouse",
+    "year": "2026",
+    "category": "datos",
+    "kind": "Curso aprobado",
+    "image": "assets/certificados/coderhouse-data-analytics.webp"
+  },
+  {
+    "id": "coderhouse-tableau",
+    "title": "Tableau",
+    "issuer": "Coderhouse",
+    "year": "2025",
+    "category": "datos",
+    "kind": "Curso aprobado",
+    "image": "assets/certificados/coderhouse-tableau.webp"
+  },
+  {
+    "id": "coderhouse-excel",
+    "title": "Excel",
+    "issuer": "Coderhouse",
+    "year": "2025",
+    "category": "datos",
+    "kind": "Curso aprobado",
+    "image": "assets/certificados/coderhouse-excel.webp"
+  },
+  {
+    "id": "ibm-skillsbuild-cybersecurity-fundamentals",
+    "title": "Cybersecurity Fundamentals",
+    "issuer": "IBM SkillsBuild",
+    "year": "2026",
+    "category": "ciberseguridad",
+    "kind": "Insignia digital",
+    "image": "assets/certificados/ibm-skillsbuild-cybersecurity-fundamentals.webp",
+    "url": "https://www.credly.com/badges/870010f9-1dd6-44dd-9809-bdd16dfa6ed4"
+  },
+  {
+    "id": "ibm-skillsbuild-vulnerability-management",
+    "title": "Vulnerability Management",
+    "issuer": "IBM SkillsBuild",
+    "year": "2026",
+    "category": "ciberseguridad",
+    "kind": "Insignia digital",
+    "image": "assets/certificados/ibm-skillsbuild-vulnerability-management.webp",
+    "url": "https://www.credly.com/badges/c3db43eb-6790-4554-9fb8-b9ee7315ae75"
+  },
+  {
+    "id": "ibm-skillsbuild-governance-risk-compliance-and-data-privacy",
+    "title": "Governance, Risk, Compliance, and Data Privacy",
+    "issuer": "IBM SkillsBuild",
+    "year": "2026",
+    "category": "ciberseguridad",
+    "kind": "Insignia digital",
+    "image": "assets/certificados/ibm-skillsbuild-governance-risk-compliance-and-data-privacy.webp",
+    "url": "https://www.credly.com/badges/261e2ebf-2a10-4b80-8cb5-d138888f6fda"
+  },
+  {
+    "id": "ibm-skillsbuild-team-essentials-for-designing-ai-solutions",
+    "title": "Team Essentials for Designing AI Solutions",
+    "issuer": "IBM SkillsBuild",
+    "year": "2026",
+    "category": "ia",
+    "kind": "Insignia digital",
+    "image": "assets/certificados/ibm-skillsbuild-team-essentials-for-designing-ai-solutions.webp",
+    "url": "https://www.credly.com/go/R0hRub2C"
+  },
+  {
+    "id": "fundacion-ypf-automatizacion",
+    "title": "Automatización",
+    "issuer": "Fundación YPF",
+    "year": "2026",
+    "category": "industria",
+    "kind": "Curso aprobado",
+    "image": "assets/certificados/fundacion-ypf-automatizacion.webp"
+  },
+  {
+    "id": "fundacion-ypf-salud-y-seguridad-en-el-trabajo",
+    "title": "Salud y Seguridad en el trabajo",
+    "issuer": "Fundación YPF",
+    "year": "2026",
+    "category": "industria",
+    "kind": "Curso aprobado",
+    "image": "assets/certificados/fundacion-ypf-salud-y-seguridad-en-el-trabajo.webp"
+  },
+  {
+    "id": "intellymation-sistema-de-control-braumat-7-1",
+    "title": "Sistema de Control Braumat 7.1",
+    "issuer": "Intellymation",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Capacitación técnica",
+    "image": "assets/certificados/intellymation-sistema-de-control-braumat-7-1.webp"
+  },
+  {
+    "id": "intellymation-enterprise-console-skelta",
+    "title": "Enterprise Console Skelta",
+    "issuer": "Intellymation",
+    "year": "2024",
+    "category": "industria",
+    "kind": "Capacitación técnica",
+    "image": "assets/certificados/intellymation-enterprise-console-skelta.webp"
+  },
+  {
+    "id": "intellymation-siemens-braumat-route-control-system",
+    "title": "Siemens Braumat Route Control System",
+    "issuer": "Intellymation",
+    "year": "2024",
+    "category": "industria",
+    "kind": "Capacitación técnica",
+    "image": "assets/certificados/intellymation-siemens-braumat-route-control-system.webp"
+  },
+  {
+    "id": "daxus-latam-inmersion-inteligencia-artificial-en-la-practica",
+    "title": "Inmersión Inteligencia Artificial en la Práctica",
+    "issuer": "DAXUS LATAM",
+    "year": "2026",
+    "category": "ia",
+    "kind": "Constancia de participación",
+    "image": "assets/certificados/daxus-latam-inmersion-inteligencia-artificial-en-la-practica.webp"
+  },
+  {
+    "id": "ifm-academy-sensores-de-posicion-sentidos-de-las-maquinas",
+    "title": "Sensores de posición, sentidos de las máquinas",
+    "issuer": "ifm Academy",
+    "year": "2026",
+    "category": "industria",
+    "kind": "Constancia de asistencia",
+    "image": "assets/certificados/ifm-academy-sensores-de-posicion-sentidos-de-las-maquinas.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-03-product-overview-rev-b",
+    "title": "InTouch Machine Edition – 03 Product Overview Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-03-product-overview-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-tag-utilities",
+    "title": "InTouch HMI 2017: Tag Utilities",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-tag-utilities.webp"
+  },
+  {
+    "id": "aveva-avevatm-edge-introduction",
+    "title": "AVEVA™ Edge Introduction",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-avevatm-edge-introduction.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-network-application-distribution",
+    "title": "InTouch HMI 2017: Network Application Distribution",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-network-application-distribution.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-09-formatting-and-shapes-rev-b",
+    "title": "InTouch Machine Edition – 09 Formatting and Shapes Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-09-formatting-and-shapes-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-symbols-with-element-styles",
+    "title": "InTouch HMI 2017: Symbols with Element Styles",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-symbols-with-element-styles.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-11-animation-overview-rev-b",
+    "title": "InTouch Machine Edition – 11 Animation Overview Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-11-animation-overview-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-10-active-objects-part-1-rev-b",
+    "title": "InTouch Machine Edition – 10 Active Objects Part 1 Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-10-active-objects-part-1-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-08-screen-groups-rev-b",
+    "title": "InTouch Machine Edition – 08 Screen Groups Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-08-screen-groups-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-symbol-construction",
+    "title": "InTouch HMI 2017: Symbol Construction",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-symbol-construction.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-07-drivers-part-1-rev-b",
+    "title": "InTouch Machine Edition – 07 Drivers Part 1 Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-07-drivers-part-1-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-tag-creation-and-configuration",
+    "title": "InTouch HMI 2017: Tag Creation and Configuration",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-tag-creation-and-configuration.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-tags-linked-to-external-data",
+    "title": "InTouch HMI 2017: Tags Linked to External Data",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-tags-linked-to-external-data.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-application-backup-and-restore",
+    "title": "InTouch HMI 2017: Application Backup and Restore",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-application-backup-and-restore.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-01-preparation-rev-b",
+    "title": "InTouch Machine Edition – 01 Preparation Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-01-preparation-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-security-configuration-using-os-security-type",
+    "title": "InTouch HMI 2017: Security Configuration Using OS Security Type",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-security-configuration-using-os-security-type.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-application-publishing",
+    "title": "InTouch HMI 2017: Application Publishing",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-application-publishing.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-10-active-objects-part-2-rev-b",
+    "title": "InTouch Machine Edition – 10 Active Objects Part 2 Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-10-active-objects-part-2-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-12-animation-details-rev-b",
+    "title": "InTouch Machine Edition – 12 Animation Details Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-12-animation-details-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-10-active-objects-part-3-rev-b",
+    "title": "InTouch Machine Edition – 10 Active Objects Part 3 Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-10-active-objects-part-3-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-introduction-to-the-modern-intouch-application",
+    "title": "InTouch HMI 2017: Introduction to the Modern InTouch Application",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-introduction-to-the-modern-intouch-application.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-06-tags-rev-b",
+    "title": "InTouch Machine Edition – 06 Tags Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-06-tags-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-05-user-interface-overview-rev-b",
+    "title": "InTouch Machine Edition – 05 User Interface Overview Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-05-user-interface-overview-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-intouch-window-layout-and-basic-navigation",
+    "title": "InTouch HMI 2017: InTouch Window Layout and Basic Navigation",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-intouch-window-layout-and-basic-navigation.webp"
+  },
+  {
+    "id": "aveva-intouch-machine-edition-07-drivers-part-2-rev-b",
+    "title": "InTouch Machine Edition – 07 Drivers Part 2 Rev B",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-machine-edition-07-drivers-part-2-rev-b.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-symbols-with-situational-awareness",
+    "title": "InTouch HMI 2017: Symbols with Situational Awareness",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-symbols-with-situational-awareness.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-web-client-2017",
+    "title": "InTouch HMI Web Client 2017",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-web-client-2017.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-tag-testing-and-diagnosing-with-tag-viewer",
+    "title": "InTouch HMI 2017: Tag Testing and Diagnosing with Tag Viewer",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-tag-testing-and-diagnosing-with-tag-viewer.webp"
+  },
+  {
+    "id": "aveva-intouch-hmi-2017-application-lockdown",
+    "title": "InTouch HMI 2017: Application Lockdown",
+    "issuer": "AVEVA",
+    "year": "2023",
+    "category": "industria",
+    "kind": "Microcurso completado",
+    "image": "assets/certificados/aveva-intouch-hmi-2017-application-lockdown.webp"
+  }
+]
