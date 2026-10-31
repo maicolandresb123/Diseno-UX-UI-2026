@@ -56,5 +56,15 @@
 - [x] Añadir dos ejemplos de workflows conceptuales a Skills.
 - [x] Mostrar evidencia visual en Proyectos con descripción honesta del origen de cada recurso.
 - [x] Ampliar Sobre mí con cinco etapas de proceso y oportunidades laborales.
-- [ ] Capturar interfaces reales adicionales de SC y CRM desde demos autorizadas y con datos ficticios; no sustituir capturas con imágenes inventadas.
+- [x] Capturar pantallas de Salud, Hotelería y Logística a partir de las demos públicas originales de SC, utilizando únicamente datos ficticios.
+- [ ] Incorporar capturas autorizadas y anonimizadas del CRM cuando se disponga de un entorno con información de prueba; no publicarlo como captura real mientras tanto.
 - [ ] Revisar visualmente la v5 en navegador real y aplicar cualquier ajuste de contraste, tamaño y espaciado.
+
+### Iteración v6 — Interfaces SC reales y visor
+
+- [x] Sustituir imágenes genéricas de SC en Inicio/Proyectos por capturas de las demos públicas.
+- [x] Incorporar galería de tres capturas del código original público en el caso SC, con visor ampliable y navegación por teclado.
+- [x] Diferenciar explícitamente datos ficticios y capturas públicas de arquitecturas privadas.
+- [x] Corregir búsqueda AVEVA en JS y probar apertura mediante interacción de navegador.
+- [x] Verificar en Chromium autocontenido que no haya overflow en 375 y 1280 px, y que el visor admita Escape, flechas y restitución del foco.
+- [ ] Revisar las nuevas capturas también desde el navegador real de la PC y confirmar el aspecto de fuentes e imágenes externas.

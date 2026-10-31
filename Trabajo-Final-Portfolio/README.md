@@ -144,3 +144,14 @@ No se utilizó un template de terceros para la implementación actual. Referente
 ## Checklist de entrega
 
 Ver [`docs/pendientes-entrega.md`](docs/pendientes-entrega.md) para el estado actualizado de los entregables de la consigna.
+
+
+## Evidencias visuales reales de las demos SC (v6)
+
+Se añadieron capturas locales de las interfaces públicas de SC Soluciones Conectadas (Salud, Hotelería y Logística) obtenidas del código original de `maicolandresb123/Mockups_Ventas`: HTML, CSS y JavaScript originales, renderizados en Chromium. La captura excluye el área de logo no disponible en el entorno sin conexión y muestra interfaces de ejemplo con **datos totalmente ficticios**. No son capturas de producción de clientes, ni se interpretan cifras simuladas como resultados comerciales reales.
+
+Archivos: `assets/img/sc-demo-{medica,hoteleria,logistica}-interfaz.webp`. Se utilizan en Inicio, Proyectos y el caso de estudio SC, cuyo visor permite ampliación, navegación con flechas, Escape y restauración del foco. Las demos auténticas siguen disponibles mediante sus enlaces externos y visor bajo demanda.
+
+El ERP Agrimensura y el CRM interno no se muestran como capturas reales mientras no existan imágenes autorizadas y anonimizadas de esos sistemas. Los SVG de esos proyectos están rotulados como conceptuales.
+
+Se corrigió además un error tipográfico en la apertura de la colección AVEVA al buscar certificados.
