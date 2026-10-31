@@ -145,7 +145,7 @@ function filterCertificates() {
     ? '1 credencial coincide con la búsqueda.'
     : `${matches} credenciales coinciden con la búsqueda.`;
 }
-function openAvevaCollection() { if (avevaCollection) aveaCollection.open = true; }
+function openAvevaCollection() { if (avevaCollection) avevaCollection.open = true; }
 if (certCards.length) {
   certFilterButtons.forEach(button => button.addEventListener('click', () => {
     certFilterButtons.forEach(other => {
@@ -235,5 +235,51 @@ scDemoButtons.forEach(button => button.addEventListener('click', () => {
   if (scDemoLink) scDemoLink.href = parsed.href;
   if (scDemoStatus) scDemoStatus.textContent = `Se solicitó la vista real de ${button.textContent.trim()}. Si no aparece, abrí la demo en una pestaña nueva.`;
 }));
+
+
+// Galería de evidencias reales de las demos públicas SC; navegación accesible.
+const scShots = [...document.querySelectorAll('[data-sc-ui-src]')];
+const scModal = document.getElementById('sc-ui-modal');
+let scLastTrigger = null;
+let scActiveIndex = 0;
+function renderScShot(index) {
+  if (!scModal || !scShots.length) return;
+  scActiveIndex = (index + scShots.length) % scShots.length;
+  const trigger = scShots[scActiveIndex];
+  const src = trigger.dataset.scUiSrc;
+  if (!/^assets\/img\/sc-demo-(medica|hoteleria|logistica)-interfaz\.webp$/.test(src || '')) return;
+  const img = document.getElementById('sc-ui-modal-image');
+  if (img) {
+    img.src = src;
+    img.alt = `Captura ampliada de la interfaz SC. ${trigger.dataset.scUiTitle}. Información ficticia.`;
+  }
+  const title = document.getElementById('sc-ui-modal-title');
+  const desc = document.getElementById('sc-ui-modal-desc');
+  if (title) title.textContent = trigger.dataset.scUiTitle || 'Demostración SC';
+  if (desc) desc.textContent = trigger.dataset.scUiDesc || 'Datos ficticios.';
+}
+if (scModal && scShots.length) {
+  scShots.forEach((trigger,index) => trigger.addEventListener('click',() => {
+    scLastTrigger = trigger;
+    renderScShot(index);
+    scModal.showModal();
+    scModal.querySelector('[data-sc-ui-close]')?.focus();
+  }));
+  scModal.querySelector('[data-sc-ui-close]')?.addEventListener('click',() => scModal.close());
+  scModal.querySelectorAll('[data-sc-ui-step]').forEach(button => button.addEventListener('click',() => {
+    renderScShot(scActiveIndex + Number(button.dataset.scUiStep));
+  }));
+  scModal.addEventListener('click',event => {
+    if (event.target === scModal) scModal.close();
+  });
+  scModal.addEventListener('keydown',event => {
+    if (event.key === 'ArrowRight') {event.preventDefault();renderScShot(scActiveIndex+1);}
+    if (event.key === 'ArrowLeft') {event.preventDefault();renderScShot(scActiveIndex-1);}
+  });
+  scModal.addEventListener('close',() => {
+    document.getElementById('sc-ui-modal-image')?.removeAttribute('src');
+    scLastTrigger?.focus();
+  });
+}
 
 })();
