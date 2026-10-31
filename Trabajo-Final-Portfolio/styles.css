@@ -618,3 +618,31 @@ p{color:var(--muted)}
 @media(max-width:950px){.sc-ui-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:630px){.sc-ui-gallery{grid-template-columns:1fr}.sc-ui-modal-top,.sc-ui-modal-bottom{padding:13px 15px}.sc-ui-modal-view{padding:7px}.sc-ui-modal-view img{max-height:calc(100dvh - 245px)}.sc-ui-modal-bottom{justify-content:center}.sc-ui-modal-bottom p{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.sc-ui-shot,.sc-ui-shot img{transition:none!important}.sc-ui-shot:hover,.sc-ui-shot:hover img{transform:none!important}}
+
+/* V7 — Evidencia real de proyectos y anclas de inicio en header */
+.home-has-sections{--nav-height:145px}
+.site-header .home-directory{border-top:1px solid var(--line);border-bottom:0;background:transparent}
+.site-header .home-directory-inner{flex-wrap:nowrap;gap:14px;padding-top:7px;padding-bottom:7px;overflow-x:auto;scrollbar-width:none}
+.site-header .home-directory-links{flex-wrap:nowrap;gap:7px}
+.site-header .home-directory-caption{white-space:nowrap}
+.site-header .home-directory-links a{white-space:nowrap;padding:6px 9px;background:transparent}
+.case-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.case-evidence-item{overflow:hidden;border-radius:21px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+.case-evidence-item>a{display:block;overflow:hidden;aspect-ratio:1.8;background:var(--panel-soft)}
+.case-evidence-item>a img{width:100%;height:100%;object-fit:contain;transition:transform .35s}
+.case-evidence-item>a:hover img{transform:scale(1.025)}
+.case-evidence-item figcaption{display:flex;flex-direction:column;padding:18px 22px 23px;gap:4px}
+.case-evidence-item figcaption strong{color:var(--ink);font-family:var(--font-head);font-size:17px}
+.case-evidence-item figcaption span,.gallery-privacy-note{color:var(--muted);font-size:13px;line-height:1.7}
+.gallery-privacy-note{margin-top:22px}
+@media(max-width:760px){.case-evidence-grid{grid-template-columns:1fr}.home-has-sections{--nav-height:134px}.home-directory-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.case-evidence-item>a img{transition:none}.case-evidence-item>a:hover img{transform:none}}
+
+/* V7 — Consigna: aprendizaje por proyecto y timeline ordenado */
+.project-learning{margin-top:12px!important;padding:12px;border-left:2px solid var(--cyan);border-radius:7px;background:var(--s-light);color:var(--muted)}
+.project-learning strong{color:var(--ink)}
+.home-timeline{margin:0;padding:0;list-style:none}
+.home-timeline-item{min-width:0;position:relative}
+.home-timeline-item:before{content:"";position:absolute;z-index:2;top:12px;left:26px;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px var(--s-light)}
+.home-timeline .experience-card{height:100%;padding-top:44px}
+.page-home section[id]{scroll-margin-top:var(--nav-height)}
