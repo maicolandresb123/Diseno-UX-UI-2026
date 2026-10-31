@@ -34,6 +34,16 @@ Se conservan HTML, CSS y JavaScript puro, sin frameworks de SPA, para cumplir la
 
 Mostrar de manera clara experiencia laboral, habilidades, formación y proyectos reales ante dos perfiles de usuario: reclutadores IT y clientes que buscan soluciones tecnológicas. El portfolio debe permitir identificar experiencia, abrir un proyecto y localizar contacto en menos de 30 segundos (hipótesis que se validará con usuarios).
 
+## Certificados verificables y vistas de SC (iteración de portfolio)
+
+- **Galería de 43 documentos**: 14 credenciales agrupadas por institución y 29 módulos AVEVA en un bloque desplegable. El filtro por especialidad se combina con búsqueda por texto.
+- **Visor con `<dialog>` nativo**: abrir miniatura, navegar entre documentos visibles, cerrar con Escape, cerrar desde el botón y volver al elemento original. Los certificados IBM incluyen enlaces oficiales de Credly.
+- **Protección de datos**: solo se versionan imágenes WEBP sin metadatos; el DNI de los certificados de Fundación YPF está oculto y no se añaden PDFs originales con información personal. El certificado inmobiliario se excluye por completo.
+- **SC real sin exponer clientes**: `caso-sc.html` incorpora un explorador de demos en vivo cargadas **solo por acción del usuario**, con acceso alternativo directo a SC cuando el servidor remoto no permite incrustación. Las demos SC contienen datos ficticios.
+- **Navegación híbrida**: `index.html` conserva las nueve secciones y anclas que pide la consigna, mientras el menú de páginas interiores enlaza directamente a Proyectos, Experiencia, Formación, Sobre mí y Contacto.
+
+**Prueba local:** `python -m unittest discover -s tests -v`. La revisión de comportamiento con navegador y los resultados de Lighthouse siguen siendo comprobaciones independientes que no se sustituyen por tests estáticos.
+
 ## Contenido y estructura
 
 El sitio conserva los **9 bloques obligatorios** de la consigna: `Header`, `Hero`, `Métricas`, `Skills`, `Proyectos`, `Experiencia / Formación`, `Sobre mí`, `Contacto` y `Footer`. Se integró un catálogo filtrable de certificaciones y dos páginas internas de casos de estudio:

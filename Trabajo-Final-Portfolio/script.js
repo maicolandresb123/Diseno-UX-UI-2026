@@ -86,7 +86,7 @@ function filterItems(selector, dataProp, group, statusId) {
   }));
 }
 filterItems('[data-project-type]','data-project-filter','[data-project-filter]','project-filter-status');
-filterItems('[data-cert-category]','data-cert-filter','[data-cert-filter]','cert-filter-status');
+// Certificaciones: el buscador y los filtros se combinan más abajo.
 // When a source image from the public SC repo is unreachable, show an explicit conceptual local fallback.
 document.querySelectorAll('img[data-fallback]').forEach(img => img.addEventListener('error', () => {
   if (!img.dataset.fallback || img.src.endsWith(img.dataset.fallback)) return;
@@ -110,5 +110,130 @@ if (contactForm) contactForm.addEventListener('submit', event => {
 });
 const year = document.getElementById('copyright-year');
 if(year) year.textContent = String(new Date().getFullYear());
+
+// Buscador y filtros combinados en la galería de certificados.
+const certSearch = document.getElementById('cert-search');
+const certFilterButtons = [...document.querySelectorAll('[data-cert-filter]')];
+const certCards = [...document.querySelectorAll('.cert-card[data-cert-category]')];
+const avevaCollection = document.getElementById('aveva-collection');
+const certFilterStatus = document.getElementById('cert-filter-status');
+function normalizeSearch(value) {
+  return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+function filterCertificates() {
+  if (!certCards.length) return;
+  const active = certFilterButtons.find(b => b.getAttribute('aria-pressed') === 'true');
+  const category = active?.dataset.certFilter || 'todas';
+  const query = normalizeSearch(certSearch?.value).trim();
+  let matches = 0, avevaMatches = 0;
+  certCards.forEach(card => {
+    const byCategory = category === 'todas' || card.dataset.certCategory === category;
+    const byText = !query || normalizeSearch(card.dataset.certSearch || card.textContent).includes(query);
+    const shown = byCategory && byText;
+    card.hidden = !shown;
+    if (shown) {
+      matches++;
+      card.classList.add('is-visible');
+      if (card.closest('.aveva-collection')) avevaMatches++;
+    }
+  });
+  if (avevaCollection) {
+    avevaCollection.hidden = avevaMatches === 0;
+    if (query && avevaMatches > 0) openAvevaCollection();
+  }
+  if (certFilterStatus) certFilterStatus.textContent = matches === 1
+    ? '1 credencial coincide con la búsqueda.'
+    : `${matches} credenciales coinciden con la búsqueda.`;
+}
+function openAvevaCollection() { if (avevaCollection) aveaCollection.open = true; }
+if (certCards.length) {
+  certFilterButtons.forEach(button => button.addEventListener('click', () => {
+    certFilterButtons.forEach(other => {
+      const selected = other === button;
+      other.setAttribute('aria-pressed', String(selected));
+      other.classList.toggle('is-active', selected);
+    });
+    filterCertificates();
+  }));
+  certSearch?.addEventListener('input', filterCertificates);
+  filterCertificates();
+}
+// Visor nativo con enfoque/restauración, Escape y navegación a documentos visibles.
+const certDialog = document.getElementById('cert-modal');
+const previewButtons = [...document.querySelectorAll('[data-cert-preview]')];
+let lastCertTrigger = null, certActiveButton = null;
+function visibleCerts() {
+  return previewButtons.filter(button => !button.closest('[hidden]') &&
+    (!button.closest('details') || button.closest('details').open));
+}
+function showCert(button) {
+  if (!button || !certDialog) return;
+  const path = button.dataset.certSrc;
+  const label = button.dataset.certTitle || 'Certificado';
+  const issuer = button.dataset.certIssuer || '';
+  if (!path || !path.startsWith('assets/certificados/')) return;
+  certActiveButton = button;
+  const image = document.getElementById('cert-modal-image');
+  const title = document.getElementById('cert-modal-title');
+  const meta = document.getElementById('cert-modal-meta');
+  const open = document.getElementById('cert-modal-open');
+  const verify = document.getElementById('cert-modal-verify');
+  if (image) { image.src = path; image.alt = `Vista pública del certificado ${label}. ${issuer}`; }
+  if (title) title.textContent = label;
+  if (meta) meta.textContent = issuer;
+  if (open) open.href = path;
+  if (verify) {
+    const url = button.dataset.certVerify;
+    const verifiedHost = url && /^https:\/\/www\.credly\.com\//.test(url);
+    verify.hidden = !verifiedHost;
+    if (verifiedHost) verify.href = url; else verify.removeAttribute('href');
+  }
+}
+if (certDialog && previewButtons.length) {
+  previewButtons.forEach(button => button.addEventListener('click', () => {
+    lastCertTrigger = button;
+    showCert(button);
+    if (!certDialog.open) certDialog.showModal();
+    certDialog.querySelector('[data-cert-close]')?.focus();
+  }));
+  certDialog.querySelector('[data-cert-close]')?.addEventListener('click', () => certDialog.close());
+  certDialog.addEventListener('click', event => { if (event.target === certDialog) certDialog.close(); });
+  certDialog.addEventListener('close', () => {
+    lastCertTrigger?.focus();
+    const image = document.getElementById('cert-modal-image');
+    if (image) image.removeAttribute('src');
+  });
+  function stepCertificate(shift) {
+    const available = visibleCerts();
+    const current = available.indexOf(certActiveButton);
+    if (!available.length || current < 0) return;
+    const next = available[(current + shift + available.length) % available.length];
+    showCert(next);
+  }
+  certDialog.querySelectorAll('[data-cert-step]').forEach(button => button.addEventListener('click', () => {
+    stepCertificate(Number(button.dataset.certStep) || 1);
+  }));
+  certDialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); stepCertificate(1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); stepCertificate(-1); }
+  });
+}
+// Vistas reales de SC bajo demanda: el usuario decide cargar la demo externa.
+const scDemoFrame = document.getElementById('sc-demo-frame');
+const scDemoLink = document.getElementById('sc-demo-direct');
+const scDemoStatus = document.getElementById('sc-demo-status');
+const scDemoPlaceholder = document.getElementById('sc-demo-placeholder');
+const scDemoButtons = [...document.querySelectorAll('[data-sc-demo]')];
+scDemoButtons.forEach(button => button.addEventListener('click', () => {
+  const url = button.dataset.scDemo;
+  let parsed;
+  try { parsed = new URL(url); } catch (_) { return; }
+  if (parsed.protocol !== 'https:' || parsed.hostname !== 'scsolucionesconectadas.com.ar') return;
+  scDemoButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+  if (scDemoFrame) { scDemoFrame.src = parsed.href; scDemoFrame.hidden = false; }
+  if (scDemoPlaceholder) scDemoPlaceholder.hidden = true;
+  if (scDemoLink) scDemoLink.href = parsed.href;
+  if (scDemoStatus) scDemoStatus.textContent = `Se solicitó la vista real de ${button.textContent.trim()}. Si no aparece, abrí la demo en una pestaña nueva.`;
+}));
 
 })();
