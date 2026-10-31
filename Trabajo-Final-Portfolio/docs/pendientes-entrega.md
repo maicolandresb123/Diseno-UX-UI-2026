@@ -47,3 +47,14 @@
 - [ ] Completar prototipo de alta fidelidad de todas las páginas en Figma.
 - [ ] Lighthouse móvil >=90 en los cuatro indicadores y captura.
 - [ ] Desplegar desde GitHub con CI/CD y verificar URL HTTPS.
+
+### Iteración v5 — Optimización editorial y recursos gráficos
+
+- [x] Revisar repetición entre Inicio, Skills, Sobre mí y Proyectos.
+- [x] Sustituir la metodología duplicada en Skills/Proyectos por contenidos diferentes.
+- [x] Crear seis diagramas SVG originales editables con animación respetuosa de movimiento reducido.
+- [x] Añadir dos ejemplos de workflows conceptuales a Skills.
+- [x] Mostrar evidencia visual en Proyectos con descripción honesta del origen de cada recurso.
+- [x] Ampliar Sobre mí con cinco etapas de proceso y oportunidades laborales.
+- [ ] Capturar interfaces reales adicionales de SC y CRM desde demos autorizadas y con datos ficticios; no sustituir capturas con imágenes inventadas.
+- [ ] Revisar visualmente la v5 en navegador real y aplicar cualquier ajuste de contraste, tamaño y espaciado.

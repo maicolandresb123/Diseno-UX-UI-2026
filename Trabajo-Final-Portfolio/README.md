@@ -31,6 +31,12 @@ Incluye botón de **modo claro/oscuro** con persistencia, animación de workflow
 
 Se conservan HTML, CSS y JavaScript puro, sin frameworks de SPA, para cumplir las restricciones del trabajo. Ver [identidad, arquitectura y decisiones UX](docs/Electric-Flow-Identidad-y-UX.md).
 
+## Iteración v5 — contenido diferenciado e ilustraciones originales
+
+Se revisó la duplicación de biografía, tecnología y metodología entre Inicio, Sobre mí, Skills y Proyectos. Inicio conserva las 9 secciones mínimas del TP; las páginas individuales tienen funciones distintas. Se sumaron **seis ilustraciones SVG originales animadas** para las seis especialidades, dos diagramas de flujo conceptual en Skills y una secuencia de cinco pasos en Sobre mí. Proyectos reemplaza un bloque metodológico repetido por una galería de evidencia visual diferenciada entre recurso público de SC, captura auténtica de Cubrí y representación conceptual de ERP privado.
+
+Todos los SVG están dentro de `assets/img/skill-*.svg` (regenerables con `python scripts/generate_skill_art.py`), son editables, se visualizan con fondos claros/oscuros y desactivan el movimiento al usar `prefers-reduced-motion`. Ver [plan editorial y visual v5](docs/Plan-editorial-visual-v5.md). **No se declara que una ilustración conceptual es captura real.**
+
 ## Objetivo
 
 Mostrar de manera clara experiencia laboral, habilidades, formación y proyectos reales ante dos perfiles de usuario: reclutadores IT y clientes que buscan soluciones tecnológicas. El portfolio debe permitir identificar experiencia, abrir un proyecto y localizar contacto en menos de 30 segundos (hipótesis que se validará con usuarios).
@@ -114,7 +120,7 @@ No son capturas de una URL publicada ni reemplazan la captura de Lighthouse que 
 
 - ERP Agrimensura usa un **mockup conceptual**: el repositorio original es privado. No se publican sistemas ni datos del estudio.
 - CRM Comercial se muestra como **en desarrollo**; no se afirma que esté publicado o completado.
-- La sección de certificados utiliza títulos, instituciones, fechas y enlaces de verificación públicos cuando existen. **No se cargaron PDFs o imágenes originales con datos de identificación**, solo metadatos.
+- La sección de certificados utiliza títulos, instituciones, fechas y enlaces de verificación públicos cuando existen. Se crearon **previsualizaciones WebP preparadas**, sin incluir los documentos originales con datos de identificación. Los certificados YPF tienen oculto el DNI.
 - Los demás mockups SVG son ilustraciones propias de la web, **no capturas reales** de los productos. Las imágenes de SC proceden del repositorio público del proyecto y se usan como recursos visuales reales de su landing, no como prueba de resultados de clientes.
 
 ## Deploy automático desde GitHub
