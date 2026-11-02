@@ -25,12 +25,13 @@
 - [ ] Comparar dos secciones Figma vs web y corregir diferencias.
 - [ ] Test moderado de prototipo con **3 personas reales**; documentar hallazgos y cambios.
 - [ ] Revisión de web maquetada con **2 compañeros** y registrar correcciones.
-- [ ] Abrir el proyecto desde una URL HTTPS pública con **Netlify conectado a GitHub** y deploy automático de `main`.
+- [x] GitHub Pages con despliegue automático desde `main` mediante Actions: https://maicolandresb123.github.io/Diseno-UX-UI-2026/ (ejecución #41380795598: `success`).
 - [x] Registrar al menos **10 commits incrementales descriptivos** en el historial de desarrollo del trabajo final (verificar rama antes de la entrega).
 - [ ] Ejecutar Lighthouse en **mobile**, buscar 90+ en cada una de sus 4 métricas y guardar captura real.
 - [ ] Revisar accesibilidad WCAG 2.2 AA en el sitio desplegado (teclado, foco, contraste, no scroll horizontal, axe/WAVE opcional).
 - [x] Open Graph con imagen pública absoluta.
-- [ ] Agregar URL pública final al README y comprobar su previsualización en redes.
+- [x] Agregar URL pública final al README.
+- [ ] Comprobar la previsualización de Open Graph al compartir la URL del portfolio.
 - [ ] Preparar PDF o presentación (máximo **10 diapositivas**) del proceso UX, benchmark, concepto, decisiones, hallazgos y 2 capturas comparativas.
 - [ ] Verificar el acceso de lectura al Figma para el profesor.
 
@@ -46,7 +47,8 @@
 - [ ] Completar test de usabilidad con tres personas y documentar hallazgos y correcciones.
 - [ ] Completar prototipo de alta fidelidad de todas las páginas en Figma.
 - [ ] Lighthouse móvil >=90 en los cuatro indicadores y captura.
-- [ ] Desplegar desde GitHub con CI/CD y verificar URL HTTPS.
+- [x] Desplegar desde GitHub con CI/CD: workflow exitoso y URL HTTPS confirmada en logs.
+- [ ] Comprobar manualmente la navegación y el contenido del sitio en Chrome/Firefox móvil y escritorio.
 
 ### Iteración v5 — Optimización editorial y recursos gráficos
 

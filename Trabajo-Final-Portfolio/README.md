@@ -2,12 +2,12 @@
 
 **Portfolio profesional de Maikol Andrés Betancourt** · Licenciatura en Sistemas de Información · FCyT-UADER · Mg. Ernesto Ledesma.
 
-> **Estado:** versión Electric Flow (rediseño del portfolio profesional) implementada localmente y documentada. **No es una entrega final cerrada:** restan la página completa de alta fidelidad en Figma, tres pruebas reales con usuarios, revisión entre pares, publicación CI/CD y captura Lighthouse del sitio público. No se presentan resultados simulados como si fueran pruebas realizadas.
+> **Estado:** portfolio Electric Flow publicado mediante GitHub Pages y GitHub Actions. **No es una entrega final cerrada:** restan sincronizar la alta fidelidad en Figma, tres pruebas reales con usuarios, revisión entre pares, Lighthouse y validación final del sitio en navegadores. No se presentan resultados simulados como si fueran pruebas realizadas.
 
 ## Enlaces
 
 - **Archivo Figma del trabajo:** https://www.figma.com/design/Ls1mpNP9BDDakTddtmAEDO
-- **Sitio publicado:** pendiente de conectar Netlify con este repositorio y verificar HTTPS. No se inventa una URL.
+- **Sitio publicado en GitHub Pages:** https://maicolandresb123.github.io/Diseno-UX-UI-2026/ ([despliegue exitoso](https://github.com/maicolandresb123/Diseno-UX-UI-2026/actions/runs/41380795598)).
 - **SC Soluciones Conectadas:** https://scsolucionesconectadas.com.ar/
 - **TP5 Cubrí Seguros:** https://tp5-seguros.netlify.app/
 
@@ -118,22 +118,23 @@ No son capturas de una URL publicada ni reemplazan la captura de Lighthouse que 
 
 ## Casos y privacidad
 
-- ERP Agrimensura usa un **mockup conceptual**: el repositorio original es privado. No se publican sistemas ni datos del estudio.
+- ERP Agrimensura muestra capturas reales proporcionadas por el autor **con información privada oculta**; el repositorio del sistema sigue siendo privado y no se publica su código.
 - CRM Comercial se muestra como **en desarrollo**; no se afirma que esté publicado o completado.
 - La sección de certificados utiliza títulos, instituciones, fechas y enlaces de verificación públicos cuando existen. Se crearon **previsualizaciones WebP preparadas**, sin incluir los documentos originales con datos de identificación. Los certificados YPF tienen oculto el DNI.
 - Los demás mockups SVG son ilustraciones propias de la web, **no capturas reales** de los productos. Las imágenes de SC proceden del repositorio público del proyecto y se usan como recursos visuales reales de su landing, no como prueba de resultados de clientes.
 
-## Deploy automático desde GitHub
+## Publicación automática: GitHub Pages
 
-Para utilizar Netlify con el repositorio de la materia, importar el repositorio y configurar:
+**URL:** https://maicolandresb123.github.io/Diseno-UX-UI-2026/
 
-1. **Base directory:** `Trabajo-Final-Portfolio`
-2. **Build command:** dejar vacío.
-3. **Publish directory:** `.` (desde la carpeta base).
-4. Branch de producción: `main`.
-5. Guardar y verificar que el deploy se actualice al realizar un nuevo push.
+La publicación funciona mediante el workflow [`.github/workflows/deploy-portfolio-pages.yml`](https://github.com/maicolandresb123/Diseno-UX-UI-2026/blob/main/.github/workflows/deploy-portfolio-pages.yml), que sube exclusivamente la carpeta `Trabajo-Final-Portfolio/` de la rama `main`. No requiere compilación ni dependencias, porque el sitio está implementado con HTML, CSS y JavaScript.
 
-Se incluyó `netlify.toml` con 404 personalizado y cabeceras de seguridad. **La conexión debe quedar efectivamente activa antes de entregar.** Añadir después la URL final al README y verificar la vista previa de Open Graph. La imagen OG tiene URL absoluta apuntando al recurso público del repositorio.
+**Verificación inicial:** [GitHub Actions #41380795598](https://github.com/maicolandresb123/Diseno-UX-UI-2026/actions/runs/41380795598) finalizó con estado `success`, y sus logs confirman la URL de ambiente anterior. El sitio todavía debe revisarse manualmente en navegadores reales y medirse con Lighthouse; un workflow exitoso no sustituye esas pruebas.
+
+**Para publicar cambios:** editar el portfolio, ejecutar `git add`, `git commit` y `git push origin main`. Los cambios en `Trabajo-Final-Portfolio/**` activan automáticamente la publicación; otros trabajos prácticos del repositorio no son el origen de Pages.
+
+El archivo `netlify.toml` se conserva como configuración opcional histórica, pero **Netlify no es el proveedor utilizado**.
+
 
 ## Uso de herramientas de IA
 
